@@ -1,64 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>This is the function of use json output the message of book </title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This is the function of use json output the message of book</title>
 </head>
 <body>
-<script>
-    var book = [
-        {"imgsrc": "image/jianai.png",
-            "bookId": "boo1",
-            "bookName": "jianai",
-            "publish": "wanjuan",
-            "price": "32.00元"
-        },
-        {
-            "imgsrc": "image/jianai.png",
-            "bookId": "boo2",
-            "bookName": "laorenyuhai",
-            "publish": "wanjuan",
-            "price": "38.00元"
-        },
-        {
-            "imgsrc": "image/jianai.png",
-            "bookId": "b002",
-            "bookName": "xiaowangzi",
-            "publish": "wanjuan",
-            "price": "28.00元"
-        },
-    ]
-    for (var i in book){
-        document.getElementById("pic"+i).src = book[i].imgsrc;
-        document.getElementById("bookId"+i).innerHTML = "图书编号："+bok[i].bookId;
-        document.getElementById("bookName"+i).innerHTML = "图书名称"+bok[i].bookName;
-        document.getElementById("publish"+i).innerHTML = "出版社："+bok[i].publish;
-        document.getElementById("price"+i).innerHTML = "图书价格："+bok[i].price;
-    }
-</script>
-<div id="book0"><img src="" width="160" height="200" id="pic0"/>
+<div >
     <ul>
-        <li id="bookId0">图书编号:</li>
-        <li id="bookName0">图书名称:</li>
-        <li id="publish0">出版社:</li>
-        <li id="price0">图书价格：</li>
+        <li class="book0"  ></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
-</div>
-<div id="book1"><img src="" width="160" height="200" id="pic1"/>
-    <ul>
-        <li id="bookId1">图书编号:</li>
-        <li id="bookName1">图书名称:</li>
-        <li id="publish1">出版社:</li>
-        <li id="price1">图书价格:</li>
-    </ul>
-</div>
-<div id="book2"><img src="" width="160" height="200" id="pic2">
-    <ul>
-        <li id="bookId2">图书编号:</li>
-        <li id="bookName2">图书名称：</li>
-        <li id="publish2">出版社：</li>
-        <li id="price2">图书价格：</li>
-    </ul>
+
+
 </div>
 </body>
 </html>
