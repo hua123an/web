@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is the function of if and switch</title>
+</head>
+<body>
+<!--By input the score output score and leval-->
+<script>
+  document.write("<h1>-----成绩评定-----</h1>")
+  var score = Number(prompt("请输入你的分数:",""))
+  var leval;
+  if (isNaN(score)) {
+    alert("输入的信息不合法！！！")
+}else {
+    if (score < 0 || score >100) {
+      alert("你输入的信息不合法！！！")
+}else {
+    switch (parseInt(score / 10)){
+      case 10,9:
+        leval = "优秀！！！"
+            break;
+      case 8:
+        leval = "良好！！！"
+            break;
+        case 7 :
+          leval = "中等！！！"
+            break;
+      case 6 :
+        leval = "及格！！！"
+            break;
+        default :
+          leval = "不及格！！！"
+            break;
+    }
+    document.write("你输入的成绩为"+score,'<br>')
+      document.write("你的等级为"+leval)
+}
+}
+
+</script>
+
+</body>
+</html>

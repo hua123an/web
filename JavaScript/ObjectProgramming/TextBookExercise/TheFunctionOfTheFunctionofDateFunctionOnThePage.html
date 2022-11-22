@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is the function of the function of date function on the page</title>
+</head>
+<body>
+<ul>
+    <li class="tdwidth">LoginOn</li>
+    <li><a href="">LoginIn</a></li>
+    <li><a href="">Search</a></li>
+    <li><a href="">Message</a></li>
+    <li><a href="">Photo</a></li>
+    <li><a href="">Index</a></li>
+    <li class="liTime" id="time"></li>
+</ul>
+<script>
+    function showTime() {
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth();
+        var day = myDate.getDate();
+        var hour = myDate.getHours();
+        var minute = myDate.getMinutes();
+        var second = myDate.getSeconds();
+        if (year < 10)
+            year = "0" + year
+        if (month < 10)
+            month = "0"+month;
+        if(day < 10)
+            day = "0"+day;
+        if (hour < 10)
+            hour = "0" + hour;
+        if (minute < 10)
+            minute = "0" + minute;
+        if (second < 10)
+            minute = "0" + second;
+        document.getElementById("time").innerHTML = "当前日期为:"+year + "-"+month + "-"+day +"<br>"+ "当前时间为:" + hour + ":" + minute + ":" + second;
+        setTimeout("showTime()", 1000)
+    }
+    window.onload = showTime;
+
+
+</script>
+</body>
+</html>

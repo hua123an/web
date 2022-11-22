@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    border: 0;
+}
+.wrapper{
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+#focus{
+    width: 800px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+#focus ul{
+    float: left;
+    width: 800px;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+#focus ul li div{
+    position: absolute;
+    overflow: hidden;
+}
+#focus .preBtn{
+    width: 45px;
+    height: 100px;
+    left: 0;
+    top: 90px;
+    /*background: url("");*/
+    background-color:#000 ;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity = 40);
+}
+#focus .nextBtn{
+    width: 45px;
+    height: 100px;
+    right: 0px;
+    top: 90px;
+    /*background: url("");*/
+    background-color: #000;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity = 40);
+}
