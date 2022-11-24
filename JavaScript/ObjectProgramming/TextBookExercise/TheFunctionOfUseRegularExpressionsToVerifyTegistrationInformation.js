@@ -72,7 +72,7 @@ function checkBirth(){
     var birth = $("birth").value;
     var birthId = $("birth_prompt");
     birthId.innerHTML = ""
-    var reg = /^((19\d{2}) | (200\d) | （201\d） | (202\d)) -([0-12])- (0?[1-9] | [1-2] \ d | 3[0-1])$/;
+    var reg=/^(19[7-9]\d{1}) | (20((0[0-9]) | (2[0-3]))) - ((0?[1-9])| (1[0-2])) - ((0?[1-9])|([1-2][0-9])|30|31)$/;
     if (reg.test(birth) == false){
         birthId.innerHTML = "输入的生日信息不合法，请重新输入";
         return false;
