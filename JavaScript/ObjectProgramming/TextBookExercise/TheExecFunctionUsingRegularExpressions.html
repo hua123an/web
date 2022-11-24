@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This exec function using regular expression</title>
+</head>
+<body>
+<script>
+    var str = "Welcome to sptc!!!";
+    var reg = new RegExp("sptc", "g");
+    var result;
+    while (result = reg.exec(str) !== null) {
+    document.write(result);
+    document.write("<br>");
+    document.write(reg.lastIndex);         //return the position
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The compile function using regular expression</title>
+</head>
+<body>
+<script>
+  var str = "Every man in the world!Every woman on earth!";
+  patt = /man/g;                      //全局搜索关键词man
+  str2 = str.replace(patt,"person");    //使用person替代man
+  document.write(str2+"<br>");
+  patt = /(wo)?man/g;//全局搜索关键词woman
+  patt.compile(patt);
+  str2 = str.replace(patt,"person");
+  document.write(str2 + "<br>");
+  document.write(str2)
+</script>
+
+</body>
+</html>
