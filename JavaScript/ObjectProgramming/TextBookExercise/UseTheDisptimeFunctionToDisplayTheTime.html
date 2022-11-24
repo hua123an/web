@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use the disptime function to display the time</title>
+</head>
+<body>
+<script>
+    function timi(){
+        var time = new Date();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        if (hour < 10)
+            hour = "0"+hour;
+        if (minute < 10)
+            minute = "0"+minute;
+        if (second < 10)
+            second = "0"+second
+        document.getElementById("time").value = hour+":"+minute+":"+second;
+        var myTime = setTimeout(timi(),1000)
+
+    }
+    window.onload = timi();
+
+    </script>
+
+</body>
+</html>

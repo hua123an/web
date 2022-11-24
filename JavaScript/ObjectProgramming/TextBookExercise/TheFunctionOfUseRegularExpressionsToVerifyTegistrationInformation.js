@@ -13,7 +13,6 @@ function checkUser() {
         userId.innerHTML = "输入用户名不正确";
         userId.innerHTML.style.color = "red";
         return false;
-
     }
     return true;
 }
@@ -72,7 +71,8 @@ function checkBirth(){
     var birth = $("birth").value;
     var birthId = $("birth_prompt");
     birthId.innerHTML = ""
-    var reg=/^(19[7-9]\d{1}) | (20((0[0-9]) | (2[0-3]))) - ((0?[1-9])| (1[0-2])) - ((0?[1-9])|([1-2][0-9])|30|31)$/;
+    //使用正则表达式验证出生日期为1970-01-01到2023-01-01之间
+    var reg = /^((19[7-9]\d)|(20[0-2]\d))-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\d|3[0-1])$/;
     if (reg.test(birth) == false){
         birthId.innerHTML = "输入的生日信息不合法，请重新输入";
         return false;
@@ -86,7 +86,5 @@ function checkAll(){
     }else{
         return false;
     }
-
-
 }
 
