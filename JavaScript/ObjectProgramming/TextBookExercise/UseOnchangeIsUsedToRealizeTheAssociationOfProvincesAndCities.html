@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use onchange is used to realize the association of provinces and cities</title>
+    <style>
+        select {
+            width: 100px;
+            text-align: center;
+            margin: 5px;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <center>
+        省份：<select name="province" id="province" onchange="LoadCity()" required>
+        <option>--请选择--</option>
+    </select>
+        城市：<select name="city" id="city" required>
+        <option>--请选择--</option>
+    </select>
+    </center>
+</form>
+<script>
+    <!--  Example01-->
+    //Create an array  save province
+    // function myInit() {
+    //     var provs = document.getElementById("province");
+    //     var ProviceList = ['陕西省', '北京市', '上海市', '香港特别行政区', '澳门特别行政区']
+    //     for (var i = 0 ; i < ProviceList[i].length; i++) {
+    //         provs.innerHTML = "<option>" + ProviceList[i] + "</option>"
+    //     }
+    // }
+    //
+    // //  Create an array save city
+    // function LoadCity() {
+    //     var provs = document.getElementById("province");
+    //     var city = document.getElementById("city");
+    //     var selcity = [
+    //         ['汉中市','；西安市','咸阳市','宝鸡市','宝鸡市'],
+    //         ['东城区','西城区','朝阳区','海淀区','丰台区'],
+    //         ['黄浦区','徐汇区','长宁区','静安区','普陀区','虹口区'],
+    //         ['中西区','湾仔区','东区','南区','油尖旺区','沙田区'],
+    //         ['大堂区','澳门新城区','圣方济各堂区','路氹区'],
+    //     ]
+    //     city.innerHTML = "<option>"+"--请选择--"+"</option>";
+    //     var index = provs.selectedIndex;
+    //     for (var i =0 ;i < selcity[index -1 ];i++){
+    //         city.innerHTML = "<option>"+selcity[index - 1][i]+"</option>"
+    //     }
+    // }
+    // window.onload = myInit;
+/*Example02*/
+    var ProvinceList = new Array();
+    ProvinceList["陕西省"] = ['汉中市','西安市','咸阳市','宝鸡市'];
+    ProvinceList["北京市"] = ['东城区','西城区','朝阳区','海淀区','丰台区'];
+    ProvinceList["上海市"] = ['黄浦区','徐汇区','长宁区','静安区','普陀区','虹口区'];
+    ProvinceList["澳门特别行政区"] = ['中西区','湾仔区','东区','南区','沙田区'];
+    ProvinceList["香港特别行政区"] = ['大堂区','澳门新城区','圣方济各堂区','路氹区'];
+    function myInit(){
+        var province = document.getElementById("province");
+        for (var i in ProvinceList){
+            province.add(new Option(i,i),null);
+        }
+    }
+    function LoadCity(){
+        var province = document.getElementById("province").value;
+        var city = document.getElementById("city");
+        city.options.length = 1;
+        for (var i in ProvinceList){
+            if (i == province){
+                for (var j in ProvinceList[i]){
+                    city.add(new Option(ProvinceList[i][j],ProvinceList[i][j]),null);
+                }
+            }
+        }
+    }
+    window.onload = myInit;
+</script>
+</body>
+</html>
