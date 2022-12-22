@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E[att^=value]</title>
+<!--  In short,this method filters the beginning string.-->
+<!--  For example,div[id^=selection].
+      Matches(匹配) div elements whose id attribute begins with selection.
+-->
+  <style>
+    p[id^="one"]{
+    /* 筛选id属性值为one的字符串开头的p元素*/
+      color: pink;
+      font-family: "微软雅黑";
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<p id="one1">this is a p tag</p>
+<p id="one2">this is a p tag</p>
+<p id="two">this is a p tag</p>
+<p id="1one">this is a p tag</p>
+
+
+
+</body>
+</html>
