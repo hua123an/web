@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-overflow(文本溢出)</title>
+  <style>
+    p{
+      width: 200px;
+      height: 100px;
+      border: 1px solid aqua;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    /*  Must use the style of white-space:nowrap,overflow:hidden,text-overflow:ellipsiis.
+        And use a border let letter in it.
+    */
+    }
+  </style>
+</head>
+<body>
+<p>This is a p tag.This is a p tag.This is a p tag.</p>
+
+</body>
+</html>
