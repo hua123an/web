@@ -1,0 +1,56 @@
+/*Defind the all style*/
+*{
+    list-style: none;
+    outline: none;
+}
+body{
+    font-family: 微软雅黑;
+    text-align: center;
+}
+/*Defind the link style*/
+a{
+    /*Set the first line retract 1em*/
+    text-indent: 1em;
+    display: inline-block;
+    font-size: 22px;
+    color: #5E2D00;
+}
+a:nth-child(1){
+    text-indent: 0;
+}
+a:link,a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color:#f03;
+}
+/*Set the body style*/
+dl{
+    display: none;
+}
+dd{
+    line-height: 38px;
+    font-size: 22px;
+    font-family: 微软雅黑;
+    color: #333;
+}
+dd:before{
+    /*content: url("");*/
+}
+dd:nth-child(odd){
+    color: #BDA793;
+}
+dd:nth-child(2) em{
+    color: #f03;
+    font-weight: bold;
+    font-style: normal;
+}
+dd:nth-child(3) em{
+    color: #5E2D00;
+    font-weight: bold;
+    font-style: normal;
+}
+:target{
+    display: block;
+}

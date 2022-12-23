@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Link pseudo-class</title>
+<!--    连接属性有下面四种：
+        hover：悬浮（鼠标悬停在元素上）
+        link：未访问（未访问超链接时的状态）
+        visited:访问（访问元素时的状态）
+        active:单击不动（鼠标单击不动时的状态）
+-->
+    <style>
+        a:link,a:visited{
+            color: pink;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        a:active{
+            color: #F00;
+        }
+    </style>
+<!--    设置四个链接属性按照：link  visited  hover  active的顺序不然无法生效-->
+</head>
+<body>
+<a href="#">公司首页</a>
+<a href="#">公司简介</a>
+<a href="#">产品介绍</a>
+<a href="#">联系我们</a>
+
+</body>
+</html>
