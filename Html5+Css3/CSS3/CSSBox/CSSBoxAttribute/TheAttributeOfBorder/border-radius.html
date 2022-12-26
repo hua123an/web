@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-radius</title>
+  <style>
+    img{
+      border: 8px solid #6C9024;
+      /*Set x-radius is 100px,v-radius is 50px*/
+      border-radius:100px/50px;
+    /*  Set the all radius is 50px*/
+      border-radius: 50px;
+    /*  Set left-top and right-bottom x-radius is 50px,v-radius is 30px.
+    Set right-top and left-bottom x-radius is 20px,v-radius is 60px.*/
+      border-radius: 50px 20px/30px 60px;
+    /*  Set left-top x-radius is 50px,v-radius is 30px.
+        Set right-top and left-bottom v-radius are 20px,v-radius are 40px.
+        Set right-bottom x-radius is 10px,v-radius is 60px.*/
+      border-radius: 50px 20px 10px/30px 40px 60px;
+    /*  Set left-top x-radius is 50px,v-radius is 50px.
+        Set right-top x-radius is 30px,v-radius is 30px.
+        Set right-bottom x-radius is 20px,v-radius is 20px.
+        Set left-bottom x-radius is 10px,v-radius is 10px.
+    */
+      border-radius: 50px 30px 20px 10px/50px 30px 20px 10px;
+    }
+  </style>
+</head>
+<body>
+<img src="" alt="">
+</body>
+</html>
