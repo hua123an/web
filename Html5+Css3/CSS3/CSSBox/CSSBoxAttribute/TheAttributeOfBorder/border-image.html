@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>border-image</title>
-  <style>
-    div{
-		/* Set the source of image url */
-      /*border-image-source: url("");*/
-	  /* set the slice(ƫ����) of image */
-	  border-image-slice: 33%;
-	  /* Set border width */
-	  border-width: 41px;
-	  /* Set image-setout(�߿�ͼƬ���򳬳��߿���) */
-	  
-        
+	<head>
+		<meta charset="UTF-8">
+		<title>border-image</title>
+		<style>
+			div {
+				/* Set the source of image url */
+				/*border-image-source: url("");*/
+				/* set the slice(“偏移量”) of image */
+				border-image-slice: 33%;
+				/* Set border width */
+				border-width: 41px;
+				/* Set image-outset(“边框图片超出边框量”) */
+				border-image-outset: 0;
+				/* Set image repeat(“设置平铺方式”) */
+				border-image-repeat: repeat;
+				/* Set border style */
+				border-style: solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
 
 
 
-
-    }
-  </style>
-</head>
-<body>
-<div></div>
-
-
-
-</body>
+	</body>
 </html>
