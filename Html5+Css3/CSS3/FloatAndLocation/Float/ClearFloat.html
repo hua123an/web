@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clear float</title>
+  <style>
+    .father{
+      background: #CCC;
+      border: 1px dashed #999;
+      overflow: hidden;
+    }
+    .box1,.box2,.box3{
+      height: 50px;
+      line-height: 50px;
+      background: #FF9;
+      border: 1px solid #F33;
+      margin: 15px;
+      padding: 0px 10px;
+      float: left;
+    }
+    p{
+      background: #FCF;
+      border: 1px solid #F33;
+      margin: 15px;
+      padding: 0px 10px;
+      clear: left;
+    }
+  </style>
+</head>
+<body>
+<div class="father">
+  <div class="box1">box1</div>
+  <div class="box2">box2</div>
+  <div class="box2">box2</div>
+  <p>This is a p tag.</p>
+
+
+
+</div>
+
+</body>
+</html>
