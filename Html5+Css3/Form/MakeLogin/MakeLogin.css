@@ -1,0 +1,48 @@
+body{
+    font-size: 12px;
+    font-family: 宋体;
+}
+body,form,input,p{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+form{
+    width: 320px;
+    height: 150px;
+    padding-top: 20px;
+    margin: 50px auto;
+    background: url("image/1263_1673956715_hd.jpeg");
+    border: 3px solid #4FAC;
+    border-radius: 20px;
+}
+p{
+    margin-top: 15px;
+    text-align: center;
+}
+p span{
+    width: 40px;
+    display:inline-block;
+    text-align: right;
+}
+.num,.pass{
+    width: 152px;
+    height: 18px;
+    border: 1px solid #38A1BF;
+    padding: 2px 2px 2px 2px;
+}
+.num{
+    background:no-repeat 5px center aqua;
+    color: #999;
+}
+.pass{
+    background: no-repeat 5px center aqua;
+}
+.btn01,.btn02{
+    width: 60px;
+    height: 25px;
+    border: 1px solid aqua;
+    border-radius: 20px;
+    margin-left: 30px;
+    background: aqua;
+}
