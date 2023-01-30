@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用translate3D方法</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            border: 5px solid #000;
+            position: relative;
+            /*规定3D元素的透视效果*/
+            perspective: 500000px;
+            /*规定元素如何在3D空间中显示*/
+            transform-style: preserve-3d;
+            translation: all 1s ease 2s;
+        }
+        div:hover{
+            transform: rotateX(-90deg);
+        }
+        div img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        div img.no1{
+            transform: translateZ(100px);
+            z-index: 2;
+        }
+        div img.no2{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="../images/1.png" alt="1" class="no1">
+    <img src="../images/2.png" alt="2" class="no2">
+</div>
+</body>
+</html>

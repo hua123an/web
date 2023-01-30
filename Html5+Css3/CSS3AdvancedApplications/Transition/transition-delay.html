@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition-delay</title>
+  <style>
+    div{
+      width: 100px;
+      height: 200px;
+      border: 1px solid aqua;
+      border-radius: 20px;
+    }
+    div:hover{
+      border-radius: 200px;
+      border-color: blue;
+      transition-property:border-radius,border-color;
+      transition-duration: 2s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 4s;
+    }
+  </style>
+</head>
+<body>
+<div>
+  使用transition-delay属性规定过渡动画化从何时开始
+</div>
+
+</body>
+</html>
