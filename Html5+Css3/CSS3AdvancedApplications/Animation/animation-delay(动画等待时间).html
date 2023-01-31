@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-delay</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      animation-name: myname;
+      animation-duration: 3s;
+      animation-timing-function: cubic-bezier(0,1,0,1);
+      /*自定义动画速度*/
+      animation-delay: 3s;
+    /*  animation-duration指的是动画完成时间，animation-delay指的是动画开始之前的等待时间*/
+    }
+    @keyframes myname {
+      from{left: 0px}
+      to{right: 200px}
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-iteration-count</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            /*定义动画名称*/
+            animation-name:nyname;
+            /*动画开始到结束的时间*/
+            animation-duration: 3s;
+            /*动画开始时延迟时间*/
+            animation-delay: 3s;
+            /*定义动画速度*/
+            animation-timing-function: cubic-bezier(1,0,0.5,1);
+        /*  定义动画播放次数*/
+            animation-iteration-count: 5;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

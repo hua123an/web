@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-timing-function</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      animation-name: myname;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+    /*  animation-timing-function有六种属性:
+      linear:从头到尾一样的动画
+      ease:默认。从低速开始，然后加快，在结束前变慢
+      ease-in:动画从低速开始
+      ease-out:动画一低速结束
+      ease-in-out:动画从低速开始和结束
+      cubic-bezier(0,0,0,0):自定义动画速度，n的值在0~1之间
+    */
+    }
+    @keyframes myname {
+      from{left: 0px}
+      to{right: 200px}
+    }
+  </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>
