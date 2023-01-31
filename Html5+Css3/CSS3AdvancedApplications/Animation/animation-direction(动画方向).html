@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-direction</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            /*定义动画名称*/
+            animation-name: myname;
+            /*定义动画从头到位的时间*/
+            animation-duration: 5s;
+        /*    定义动画开始前延迟时间*/
+            animation-delay: 3s;
+        /*    定义动画速度*/
+            animation-timing-function: cubic-bezier(0.5,1,0.5,1);
+        /*    定义动画次数*/
+            animation-iteration-count: 10;
+        /*    定义动画方向*/
+            animation-direction: alternate;
+        /*    animation-direction属性值:
+               normal:默认动画方向
+               alternate:动画在奇数次数时正常播放，在偶数时逆向播放，即正反交替
+        */
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
