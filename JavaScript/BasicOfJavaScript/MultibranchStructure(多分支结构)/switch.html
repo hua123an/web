@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+</head>
+<body>
+<script>
+    var day = parseInt(prompt("请输入任意一到七的数字："))
+    switch (day) {
+        case 1 :
+            flag = "Monday"
+            break;
+        case 2 :
+            flag = "Tuesday"
+            break;
+        case 3 :
+            flag = "Wednesday"
+            break;
+        case 4 :
+            flag = "Thursday"
+            break;
+        case 5 :
+            flag = "Friday"
+            break;
+        case 6 :
+            flag = "Saturday"
+            break;
+        case 7 :
+            flag = "Sunday"
+            break;
+    }
+    document.write("你输入的数字是:",day,"<br>")
+    document.write("今天是:",flag)
+</script>
+
+</body>
+</html>
