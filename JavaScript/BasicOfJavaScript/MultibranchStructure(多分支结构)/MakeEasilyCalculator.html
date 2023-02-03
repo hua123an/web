@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make easily calculator</title>
+</head>
+<body>
+<tr>
+    <td><input type="button" name="addbutton" id="addbtn" value="+" onclick="computer('+')"></td>
+    <td><input type="button" name="subbutton" id="subbtn" value="-" onclick="conputer('-')"></td>
+    <td><input type="button" name="mulbutton" id="mulbtn" vlaue="x" onclick="computer('*')"></td>
+    <td><input type="button" name="divbutton" id="divbtn" value="/" onclick="computer('/')"></td>
+</tr>
+<tr>
+    <td>计算结果</td>
+    <td colspan="3"><input type="text" name="txtresult" id="txtresult" size="25"></td>
+</tr>
+<script>
+    function computer(obj) {
+        var num1, num2, result;
+        num1 = parseFloat(document.myform.txtnum1.value)
+        num2 = parseFloat(document.myform.txtnum2.value)
+        switch (obj) {
+            case "+" :
+                result = num1 + num2;
+                break;
+            case "-" :
+                result = num1 - num2;
+                break;
+            case "*" :
+                result = num1 * num2;
+                break;
+            case "/" :
+                if (num2 != 0) {
+                result = num1 / num2;
+                    } else {
+                    alert("除数不能为0，请重新输入！！！")
+                    break;
+                }
+        }
+        document.myform.txtresult.value = result;
+    }
+</script>
+<!--垃圾课本一堆屎山代码-->
+</body>
+</html>
