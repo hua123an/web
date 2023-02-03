@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make calculator</title>
+  <style>
+    #calculator{
+      margin: 0 auto;
+      border: 2px solid #000;
+      border-radius: 30px;
+      width: 300px;
+      height: 460px;
+      background: aqua;
+    }
+    #hiddentxt{
+      height: 100px;
+    }
+    #txt{
+      width: 88%;
+      height: 80px;
+      border-radius:30px;
+      font-size: 24px;
+      font-weight: bold;
+      background: aqua;
+      color: white;
+      border: 5px solid #fff;
+      margin-top: 15px;
+      margin-left: 12px;
+      font-family: "Comic Sans Ms","Leelawadee UI";
+    }
+    input[type = button]{
+      width: 56px;
+      height: 56px;
+      margin-top: 10px;
+      margin-left: 13px;
+      border-radius:30px;
+      font-size: 20px;
+      font-weight: bold;
+      background: #fff;
+      font-family: "Comic Sans Ms";
+    }
+    #Zero,#AC{
+      width: 129px;
+    }
+    input[type = button]:hover{
+      color: #fff;
+      background: #000;
+      animation-name: mybutton;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+    }
+    @keyframes mybutton {
+      0%{
+        background: #fff;
+        color: #000;
+      }
+      100%{
+        background: #000;
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="calculator">
+  <input type="text" id="txt" readonly>
+  <input type="button" id="AC" value="AC" onclick="Clean()">
+  <input type="button" onclick="TNumber(this.value)" value="/">
+  <input type="button" onclick="TNumber(this.value)" value="%">
+  <br>
+  <input type="button" id="Seven" onclick="TNumber(this.value)" value="7">
+  <input type="button" id="Eight" onclick="TNumber(this.value)" value="8">
+  <input type="button" id="Nine" onclick="TNumber(this.value)" value="9">
+  <input type="button" onclick="TNumber(this.value)" value="+">
+  <br>
+  <input type="button" id="Four" onclick="TNumber(this.value)" value="4">
+  <input type="button" id="Five" onclick="TNumber(this.value)" value="5">
+  <input type="button" id="Six" onclick="TNumber(this.value)" value="6">
+  <input type="button" onclick="TNumber(this.value)" value="-">
+  <br>
+  <input type="button" id="One" onclick="TNumber(this.value)" value="1">
+  <input type="button" id="Two" onclick="TNumber(this.value)" value="2">
+  <input type="button" id="Three" onclick="TNumber(this.value)" value="3">
+  <input type="button"  onclick="TNumber(this.value)" value="*">
+  <br>
+  <input type="button" id="Zero" onclick="TNumber(this.value)" value="0">
+  <input type="button" id="Dot" onclick="TNumber(this.value)" value=".">
+  <input type="button" onclick="Calculator()" value="=">
+</div>
+<script>
+  var text = document.getElementById("txt");
+  var numObj = "";
+  var Total = 0;
+  function TNumber(obj) {
+    numObj += obj;
+    text.value = numObj;
+  }
+function Calculator(){
+    var str = text.value;
+    Total = eval(text.value);
+    text.value = str + "=" + Total;
+    numObj = ""
+}
+function Clean(){
+    text.value = "";
+    numObj = "";
+}
+</script>
+</body>
+</html>
