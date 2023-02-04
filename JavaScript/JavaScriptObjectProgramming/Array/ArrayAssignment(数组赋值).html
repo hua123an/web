@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array assignment</title>
+<!--    给数组进行赋值操作-->
+</head>
+<body>
+<script>
+    var arr = new Array(3);
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    document.write("arr: " + arr + "<br>");
+    document.write("arr[0]: " + arr[0] + "<br>");
+    document.write("arr[1]: " + arr[1] + "<br>");
+    document.write("arr[2]: " + arr[2] + "<br>");
+    // 由于数组长度为3，所以arr[3]为undefined，这里未赋值，但是已经存在，所以显示undefined
+    document.write("arr[3]: " + arr[3] + "<br>");
+</script>
+
+</body>
+</html>

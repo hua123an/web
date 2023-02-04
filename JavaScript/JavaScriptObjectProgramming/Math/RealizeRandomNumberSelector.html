@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Realize random number selector</title>
+    <!--利用Math.random()实现简单的选号器-->
+    <style>
+        .inputTxt {
+            width: 600px;
+            height: 500px;
+            font-size: 30px;
+            text-align: center;
+            background: aqua;
+            color: lightgoldenrodyellow;
+        }
+
+        input[type = button] {
+            width: 50px;
+            height: 50px;
+            color: lightgoldenrodyellow;
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <form name="myForm">
+        <input type="text" value="0" name="myText" class="inputTxt">
+        <br>
+        <input type="button" name="start" value="开始" onclick="start()">
+        <input type="button" name="stop" value="停止" onclick="stop()">
+    </form>
+</center>
+<script>
+    var timer = null;
+    var num = 0;
+    var flag = 0;
+
+    function start() {
+        if (flag == 0) {
+            flag = 1;
+            timer = setInterval("randomNum()", 50);
+        }
+    }
+
+    function stop() {
+        if (flag == 1) {
+            flag = 0;
+            clearInterval(timer);
+        }
+    }
+
+    function randomNum() {
+        num = Math.floor(Math.random() * 100);
+        document.myForm.myText.value = num;
+    }
+</script>
+
+</body>
+</html>

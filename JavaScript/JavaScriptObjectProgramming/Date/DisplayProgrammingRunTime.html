@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display programming run tine</title>
+<!--实现1~10000累加和运行时间-->
+</head>
+<body>
+<script>
+  var t1 , t2 , htime , sum = 0;
+  t1 = new Date();
+  document.write("循环前时间为:"+t1.toLocaleString()+":"+t1.getMilliseconds()+"<br>")
+  for (var i = 0; i < 10000;i++) {
+    sum += i;
+}
+  t2 = new Date();
+  document.write("循环前时间为:"+t2.toLocaleString()+":"+t2.getMilliseconds()+"<br>")
+  htime = t2.getTime() - t1.getTime();
+  document.write("循环所需要的时间为:"+htime+"毫秒")
+</script>
+</body>
+</html>

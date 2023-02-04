@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Common date function</title>
+</head>
+<body>
+<script>
+/*  常见的Date()对象方法有:
+getYear():返回年份      返回以1900年开始算，到所在年份的差值
+getFullYear():返回年份  在常见的浏览器中都可以正确返回
+getMonth():返回月份
+getDate():返回日期
+getDay():返回星期数
+getHours():返回时
+getMinutes():返回分钟
+getSeconds():返回秒
+getMilliseconds():返回毫秒数
+getTime():返回对应时间基线的毫秒
+toGMTString():以GMT格式表示时间对象
+toLocaleString():返回当前区域时间
+调用时，先创建一个Date()对象，可以直接输出变量名.get方法，得到需要的数值
+*/
+var myDate = new Date();
+document.write(myDate.getYear(),"<br>");
+document.write(myDate.getFullYear(),"<br>")
+document.write(myDate.getMonth(),"<br>")
+document.write(myDate.getDate(), "<br>");
+document.write(myDate.getHours(), "<br>");
+document.write(myDate.getMinutes(), "<br>");
+document.write(myDate.getSeconds(), "<br>");
+document.write(myDate.getMilliseconds(), "<br>");
+document.write(myDate.toGMTString(),"<br>");
+document.write(myDate.toLocaleString())
+</script>
+</body>
+</html>

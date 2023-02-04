@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Array</title>
+</head>
+<body>
+<script>
+/*创建数组的几种方法:
+* 1.直接创建无参数组
+* 2.一个数字参数构造函数，指定数组的长度
+* 3.初始化中带有参数的数组
+* 4.使用方括号创建数组，相当于调用无参构造函数
+* 5.使用方括号，并传入参数，相当于调用有参构造函数
+* */
+var arr1 = new Array();
+var arr2 = new Array(10);
+var arr3 = new Array(1, 2, 3, 4, 5);
+var arr4 = [];
+var arr5 = [1, 2, 3, 4, 5];
+document.write("arr1: " + arr1 + "<br>");
+document.write("arr2: " + arr2 + "<br>");
+document.write("arr3: " + arr3 + "<br>");
+document.write("arr4: " + arr4 + "<br>");
+document.write("arr5: " + arr5 + "<br>");
+</script>
+
+</body>
+</html>

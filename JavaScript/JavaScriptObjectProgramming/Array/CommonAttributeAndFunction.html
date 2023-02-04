@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Common attribute and function</title>
+<!--Array常见的属性和方法:
+length:数组的长度属性
+reverse:反转数组
+join("-"):-为连字符，可为其他
+sort():对数组升序操作
+concat(a1):a1为需要连接的数组，连接的数组直接接在原数组后面
+push():将一个或者多个元素添加到数组中去
+slice(start,end)：在start到end直接进行切割
+splice():此方法可以指定起始索引和数据个数，该方法的格式为array.splice(start,count[date]),
+其中count为必选项，整数，指要删除或者替换的数组的个数，data为可选项，用于替换指定数据的新数据，如果没有data参数，则
+会删除指定数据；指定data参数，才会出现替换
+pop():该方法可以直接移除并返回数组的最后一个元素；如果数组已经为空，则pop()不改变数组，返回undefined，用法为：array.pop()
+shift():删除数组的第一个元素，实现原理和pop()差不多；但是数组为空时，不进行操作
+unshift():将指定元素插入到元素的开始位置，用法为array.unshift(element1,elements,.......elementn)
+toString():将数组转换成字符串，使用方法为：array.toString()
+toLocaleString():将数组转换成本地字符串,使用方法为:array.toLocaleString()
+-->
+</head>
+<body>
+<!--下面通过一个实例对以上属性和方法进行应用-->
+<script>
+//  初始化数组
+var fruit = new Array(5);
+fruit[0] = "Apple";
+fruit[1] = "Orange";
+fruit[2] = "Banner";
+fruit[3] = "Peach";
+fruit[4] = "Grape";
+document.write("<h3>输出数组:</h3>")
+for (var i = 0; i < fruit.length; i++ ) {
+  document.write("<h5>数组的第"+i+"个元素是:"+fruit[i] + "</h5>")
+}
+document.write("<h3>反转数组</h3>")
+fruit.reverse();
+for (var i = 0; i < fruit.length; i++) {
+    document.write("<h5>反转后的数组第"+i+"个元素是:"+fruit[i] + "</h5>")
+}
+document.write("<h3>数组排序</h3>")
+fruit.sort();
+for (var i in fruit) {
+  // 排序根据元素类型排序，字符串类型的排序依据首字母大小写；数值类型的排序依据数值大小
+  document.write("<h5>排序后的数组第"+i+"个元素是:"+fruit[i]+"</h5>")
+}
+document.write("<h3>连接数组</h3>")
+var str = fruit.join("-")
+document.write(str)
+document.write("<h3>插入数组</h3>")
+var arr1 = new Array("魅族","小米","华为","苹果");
+var arr2 = fruit.concat(arr1);
+for (var i in arr2 ) {
+  document.write("<h5>连接后的数组第"+i+"个元素是:"+arr2[i] +"</h5>")
+}
+// 当元素发生变化是，最好的方法是定义一个新变量存储新数组，然后输出新数组
+// 常用的属性和方法基本就以上几种，上面列出的其他属性和方法基本了解就行
+</script>
+</body>
+</html>

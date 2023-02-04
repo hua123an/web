@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create JSON</title>
+<!--    JSON创建方式：
+1.创建JSON数组:使用[]表示
+2.创建JSON对象:使用{}表示
+创建JSON时遵循以下原则：
+(名称/属性值)即：(name/value)之间用：隔开
+多个数据并列用“，”隔开
+访问JSON对象时有两种方式:
+使用.直接访问JSON数据
+使用[]来访问JSON数据
+-->
+</head>
+<body>
+<script>
+//    创建JSON对象
+var user = {
+    "username" : "huaan",
+    "password" : "admin",
+    "role" : "admin"
+}
+//    访问JSON对象
+document.write(user.username,"<br>")
+document.write(user["password"],"<br>")
+</script>
+<script>
+//    创建JSON数组
+var user1 = ["Apple","MeiZu","XiaoMi","HuaWei"];
+//    访问JSON数组
+document.write(user1[0])
+
+</script>
+</body>
+</html>

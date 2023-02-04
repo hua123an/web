@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set timer function</title>
+<!--常见的定时器方法有两种:
+setTimeout():这种定时器只能执行一次，使用clearTimeout()可以清理这个定时器
+setInterval():这种定时器可以多次调用，只有把窗口关闭或者使用clearInterval()函数清理
+-->
+</head>
+<body>
+<!--下面这个例子展示如何使用定时器-->
+<div id="container">
+  <div id="top">
+    <ul>
+      <li class="tdwidth"><a href="#">注册</a></li>
+      <li><a href="">登录</a></li>
+      <li><a href="">搜索</a></li>
+      <li><a href="">留言</a></li>
+      <li><a href="">相册</a></li>
+      <li><a href="">首页</a></li>
+      <li class="liTime" id="time"></li>
+    </ul>
+  </div>
+</div>
+<script>
+  function showTime() {
+    var myData = new Date();
+    var hours = myData.getHours();
+    var minutes = myData.getMinutes();
+    var seconds = myData.getSeconds();
+    if (hours < 10)
+      hours = "0" + hours;
+    if (minutes < 10)
+      minutes = "0" + minutes;
+    if (seconds < 10)
+      seconds = "0" + seconds;
+    document.getElementById("time").innerHTML = "当前时间为" + hours + ":" + minutes + ":" + seconds;
+    setTimeout("showTime()",1000)
+  }
+  window.onload = showTime();
+</script>
+</body>
+</html>
