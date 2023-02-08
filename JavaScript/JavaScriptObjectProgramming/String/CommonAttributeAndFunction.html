@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Common attribute and function</title>
+<!--    String对象常见的属性和方法
+1.length:返回字符串长度
+2.toUpperCase():将字符串(全部)转化为大写
+3.toLowerCase():将字符串(全部)转化为小写
+4.charAt(索引):返回索引位置的字符串，索引下标从0开始
+5.indexOf("字符串")：返回该字符串的索引位置
+6.lastIndexOf("字符串")：返回该字符串的索引位置(反向搜索),返回结果和indexOf()一样，只是搜索方向不同
+7.split("字符串",数组长度)
+8.substr(start,length):start表示字符串开始位置，length表示从start规定字符串开始向后数几位
+9.substring(start,stop)：start表示字符串开始位置，stop表示字符串结束位置，截取两者之间的字符串(8,9输入的数字会优先匹配下标，实际结果以下标字符为准)
+10.concat():合并多个字符串，并返回合并的字符串
+-->
+</head>
+<body>
+<script>
+    var str = "Hello-World!!!"
+    document.writeln(str.length)
+    document.writeln(str.toUpperCase())
+    document.writeln(str.toLowerCase())
+    document.writeln(str.charAt(2))
+    document.writeln(str.indexOf("H"))
+    document.writeln(str.lastIndexOf("H"))
+    document.writeln(str.split("-"))
+    document.writeln(str.substr(0,4))
+    document.writeln(str.substring(0,4))
+    var str1 = "Hello,huaan!!!"
+    var str2 = str.concat(str1)
+    document.writeln(str2)
+</script>
+</body>
+</html>

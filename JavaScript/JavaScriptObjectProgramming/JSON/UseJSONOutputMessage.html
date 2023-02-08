@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use JSON output message</title>
+<!--利用JSON输出图书信息-->
+    <style>
+        #book0{
+            background: #FFC;
+            border: 1px sandybrown solid;
+            padding: 10px;
+            margin: 5px;
+        }
+        #book0 img{
+            float: left;
+            margin: 10px;
+        }
+        li{
+            line-height: 45px;
+            color: #333;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            list-style: none;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="book0"><img src="" width="160" height="200" id="pico">
+    <ul>
+        <li id="bookId0">图书编号：</li>
+        <li id="bookName0">图书名称：</li>
+        <li id="publish0">出版社：</li>
+        <li id="price0">图书价格：</li>
+    </ul>
+</div>
+<script>
+    var book = [{"booksrc":"","bookId":"boo1","bookname":"简爱","publish":"万卷出版公司","price":"28.00元"}]
+for(var i in book){
+    document.getElementById("pic" + i).src = book[i].booksrc;
+    document.getElementById("bookId" + i).innerHTML = "图书编号:"+book[i].bookId;
+    document.getElementById("bookName" + i).innerHTML = "图书名称:"+book[i].bookname;
+    document.getElementById("publish" + i).innerHTML = "出版社:"+book[i].publish;
+    document.getElementById("price" + i).innerHTML = "图书价格:"+book[i].price;
+}
+</script>
+</body>
+</html>
