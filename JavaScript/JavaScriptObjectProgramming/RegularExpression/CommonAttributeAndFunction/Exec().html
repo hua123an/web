@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exec()</title>
+<!--    Exec()实例-->
+</head>
+<body>
+<script>
+    var str = "欢迎来到广科院";
+    var reg = new RegExp("广科","g");
+    var result;
+    while((result = reg.exec(str)) != null){
+        document.write(result);
+        document.write("<br>")
+        document.write(reg.lastIndex);
+    }
+</script>
+
+</body>
+</html>

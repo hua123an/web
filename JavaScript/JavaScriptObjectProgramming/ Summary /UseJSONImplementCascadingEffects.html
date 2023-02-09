@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cascading effects</title>
+<!--    使用json效果实现级联-->
+</head>
+<body>
+<form>
+    <center>
+        省份:<select name="province" id="province" required>
+        <option>--请选择--</option>
+    </select>
+       城市:<select name="city" id="city" required >
+            <option>--请选择--</option>
+        </select>
+    </center>
+</form>
+<script>
+    var city = [
+        {"name":"广东省","info":['广州市','深圳市','佛山市','珠海市']},
+        {"name":"四川省","info":['成都市','绵阳市','德阳市','广元市']},
+        {"name":"陕西省","info":['西安市','汉中市','咸阳市','宝鸡市']},
+        {"name":"山西省","info":['太原市','忻州市']}
+    ];
+    window.onload = function (){
+        for (var i in city){
+            document.getElementById("city").innerHTML = "<option>" + city[i].name + "</option>"
+        }
+    }
+    function loadCity(){
+        for (var i in city){
+            if (city[i].name== sheng){
+                var shi = document.getElementById("city");
+                shi.options.length = 1;
+                for (var j in city[i].info){
+                    shi.innerHTML = "<option>" + city[i].info[i] +"</option>"
+                }
+
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>
