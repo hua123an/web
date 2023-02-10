@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advance Function</title>
+<!--    使用高级方式查看和获取元素信息
+可遵循：parentNode、firstChild、lastChild三个属性来获取元素
+-->
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0" id="myTable">
+    <thead>
+    <td>姓名</td>
+    <td>课程</td>
+    <td>成绩</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>欧阳兰</td>
+        <td>语文</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>白杨</td>
+        <td>数学</td>
+        <td>96</td>
+    </tr>
+    </tbody>
+</table>
+<input type="button" name="btn" value="第二行第一个单元格内容" onclick="check()">
+<script>
+    function check(){
+        var tt = document.getElementById("myTable");
+        var s = tt.lastChild.firstChild.firstChild.innerHTML;
+        alert(s)
+    }
+</script>
+</body>
+</html>

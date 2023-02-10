@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Common Function</title>
+<!--使用普通方法查看并获取元素信息
+利用getElementBy*方法来获取元素信息
+-->
+</head>
+<body>
+<input type="checkbox" name="enjoy" value="apple">苹果
+<input type="checkbox" name="enjoy" value="banana">香蕉
+<input type="checkbox" name="enjoy" value="grape">葡萄
+<input type="checkbox" name="enjoy" value="pear">梨
+<input type="checkbox" name="enjoy" value="watermelon">西瓜
+<br>
+<input type="button" name="btn" value="显示图片路径" onclick="hh()">
+<br><input type="button" name="btn" value="喜欢的水果" onclick="check()" >
+<br><input type="button" name="btn" value="改变图片" onclick="change()">
+<script>
+    function hh(){
+        var hText = document.getElementById("fruit").getAttribute("src");
+        alert("图片的路径为",hText)
+    }
+    function check(){
+        var favor = document.getElementsByName("enjoy");
+        var like = "你喜欢的水果是：";
+        for (var i = 0;i<favor.length;i++){
+            if (favor[i].checked == true){
+                like += "\n" +favor[i].getAttribute("value");
+            }
+        }
+        alert(like)
+    }
+    function change(){
+        var imgs = document.getElementByTagName("img");
+        imgs[0].setAttribute("src","images/grape.jpg")
+    }
+</script>
+</body>
+</html>
