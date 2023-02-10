@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+<!--    对注册页面的就读学校添加事件-->
+</head>
+<body>
+<form action="">
+    <div class="maintxt">
+        注册成功后可以继续使用中国研究生招生信息网、阳光高考、学信档案、全国征兵网、全国大学生创业服务网提供的服务。<br>
+        (<a href="#" target="_blank" class="colorblue" style="text-decoration: underline">什么是学信网账号？</a><a
+            href="#" target="_blank" class="colorblue" style="text-decoration: underline">了解更多</a>)
+    </div>
+    <div class="regline clearfix">
+        <table width="353" border="0">
+            <tr>
+                <td width="112">手机</td>
+                <td width="231"><input type="text"></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>省份证号</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>就读学校</td>
+                <td><input type="text" id="school">
+                    <select>
+                        <div id="mdA">
+                            <table width="300" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td><a href="#" onclick="choose(this)">广东科学技术职业学院</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" onclick="choose(this)">番禺职业技术学院</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" onclick="choose(this)">吉林大学珠海学院</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </select>
+                <INPUT type="button" name="regButton" value="选择" onclick="openwindow()">
+                </td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="确认了，马上提交"></td>
+            </tr>
+        </table>
+    </div>
+</form>
+<script>
+    function openwindow(){
+        window.open("register.html","width=400,height=400,top=100,left=200,toolbar=no,scrollbars=yes,resizeable=yes,location=no,menubar=no")
+    }
+    function choose(obj){
+        var parent = window.opener.document.getElementById(school);
+        parent.value = obj.innerHTML;
+        self.close();
+        window.opener.focus()
+    }
+</script>
+</body>
+</html>
