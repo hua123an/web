@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create and add node</title>
+<!--    创建和添加节点-->
+</head>
+<body>
+<input type="button" id="bt1" value="增加一张图片" onclick="newNode()">
+<input type="button" id="bt2" value="复制原图" onclick="copynode()">
+<img src="" alt="水果" id="sixty1">
+<img src="" alt="果蓝" id="sixty2">
+<script>
+    function newNode(){
+        var oldNode = document.getElementById("sixty1");
+        var newNode = document.createElement("img");
+        img.setAttribute("src","../img/fruit.png")
+        document.body.insertBefore(img,oldNode);
+    }
+    function copyNode(){
+      var image = document.getElementById("sixty1");
+      var copyimage =  image.cloneNode(false);
+      document.body.appendChild(copyimage);
+
+    }
+</script>
+</body>
+</html>
