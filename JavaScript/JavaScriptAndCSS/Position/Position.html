@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+</head>
+<body>
+<div id="test" onclick="place()" style="position: absolute;width: 200px;height: 100px;left: 50px;top: 120px">
+
+</div>
+<script>
+    function place() {
+        var divobj = document.getElementById("test");
+        alert("上"+divobj.style.top+"\n左"+divobj.style.left)
+
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position01</title>
+</head>
+<body>
+<div id="test" onclick="place()"> </div>
+<script>
+    function place(){
+        var divobj = document.getElementById("test");
+        alert("上"+divobj.currentStyle.top+"\n左"+divobj.currentStyle.left);
+    }
+</script>
+</body>
+</html>

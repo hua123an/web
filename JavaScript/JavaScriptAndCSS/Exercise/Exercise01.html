@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带平滑效果的js返回顶部特效</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border: none;
+        }
+        body{
+            width:1326px;
+            margin: 0 auto;
+            background: #fafafa;
+        }
+        .totop{
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            display: block;
+            width: 26px;
+            height: 62px;
+            background: aqua;
+            transition: all ease-in-out 0.2s;
+        }
+        .totop:hover{
+            background: blue;
+        }
+    </style>
+<!--    实现点击回到顶部效果-->
+</head>
+<body>
+<div id="content">
+    <img src="" alt="qq网">
+</div>
+<a href="#" onclick="gotoTop();return false" class="totop"></a>
+<script>
+/*需要实现的目标
+* JavaScript脚本实现点击回到顶部效果
+* @param speed速度
+* @param stime时间间隔(毫秒)
+* */
+function gotoTop(speed,stime){
+    speed = speed || 0.1
+    sitme = stime || 10
+    var x1 = 0;
+    var y1 = 0;
+    var x2 = 0;
+    var y2 = 0;
+    var x3 = 0;
+    var y3 = 0;
+    if (document.documentElement){
+        x1 = document.documentElement.scrollLeft || 0;
+        y1 = document.documentElement.scrollTop || 0;
+    }
+    if (document.body){
+        x2 = document.body.scrollLeft || 0;
+        y2 = document.body.scrollTop || 0;
+    }
+    var x3 = window.scrollX || 0;
+    var y3 = window.scrollY || 0;
+//     滚动条到页面顶部的水平距离
+    var x = Math.max(x1,Math.max(x2,x3))
+//     滚动条到页面顶部的垂直距离
+    var y = Math.max(y1,Math.max(y2,y3))
+//     滚动速度
+    speeding = speed + 1;
+    window.scrollTo(Math.floor(x / speeding),Math.floor(y / speeding))
+//     如果距离不为0，继续调用此函数
+    if (x , y > 0){
+        var run = "gotoTop("+speed+","+stime+")";
+        window.setTimeout(run,stime)
+    }
+
+
+
+}
+
+
+
+</script>
+</body>
+</html>
