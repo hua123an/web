@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert node</title>
+<!--    在待定节点之后插入节点-->
+</head>
+<body onload="insertp()">
+<p id="myTarget">
+    插入这行文字之后
+    也就是插入这行文字之前，但是这一行没有id，也可能不存在
+</p>
+<script>
+function insertp(){
+    var oOldP = document.getElementById("myTarget");
+    var oNewP = document.createElement("p");
+    var oT = document.createTextNode("这是一个感人肺腑的故事")
+    oNewP.appendChild(oT);
+    insertAfter(oNewP,oOldP)
+}
+onmouseover = "changeTu('t1,jpg')"
+
+</script>
+
+</body>
+</html>

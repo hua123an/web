@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassName01</title>
+    <style>
+        .over {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            background-color: aqua;
+            list-style: none;
+            float: left;
+            text-align: center;
+        }
+
+        .out {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            background-color: red;
+            list-style: none;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>资讯动态</li>
+    <li>产品世界</li>
+    <li>市场营销</li>
+</ul>
+
+<script>
+    var len = document.getElementsByTagName("li")
+    for (var i = 0; i < len.length; i++) {
+        len[i].onmouseover = function () {
+            this.className = "over"
+        }
+        len[i].onmouseout = function () {
+            this.className = "out"
+        }
+    }
+
+</script>
+</body>
+</html>

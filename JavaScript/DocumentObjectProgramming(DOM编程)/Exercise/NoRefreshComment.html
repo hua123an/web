@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>No refresh comment</title>
+    <style>
+        #txt{
+            width: 200px;
+            height: 100px;
+            background-color: #DDDDDD;
+        }
+        #dv{
+            width: 200px;
+            height: 200px;
+            background-color: #DBF0FF;
+        }
+    </style>
+</head>
+<body>
+<h4>你的评论:</h4>
+<textarea id="txt"></textarea>
+<br>
+<input type="button" id="btn" value="评论">
+<h4>你的留言:</h4>
+<div id="dv">
+</div>
+<script>
+    var j = function(id) {
+        return document.getElementById(id);
+    }
+    onload =  function(){
+        btn.onclick = function() {
+            var txt = j("txt").value;
+            var p = document.createElement("p");
+            p.appendChild(document.createTextNode(txt))
+            var ps = j("dv").getElementsByTagName("p");
+            console.log(ps.length)
+            if (ps.length > 0){
+                j("dv").insertBefore(p,ps[0])
+            }else {
+                j("dv").appendChild(p)
+            }
+            j("txt").value = " ";
+        }
+
+    }
+</script>
+</body>
+</html>

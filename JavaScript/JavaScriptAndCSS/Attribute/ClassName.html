@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassName</title>
+    <style>
+    .over{
+        background-color: aqua;
+        list-style: nonne;
+        float: left;
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .out{
+        background-color: blue;
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+    </style>
+</head>
+<body>
+<ul>
+    <li onmousemove="this.className = 'over'" onmouseout="this.className = 'out'">资讯动态</li>
+    <li onmousemove="this.className = 'over'" onmouseout="this.className = 'out'">产品世界</li>
+    <li onmousemove="this.className = 'over'" onmouseout="this.className = 'out'">市场营销</li>
+</ul>
+</body>
+</html>

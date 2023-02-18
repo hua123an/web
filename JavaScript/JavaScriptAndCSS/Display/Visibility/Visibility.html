@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visibility</title>
+</head>
+<body>
+<ul>隐藏li
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+</ul>
+<script>
+    //隐藏li标签
+    function hidden(){
+        document.querySelectorAll("li").forEach(function (item) {
+            item.style.visibility = "hidden";
+        })
+    }
+    hidden()
+</script>
+<!--重新显示li-->
+<script>
+    function visible() {
+        document.querySelectorAll("li").forEach(function (item) {
+            item.style.visibility = "visible";
+
+        })
+    }
+    visible();
+</script>
+
+</body>
+</html>

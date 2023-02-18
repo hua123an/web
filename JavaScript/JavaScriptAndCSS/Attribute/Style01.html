@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style01</title>
+</head>
+<body>
+<ul>
+    <li>资讯动态</li>
+    <li>产品世界</li>
+    <li>市场营销</li>
+</ul>
+<script>
+    var len = document.getElementsByTagName("li");
+    for(var i=0;i<len.length;i++){
+        len[i].onmouseover = function () {
+            this.style.backgroundColor = "aqua"
+        }
+        len[i].onmouseout = function() {
+            this.style.backgroundColor = "blue"
+        }
+    }
+</script>
+</body>
+</html>

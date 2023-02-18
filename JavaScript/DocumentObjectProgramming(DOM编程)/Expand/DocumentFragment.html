@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document fragment</title>
+</head>
+<body>
+<script>
+  //文档碎片
+  var aColors = ["white", "green", "blue", "orange", "black", "pink", "brown", "grey", "gold", "silver", "beige", "goldenrod", "purple", "blue", "pink", "brown", "green", "blue", "orange", "black", "pink", "brown", "grey", "gold", "silver", "beige", "goldenrod", "purple", "blue", "pink", "brown", "green", "blue", "orange", "black", "pink", "brown", "grey", "gold", "silver", "beige", "goldenrod", "purple", "blue", "pink", "brown", "green", "blue", "orange", "black", "pink", "brown", "grey", "gold", "silver", "beige", "golden"];
+  //创建文档碎片
+  var oFragment = document.createDocumentFragment();
+  for (var i = 0; i < oFragment.length; i++) {
+      var oP = document.createDocumentFragment("p");
+      var oT = document.createTextNode(aColors[i]);
+      oP.appendChild(oT);
+      oFragment.appendChild(oP);
+  }
+  document.body.appendChild(oFragment);
+</script>
+
+</body>
+</html>
