@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange</title>
+</head>
+<body>
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    为了实现jQuary对象能否实现转换成DOM对象，可以使用index[]，由于jQuary对象返回的值是一个数组对象，我们可以通过访问jQuary对象的索引就可以实现转换
+    var $cr = $('cr')
+    var cr = $cr[0]
+    alert(cr.checked)
+</script>
+
+</body>
+</html>
