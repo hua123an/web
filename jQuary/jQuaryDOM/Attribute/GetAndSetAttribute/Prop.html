@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop</title>
+</head>
+<body>
+<!--比较attr()和prop()方法的区别-->
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("button").click(function () {
+      $('#p1').html("attr('checked'):"+$("input").attr('checked')+"<br>prop(''checked):"+$("input").prop('checked'));
+    })
+  })
+
+</script>
+<button>查看attr()和prop()的值</button>
+<br>
+<input type="checkbox" id="check1" checked="checked">
+<label for="check1">单击</label>
+<p id="p1"></p>
+
+
+
+</body>
+</html>

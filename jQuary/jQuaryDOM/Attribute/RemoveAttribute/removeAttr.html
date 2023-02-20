@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>removeAttr</title>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  直接调用d对象.removeAttr
+    $(function () {
+        $('div img').addClass("alpha")
+        $('div img:eq(0)').removeClass("alpha")
+        $('div img').mousemove(function () {
+            var big_src = $(this).attr("src")
+            $('#test').attr("src",big_src)
+            $(this).removeClass("alpha").siblings().addClass("alpha")
+        })
+    })
+</script>
+<img src="./img" title="test" id="test"><br>
+<div>
+    <img src="./img/endeavour_flavours.png">
+    <img src="./img/elloquin_1_bspwm.png">
+    <img src="./img/elloquin_2_bspwm.png">
+    <img src="./img/eos-4k-flat-2.png">
+</div>
+</body>
+</html>

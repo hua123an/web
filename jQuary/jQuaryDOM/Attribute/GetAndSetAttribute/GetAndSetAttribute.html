@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get and set attribute</title>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    //  JavaScript定义方式
+    // 绑定元素
+    var img = document.getElementById("photo")
+    // 获取属性
+    var path = img.src
+    // 设置属性
+    img.src = "路径"
+    // 获取元素
+    img.getAttribute("src")
+    // 设置元素
+    img.setAttribute("src","路径")
+//     jQuary定义方式
+//     获取图片img元素
+    var $img = $('#photo')
+//     获取图片src属性
+    var $src = $img.attr("src")
+//     设置图片src属性
+    $img.attr("src","路径")
+//     设置多个属性
+    $img.attr({"src":"路径","title":"图片提示文字"})
+</script>
+</body>
+</html>
