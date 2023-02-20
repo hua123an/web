@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<h1>制作留言板前端布局更新效果</h1>
+<ul>
+    <li>
+        <span>功夫熊猫</span>
+        <p>欢迎你</p>
+    </li>
+</ul>
+<form method="post">
+    <h2>Message</h2>
+    <label for="Name">昵称</label>
+    <input type="text" id="Name" class="text" value="你的昵称">
+    <label for="Content">留言内容</label>
+    <textarea  id="Content" rows="4" class="text">你要说的话</textarea>
+    <input type="button" value="点击这里提交留言">
+</form>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        $(".text").each(function () {
+            var defaultVal = this.value;
+            $(this).focus(function () {
+                if (this.value == defaultVal){
+                    this.value = ""
+                }
+            })
+            $(this).blur(function () {
+                if (this.value == ""){
+                    this.value = defaultVal
+                }
+            })
+        })
+      $("input[type = 'button']").click(function () {
+          var name = $("input[name]").val()
+          var content = $("textarea").val()
+          if (name != "你的昵称" && content != "你要说的话"){
+              var msg = "<li><span>"+name+"</span><p>"+content+"</p></li>"
+              $("ul").append(msg)
+              $("input[name]").val("你的昵称")
+              $("textarea").val("你要说的话")
+          }
+
+      })
+    })
+
+</script>
+
+</body>
+</html>
