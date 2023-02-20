@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BasicSelector</title>
 </head>
 <body>
-
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    基础选择器
+//  id选择器
+    $('#one').css('background','aqua')
+// class选择器
+    $('.one').css('background','aqua')
+// element选择器
+    $('div').css('background','aqua')
+// *选择器
+    $('*').css('background','aqua')
+// 多重选择器
+    $('div','#one').css('background','aqua')
+</script>
 </body>
 </html>

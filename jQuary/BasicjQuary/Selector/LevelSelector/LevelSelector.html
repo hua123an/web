@@ -5,6 +5,20 @@
     <title>LevelSelector</title>
 </head>
 <body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    后代选择器
+    $('div span').css('background','aqua')
+// 子代选择器
+    $('div > span').css('background','aqua')
+// 链接选择器
+    $('.one + next').css('background','aqua')
+// 选取之后选择器
+    $('.two ~ div').css('background','aqua')
+
+
+</script>
+
 
 </body>
 </html>
