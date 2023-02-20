@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BasicFilterSelector</title>
 </head>
 <body>
-
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    //    选取第一个元素 :first
+    $('div:first').css('background', 'aqua')
+    // 选取最后一个元素  ：last
+    $('div:last').css('background', 'aqua');
+    //     选取不是条件的元素 :not(selector)
+    $('div:not(.one)').css('background', 'aqua')
+    // 选取偶数元素 ：even
+    $('div:even').css('background', 'aqua')
+    // 选取奇数元素 ：odd
+    $('div:odd').css('background', 'aqua')
+    // 选取等于索引的元素 :eq(index)
+    $('div:eq(0)').css('background','aqua')
+//     选取大于索引的元素 :gt(index)
+    $('div:gt(1)').css('background','aqua')
+//     选取小于索引的元素 :lt(index)
+    $('div:lt(2)').css('background','aqua')
+//     选取所有标题元素  :header
+    $(':header').css('background','aqua')
+//     选取正在执行动画的元素  :animated
+    $('div:animated').css('background','aqua')
+</script>
 </body>
 </html>

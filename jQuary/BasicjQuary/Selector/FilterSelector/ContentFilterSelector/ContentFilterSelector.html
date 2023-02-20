@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ContentFilterSelector</title>
 </head>
 <body>
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    选取含有文本内容的元素    :contains(text)
+    $("div:contains('我')")
+// 选取不含任何子元素(包括文本元素)的元素
+    $('div:empty').css('background','aqua')
+// 选取选择器所匹配的元素
+   $('div:has(p)').css('background','aqua')
+// 选取含有子元素的元素（包括文本元素）
+    $('div:parent').css('background','aqua')
+</script>
 
 </body>
 </html>

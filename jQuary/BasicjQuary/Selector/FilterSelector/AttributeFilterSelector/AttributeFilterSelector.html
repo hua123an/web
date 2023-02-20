@@ -7,9 +7,21 @@
 <body>
 <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
 <script>
-
-
+//    选取拥有此属性的元素 tag[attribute]
+    $('div[id]').css('background','aqua')
+//  选取属性值为value的元素 [attribute = value]
+    $('div[title = test]').css('background','aqua')
+// 选取属性值不等于value的元素 [attribute != value]
+    $('div[title != text]').css('background','color')
+// 选取以属性值为value开始的元素 [attribute ^= value]
+    $('div[title ^= test]').css('background','aqua')
+// 选取以属性值为value结束的元素 [attribute $= value]
+   $('div[title $= test]').css('background','aqua')
+// 选取含有属性值为value的元素 [attribute *= value]
+    $('div[title *= test]').css('background','aqua')
+// 复合选择属性，先确定前面的限定条件，再确定后面的限定条件
+    $('div[id][title = test]').css('background','aqua')
+// 选取含有id属性，title属性以test结束的div元素
 </script>
-
 </body>
 </html>

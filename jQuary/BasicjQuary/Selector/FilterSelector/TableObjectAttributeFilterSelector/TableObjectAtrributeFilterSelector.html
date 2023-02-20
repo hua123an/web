@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TableObjectAttributeFilterSelector</title>
 </head>
 <body>
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    选取所有可用元素 :enabled
+        $('div:enabled').css('background','aqua')
+// 选取所有不可用元素 :disabled
+        $('div:disabled').css('background','aqua')
+// 选取所有被选中的元素，包括单选框和复选框 :checked
+      $('div:checked').css('background','aqua')
+// 选取所有被选中的元素，包括下拉列表框  :selected
+     $('div:selected').css('background','aqua')
 
+</script>
 </body>
 </html>

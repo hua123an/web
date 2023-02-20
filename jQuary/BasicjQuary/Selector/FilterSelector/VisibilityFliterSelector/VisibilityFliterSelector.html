@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>VisibilitySelector</title>
 </head>
 <body>
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    //    选取可见元素   :visible
+    $('div:visible').css('background', 'aqua')
+//     选取不可见元素,:hidden 可以加入需要隐藏的时间.show(),单位毫秒
+    $('div:hidden').css('background','aqua').show(1000)
+</script>
 
 </body>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ChildFilterSelector</title>
 </head>
 <body>
+<script type="text/javascript" src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    选取父元素下的第index个元素(index可选值：index,odd,even),与eq(index)不同的是，nth-child(index)所以是从1开始的，而eq(index)索引是从0开始的 :nth(index)
+        $('div:nth-child(1)').css('background','aqua')
+// 选取父元素下面的第一个子元素  :first-child
+       $('div:first-child').css('background','aqua')
+// 选取父元素下面的最后一个子元素    :last-child
+       $('div:last-child').css('background','aqua')
+// 选取父元素下面的唯一子元素,当拥有多个子元素时选择器不会生效     :only-child
+      $('div:only-child').css('background','aqua')
 
+
+
+</script>
 </body>
 </html>
