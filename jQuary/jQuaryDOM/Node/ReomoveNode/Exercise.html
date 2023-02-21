@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<!--实现删除邮箱效果-->
+<div class="warp">
+  <p>收件箱</p>
+  <table>
+    <tr>
+      <td>状态</td>
+      <td>发件人</td>
+      <td>主题</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Select" value="Select"></td>
+      <td>里德</td>
+      <td>周末去爬山去吗？</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" value="Select" name="Select"></td>
+      <td>XXXXXXX公司</td>
+      <td>恭喜你，获得我公司的一等奖：价值1000w的宝马，请汇款5000元到账户.......</td>
+    </tr>
+  </table>
+  <div>
+    <a><span>全选/全不选</span></a>
+    <a><span>删除邮箱</span></a>
+  </div>
+</div>
+
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $('div div a:eq(1)').click(function () {
+    $("input[name = Select]").each(function () {
+      if ($(this).is(":checked"))
+        $(this).parent().parent().remove()
+    })
+  })
+</script>
+
+
+
+</body>
+</html>

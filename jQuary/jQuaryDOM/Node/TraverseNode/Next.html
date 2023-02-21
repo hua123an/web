@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Children</title>
+    <title>Next</title>
 </head>
 <body>
-<!--用于获取元素的子元素集合，不考虑其他后代元素-->
+<!--Next方法用于取得匹配元素后面的紧邻同辈元素-->
 <ul>我最喜欢的运动
     <li>篮球</li>
     <li>足球</li>
     <li>羽毛球</li>
 </ul>
+<div>This is a div tag</div>
 <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
 <script>
-    var $li = $("ul").children();
+  var $ul = $("ul").next()
 </script>
 </body>
 </html>

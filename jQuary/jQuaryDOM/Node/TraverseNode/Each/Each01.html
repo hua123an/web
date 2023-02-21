@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Each01</title>
+</head>
+<body>
+<!--Each方法可以为每个元素规定要运行的函数-->
+
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+<!--  使用each方法实现遍历对象-->
+ $("li").each(function () {
+   alert($(this).text())
+ })
+</script>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+<script>
+<!--  使用each输出数组元素-->
+  var arr = ["one","two","three","four"]
+  $.each(arr,function () {
+    alert(this)
+  })
+</script>
+<script>
+  var obj = {one:1,two:2,three:3,four:4}
+  $.each(obj,function (key,val) {
+    alert(obj[key])
+
+  })
+</script>
+</body>
+</html>
