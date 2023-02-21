@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CloneNode</title>
+</head>
+<body>
+<ul>你喜欢的运动
+  <li>篮球</li>
+  <li>足球</li>
+  <li>羽毛球</li>
+</ul>
+</body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $("ul li").click(function () {
+    $(this).clone().appendTo("ul")
+  })
+//   赋予新节点也具有实践行为
+  $("ul li").click(function () {
+    $(this).clone(true).appendTo("ul")
+  })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove</title>
+</head>
+<body>
+<ul>你喜欢什么运动
+    <li>篮球</li>
+    <li>足球</li>
+    <li>羽毛球</li>
+</ul>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+<!--    先获取节点，然后直接调用remove()完成为删除节点操作-->
+    // Example01
+    $('ul li:eq(0)').remove("li[title = 篮球]")
+// Example02 元素删除之后还可以继续使用
+    var $li = $("ul li:eq(0)").remove()
+    $li.appendTo("ul")
+//     方法2
+    $("ul li:eq(0)").appendTo("ul")
+// 但是删除的节点之前绑定了事件，经过remove()方法后又重新追加进来了，该节点上所绑定的事件已经失效
+    $("ul li").click(function () {
+        alert($(this).html())
+    })
+    var $li = $("ul li:eq(0)").remove()
+    $li.appendTo("ul")
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Empty</title>
+</head>
+<body>
+<ul>你喜欢什么运动
+    <li>篮球</li>
+    <li>足球</li>
+    <li>羽毛球</li>
+</ul>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+<!--    empty()方法并不是删除节点，而是清空节点，他能清空元素中的所有后代选择器-->
+// 当运行代码时，li标签本身位置还是存在，但是只剩下li标签默认的.
+$("ul li:eq(0)").empty()
+</script>
+</body>
+</html>

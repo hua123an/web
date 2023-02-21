@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detach</title>
+</head>
+<body>
+<ul>你喜欢什么运动
+    <li>篮球</li>
+    <li>足球</li>
+    <li>羽毛球</li>
+</ul>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $("ul li").click(function () {
+        alert($(this).html())
+    })
+    var $li = $("ul li:eq(0)").detach()
+    $li.appendTo("ul")
+</script>
+</body>
+</html>
