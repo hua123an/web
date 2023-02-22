@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addclass</title>
+<!--    先设定一组样式，当jQuary代码执行时，会发生另一种变化-->
+    <style>
+        .tableHeader{
+            background-color: #00a40c;
+            color: #FFF;
+            font-weight: bold;
+
+        }
+        .evenStyle{
+            background-color: #a5e5aa;
+
+        }
+        .over{
+            background-color: #ff9;
+        }
+    </style>
+</head>
+<body>
+
+<!--使用addClass属性追加样式-->
+<!--如果之前的class属性为myClass，追加class属性为high,追加后的class属性为myClass high,即两种class属性发生重叠-->
+<table>
+        <tr>这是table的第一行</tr>
+        <tr>这是table的第二行</tr>
+        <tr>这是table的第三行</tr>
+        <tr>这是table的第四行</tr>
+</table>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    设置首行背景色
+$("table tr:first").addClass("tableHeader")
+// 设置所有偶数行背景色
+$("table tr:even").addClass("evenStyle")
+// 设置除首行以外行背景色
+$("table tr:not(:first)").addClass("evenStyle")
+// 当光标移动到表格某行时，当前行背景色发生变化，首行除外
+$("table tr:not(:first)").mouseover(function () {
+    $(this).addClass("over");
+
+})
+
+</script>
+</body>
+</html>

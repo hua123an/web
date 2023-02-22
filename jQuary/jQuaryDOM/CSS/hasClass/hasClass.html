@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hasClass</title>
+</head>
+<body>
+<!--使用hasClass用来判断是否具有该属性-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  判断师傅具有该属性
+$("table tr:not(:first)").click(function () {
+  alert($(this).hasClass(".over"))
+})
+// 增强可读性可以这样写
+$("table tr:not(:first)").click(function () {
+  alert($(this).is(".over"))
+})
+$
+</script>
+</body>
+</html>

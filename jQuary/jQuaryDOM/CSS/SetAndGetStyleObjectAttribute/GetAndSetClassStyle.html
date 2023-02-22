@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get and set class style</title>
+</head>
+<body>
+<p class="myClass" title="你最喜欢的运动">你最喜欢的运动是什么？</p>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    class是p标签的一个属性，因此可以使用attr()获取class
+    var p_class = $("p").attr("class")
+// 还可以使用attr()方法来改变class的属性,大多数情况下是替代原有的class属性，追加属性需要使用addClass()
+   $("p").attr("calss","high");
+// 改变属性还可以自定义改变，如果要求改变奇数或者偶数行的属性改变
+ $("tr :even").attr("class","eevenstyle")
+
+
+
+</script>
+
+</body>
+</html>

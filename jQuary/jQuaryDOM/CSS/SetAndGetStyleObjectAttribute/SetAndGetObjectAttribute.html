@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set and get object attribute</title>
+    <style>
+        p{
+            text-align: center;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+<h2>This is a h2 tag.</h2>
+<p>This is a p tag</p>
+<h3>This is a h3 tag</h3>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    获取元素属性,但是返回的值时RGB属性值
+var $c = $("p").css("color")
+alert($c)
+// 设置元素属性
+$("h2").css({"color":"aqua","text-align":"center"})
+// 设置多个属性时，需要改变符号，当出现多个属性时，将，改为：单个属性用，隔开，多个属性时，用{}包裹住属性
+$("h3").css({"color":"red","text-align":"center","font-size":"30px","font-weight":"bold"})
+
+</script>
+</body>
+</html>

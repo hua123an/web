@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RemoveStyle</title>
+</head>
+<body>
+<!--使用removeClass删除全部或者指定的class属性-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  使用哪个removeClass删除某个class属性
+// 删除首行以外的class属性值
+$("table tr:not(:first)").mouseover(function () {
+    $(this).remove("hover")
+})
+// 删除多个class属性
+$("table tr:not(:first)").mouseover(function () {
+    $(this).removeClass("over evenStyle")
+})
+// 当不带class参数时，会删除现有的class属性
+$("table tr:not(:first)").mouseover(function () {
+    $(this).removeClass()
+})
+</script>
+</body>
+</html>
