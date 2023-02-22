@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete shopping information</title>
+</head>
+<body>
+<table border="1" cellspacing="0" cellpadding="0" >
+  <tr>
+    <th><input type="checkbox">全选</th>
+    <th>商品信息</th>
+    <th>宜美惠价</th>
+    <th>数量</th>
+    <th>操作</th>
+  </tr>
+  <tr>
+    <td>
+      <input type="checkbox" name="" value-="">
+    </td>
+    <td>
+      <img src="" class="products"><a href="#">果子5</a>
+    </td>
+    <td>￥3339元</td>
+    <td>
+      <img src="" width="20" height="20">
+      <input type="text" class="quantity" value="1">
+      <img src="" width="20" height="20">
+    </td>
+    <td>
+      <a href="#" class="de1">删除</a>
+    </td>
+  </tr>
+</table>
+<a href="#" class="add">添加</a>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $(function () {
+    $(".del").click(function () {
+      $(".tr_0").remove()
+    })
+  $("body").on("click","del",function () {
+    $(this).parent().parent().remove()
+  })
+    $(".add").click(function () {
+    //   创建新节点
+      var $newPro = $("<tr>" +
+              "<td>" +
+              "" + <input type="checkbox" name= "" value="" />,
+              "</td>" +
+               "<td>" + <img src="" class="products"/>,
+              + <a href="#">联想笔记本电脑</a>,
+              +"</td>"+
+              "<td>￥3198元</td>",+
+                      "<td>"+
+              <img src="" width="20" height="20"/>,+
+                      "<input type='text' class='quantity' value='1'/>",+
+                      <img  width='20' height='20'/>,+
+                      "</td>"+
+              "<td><a href='#' class='del'>删除</a></td>",+
+                      "</tr>")
+              $("table").append($newPro)
+    })
+  })
+</script>
+</body>
+</html>

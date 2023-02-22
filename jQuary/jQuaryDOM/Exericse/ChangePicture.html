@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChangePicture</title>
+</head>
+<body>
+<h2>图片切换</h2>
+<p><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_1.png" alt="Large image" id="largeImg"></p>
+<p class="thumbs">
+  <a href="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_2.png" title="Image2"><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_2.png"></a>
+  <a href="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_3.png" title="Image3"><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_3.png"></a>
+  <a href="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_4.jpg" title="Image4"><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_4.jpg"></a>
+  <a href="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_5.jpg" title="Image5"><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_5.jpg"></a>
+  <a href="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_6.jpg" title="Image6"><img src="/jQuary/jQuaryDOM/Attribute/RemoveAttribute/img/blinky_6.jpg" ></a>
+</p>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        $("h2").append('<em></em>')
+        $(".thumbs a").click(function () {
+            var largePath = $(this).attr("href")
+            var largeAlt = $(this).attr("title")
+            $("#largeImg").attr({src:largePath,alt:largeAlt})
+            $("h2 em").html("("+ largeAlt +")")
+            return false;
+        })
+
+    })
+
+
+
+</script>
+</body>
+</html>

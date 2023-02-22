@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <style>
+        .wrap {
+            margin: 50px auto;
+            width: 1134px;
+            height: 437px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pic {
+            width: 679px;
+            height: 437px;
+            cursor: pointer;
+        }
+
+        .pic1 {
+            /*background: url("");*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .pic_num1 {
+            width: 74px;
+            height: 79px;
+            position: absolute;
+            top: 40px;
+            left: 17px;
+            /*background: url("");*/
+            background-position: 0 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--制作层叠图片横向平滑移动轮播图效果-->
+<div class="wrap">
+    <div class="pic1 pic"></div>
+    <div class="pic_num1 pic_num"></div>
+</div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    //    设置图片切换的js函数
+    $(function () {
+//     获取接节点对象
+        var imgOuter = $('.wrap')        //获取所有图片的虽在处的容器
+        var imgDiv = $('.pic')             //获取图片所在的Div容器
+//     设置部分初始值和计算
+        var timeId = null;                 //设置定时器
+        var edgeDistance = 91              //记录相邻图片错开的距离
+        var imgNow = 0                     //设置现在图片的位置
+        var imgMouse = 0                    //设置光标停留的位置在第几张图片的位置
+        var imgOuterWidth = imgOuter.width();    //获取第一张图片到其他图片的距离
+        alert(imgDiv.size())                     //输出图片之间的距离
+
+
+// 设置自动轮播方法
+        function autoSlider() {
+            if (imgNow == imgDiv.size() - 1) {
+                imgNow = 0
+            } else {
+                imgNow++
+            }
+            if (imgNow == 0) {
+                imgDiv.eq(imgNow).children().hide().siblings().children().show()
+                imgDiv.eq(imgNow).siblings().children().show()
+                //     图片运动
+                for (var i = imgDiv.size() - 1; i > 0; i--) {
+                    imgDiv.eq(i).animate({'left': imgOuterWidth - (imgDiv.size() - i) * edgeDistance + 'px'}, 2000)
+                }
+            } else {
+                // 显示第一张之外的图片，先改变左上角的数字
+                imgDiv.eq(imgNow).children().hide().siblings().children().show()
+                imgDiv.eq(imgNow).siblings().children().show();
+                //     制作动画
+                imgDiv.eq(imgNow).animate({'left': edgeDistance * imgNow + 'px'}, 2000)
+            }
+        }
+
+        function mouseSlide() {
+            //     判断所选图片是否被转换过，选择右边或者左边图片移动
+            if (imgNow < imgMouse) {
+                //     当前选择的图片是左边，将要移动的是右边
+                for (var i = imgNow + 1; i <= imgMouse; i++) {
+                    imgDiv.eq(imgMouse).children().hide()
+                    imgDiv.eq(imgMouse).siblings().children().show()
+                    //     图片移动
+                    imgDiv.eq(i).stop().animate({'left': edgeDistance * i + 'px'}, 2000)
+                    //     重置当前索引
+                    imgNow = imgMouse;
+                }
+            } else {
+                for (var i = imgNow; i > imgMouse; i--) {
+                    imgDiv.eq(imgMouse).children().hide()
+                    imgDiv.eq(imgMouse).siblings().children().show()
+                    imgDiv.eq(i).stop().animate({'left': imgOuterWidth - (imgDiv.size() - i) * edgeDistance + 'px'}, 2000)
+                }
+                imgNow = imgMouse;
+
+            }
+
+        }
+
+//     图片控制事件
+        timeId = setInterval(autoSlider, 3000)
+        imgDiv.hover(function () {
+            clearInterval(timeId)
+            imgMouse = $(this).index()
+            if (imgMouse != imgNow) {
+                mouseSlide();
+            }
+        }, function () {
+            timeId = setInterval(autoSlider, 3000)
+
+        }).bind('click', function () {
+            imgNow = $(this).index()
+        })
+
+    })
+</script>
+</body>
+</html>

@@ -21,6 +21,30 @@
 </div>
 <script SRC="/jQuary/Packages/jquery-3.6.3.min.js"></script>
 <script>
+  if(document.getElementById("nav_menu")) {
+    var navMenu = $('#nav_menu > li:lt(9)');
+    $('#nav_menu').one('mouseout', function () {
+      $(this).find('img').each(function () {
+        var src = this.getAttribute("src2")
+        $(this).attr('src', src)
+      })
+    })
+    navMenu.hover(function () {
+      if (this.id == 'indexhall') {
+        (this).className = 'curron'
+      } else {
+        $(this).addClass('hover')
+      }
+
+      function f() {
+        if (this.id == 'indexhall') {
+          this.className = ""
+        } else {
+          $(this).removeClass('hover')
+        }
+      }
+    })
+  }
 
 
 </script>
