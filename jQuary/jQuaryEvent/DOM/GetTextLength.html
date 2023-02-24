@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get text length</title>
+    <style>
+        .textColor{
+            color: #c00;
+        }
+        .input{
+            height: 60px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<!--练习获取文本的字数-->
+<!--创建输入框-->
+<div id="edit_myform">
+    <form action="" method="post">
+        <p id="numtj">你还可以输入<var class="textColor"></var>个字符.</p>
+        <p class="textInput"><label><textarea name="" cols="" rows="" maxlength="110" class="input"></textarea></label></p>
+    </form>
+</div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+    //     获取文本信息
+        var text = $("#edit_myform textarea").val();
+    //     获取文本域长度
+        var counter = text.length;
+    //     提示还有多少字
+        $("#numtj var").text(100 - counter);
+    //    函数在键盘弹起时触发
+        $(document).keyup(function () {
+            // 重新获取文本域内容
+            var text = $("#edit_myform textarea").val();
+        //     重新获取现在文本长度
+            var counter = text.length;
+        //     比较文本域字数长度
+            if (counter >= 100){
+                $("#numtj var").text("对不起，输入的字数超过限制");
+            //     设置文本域为只读
+                $("#edit_myform textarea").prop('disable',true);
+            }
+            else
+                $("#numtj var").text(100 - counter);
+
+        })
+
+    })
+</script>
+</body>
+</html>

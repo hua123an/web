@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnloadEvent</title>
+</head>
+<body>
+<!--如何使用jquary加载DOM对象-->
+<!--JavaScript方法-->
+<script>
+  window.onload = function () {
+
+  }
+//   当出现多个函数时
+  function one(){
+
+  }
+  function two() {
+
+  }
+  window.onload = one()
+  window.onload = two()
+//   虽然上面方式书写正确，但是只会执行函数two()，因为函数one()被函数two()覆盖
+//   可以创建一个新的函数，来完成调用
+  window.onload = function (){
+    one();
+    two();
+  }
+</script>
+<!--jQuary方法-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $(window).onload(function () {
+  })
+//   jQuary方法很好的解决了方法调用出现旧行为被替代问题，在jQuary方法中，可以调用$(document).ready(function()），方法可以有效避免发生
+  function one() {
+    alert("one")
+  }
+  function two(){
+    alert("two")
+  }
+  $(document).ready(function(){
+    one()
+  })
+  $(document).ready(function () {
+    two()
+  })
+//   document和ready可以不写，可以写成这样
+  $(function () {
+
+
+
+
+
+  })
+</script>
+</body>
+</html>

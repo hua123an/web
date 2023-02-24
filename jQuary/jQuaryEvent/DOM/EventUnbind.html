@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventUnbind</title>
+</head>
+<body>
+<!--事件移除-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    给id为btn的按钮绑定两个点击事件
+$(function () {
+
+
+function fn1() {
+    alert('点击1')
+}
+function fn2() {
+    alert('点击2')
+}
+$("#btn").bind('click',fn1)
+$("#btn").bind('click',fn2)
+$("#btn").unbind('click',fn2)
+
+
+})
+
+
+
+</script>
+</body>
+</html>

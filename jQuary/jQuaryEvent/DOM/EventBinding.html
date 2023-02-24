@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventBinding</title>
+</head>
+<body>
+<--使用jQuary进行事件绑定-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  基本表示方式
+// $(selector).bind(type,[dat],function),data为可选参数，可以传入一个字符串、一个数字、一个数组或者一个对象
+//   demo01
+//位页面元素id位btn的按钮绑定单击事件
+$('#btn').bind('click',fn)
+function fn(){
+    alert('单击！！！')
+}
+// 执行匿名函数
+$('#btn').bind('click',function () {
+    alert('单击')
+
+})
+// 为id为myDiv的div元素绑定多个事件，在id为div1的div元素中显示值
+$("#myDiv").bind('mouseover mouseout',function () {
+    $("#div1").html(function (index,value) {
+        return + "1";
+    })
+})
+// 通过键值为页面id为myDiv的div绑定多个参数
+$('#myDiv').bind({
+    'mouseout':function () {
+        alert('移开')
+    },
+    'mouseover':function () {
+        alert('移入')
+    }
+
+})
+
+
+
+</script>
+</body>
+</html>

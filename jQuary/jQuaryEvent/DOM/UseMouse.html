@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UseMouse</title>
+</head>
+<body>
+<!--鼠标事件练习-->
+<h2>用户交互设计学习参考书</h2>
+<ul>
+  <li>JavaScript DOM编程</li>
+  <li>锋利的jQuary</li>
+  <li>jQuary入门与提高</li>
+  <li>JavaScript高级编程</li>
+  <li>jQuary权威指南</li>
+  <li>jQuary实战</li>
+  <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+  <script>
+    $(function (e) {
+      $("h2").mouseover(function () {
+        $(this).next().hide()
+      })
+      $("h2").mouseout(function () {
+        $(this).next().show()
+
+      })
+
+    })
+
+
+
+  </script>
+</ul>
+</body>
+</html>
