@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventObject</title>
+</head>
+<body>
+<!--事件对象练习-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $("#btn").click(function (e) {
+        alert(e.type);
+        alert(e.target);
+
+    })
+//     传递data参数
+    $("#btn").click(function (e) {
+    //     使用e.data获取额外元素
+        $('input').bind('click','sunny',function (e) {
+            alert(e.data);
+        })
+    })
+</script>
+</body>
+</html>

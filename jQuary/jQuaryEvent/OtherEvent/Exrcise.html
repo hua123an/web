@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+
+</head>
+<body>
+<!--  制作顶部导航栏菜单效果-->
+<div class="hd-main clearfix" id="hader">
+    <a href="" class="logo"></a>
+    <div class="navs">
+        <a href="" class="def-nav">主页</a>
+        <span class="separate"></span>
+        <div class="def-nav current has=pulldown-spacial">
+            <a href="" class="pulldown-nav"><em class="f-icon"></em></a>
+            <div class="pulldown app-url">
+                <div class="content">
+                    <a href="" class="li desk">
+                        <span class="icon"></span>
+                        <span class="text">网盘</span>
+                    </a>
+                    <a href="" class="li tongxunlu">
+                        <span class="icon"></span>
+                        <span class="text">通讯录</span>
+                    </a><a href="" class="li xiangce">
+                    <span class="icon"></span>
+                    <span class="text">相册</span>
+                </a><a href="" class="li wenzhang">
+                    <span class="icon"></span>
+                    <span class="text">文章</span>
+                </a><a href="" class="li note">
+                    <span class="icon"></span>
+                    <span class="text">记事本</span>
+                </a><a href="" class="li duanxin">
+                    <span class="icon"></span>
+                    <span class="text">短信</span>
+                </a><a href="" class="li zhaohui">
+                    <span class="icon"></span>
+                    <span class="text">找回</span>
+                </a><a href="" class="li youxi">
+                    <span class="icon"></span>
+                    <span class="text">游戏</span>
+                </a><a href="" class="li jiankang">
+                    <span class="icon"></span>
+                    <span class="text">健康</span>
+                </a>
+                </div>
+            </div>
+        </div>
+        <span class="separate"></span>
+        <a href="" class="def-nav">应用</a>
+    </div>
+    <div class="info">
+        <ul>
+            <li class="info-i user-name has-pulldown">
+                <em class="f-icon pull-arrow"></em>
+                <a href="" class="f-icon identity" title="未开通VIP"></a>
+                <span class="name top-username">简华安</span>
+                <div class="pulldown user-info">
+                    <em class="arrow"></em>
+                    <div class="content">
+                        <span class="li"><a href="">基本信息</a></span>
+                        <span class="li"><a href="">科研项目</a></span>
+                        <span class="li"><a href="">教学成果</a></span>
+                        <span class="li"><a href="">系统设置</a></span>
+                        <span class="separate-li no-height"></span>
+                        <span class="li"><a href="javascript" id="signout">退出</a></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info-i default-text">
+                <a href="" class="notice" id="notificationTrigger">通知</a>
+                <em class="f-icon notice-nu" id="noticeNoParent">
+                    <b class="f-icon" id="noticeNo"></b>
+                </em>
+            </li>
+            <li class="info-i no-separate default-text has-pulldown">
+                <em class="f-icon pull-arrow"></em>
+                <span class="more" hideFocus="hideFocus">更好</span>
+                <div class="pulldown more-info">
+                    <em class="arrow"></em>
+                    <div class="content">
+                        <span class="separate-li no-height"></span>
+                        <span class="li"><a href="">收藏工具</a></span>
+                        <span class="li"><a href="">历史记录</a></span>
+                        <span class="li"><a href="">版本更新</a></span>
+                        <span class="li"><a href="">帮助中心</a></span>
+                        <span class="li"><a href="">问题反馈</a></span>
+                        <span class="li"><a href="">服务协议</a></span>
+                        <span class="li"><a href="">权利声明</a></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        $(".def-nav,.info-i").hover(function () {
+        //     使用find方法获取当前元素集合中的每个元素的后代
+            $(this).find(".pulldown-nav").addClass("hovwe");
+            $(this).find(".pulldown").show()
+
+        },function () {
+            $(this).find(".pulldown").hide()
+            $(this).find(".pulldown-nav").removeClass("hover")
+
+        })
+
+    })
+
+
+</script>
+</body>
+</html>

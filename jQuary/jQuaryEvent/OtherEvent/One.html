@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One</title>
+<!--  One事件只执行一次-->
+</head>
+<body>
+<h2>This is h2 tag.</h2>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        $("h2").one("click",function (e) {
+            alert($("h2").text())
+        })
+    })
+</script>
+</body>
+</html>

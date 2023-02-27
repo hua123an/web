@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventBubbling</title>
+<!--    假如页面上有两个元素按钮和div，其中按钮嵌套在div里面，并且都被绑定了click事件，同事页面文档也被绑定了click事件-->
+    <style>
+        #content{
+            width: 200px;
+            height: 200px;
+        background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <input type="button" value="按钮">
+    <input type="button" value="Stop" id="stop">
+</div>
+<div id="msg"></div>
+<a href="www.jha123.icu:030902">This is a</a>
+<form action="">
+    <input type="submit" value="提交" id="submit">
+</form>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    获取元素
+$(function (e){
+    $('input').click(function () {
+        $("#msg").html($('#msg').html() + "按钮被触发了<br>")
+
+    });
+    $("div").click(function () {
+        $("#msg").html($("#msg").html() + "div被触发了<br>")
+    })
+        .click(function () {
+            $("#msg").html($("#msg").html() + "文档页面被触发了<br>")
+
+        })
+
+// 取消上层的冒泡
+$('input').click(function () {
+    $("#stop").html($("#msg").html() + "按钮被触发了！！！")
+    e.stopPropagation()
+})
+//     阻止超链接跳转
+    $("a").click(function (e) {
+        e.preventDefault();
+    })
+// 禁止提交表单跳转
+    $("form #submit").click(function (e) {
+        e.preventDefault();
+    })
+//     如果要同时禁止默认行为和冒泡行为，可以直接返回false
+    $('a').click(function (e) {
+        return false;
+    })
+})
+
+</script>
+</body>
+</html>
