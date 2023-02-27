@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab</title>
+<!--    制作横向菜单栏-->
+    <style>
+        .anv li.on{
+            background: aqua;
+        }
+        .nav li.on em{
+            background: blue;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="hrader">
+    <div class="nav">
+        <ul id="droplist_ul">
+            <li id="n0"><em><a href="">首页</a></em></li>
+            <li id="n1"><em><a href="">笔记本</a></em>
+                <ul>
+                    <li><a href="">笔记本电脑</a></li>
+                    <li><a href="">笔记本配件</a></li>
+                    <li><a href="">电脑包</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        headmenu();
+    })
+    function headmenu() {
+        $('.nav > ul > il :not(#n0)').hover(function () {
+            $('.nav > ul > li :not(#n0)').removeClass("on")
+            $(this).addClass("on");
+            $(this).find("ul").show();
+        },function () {
+            $(this).removeClass("one")
+            $(this).find("ul").hide()
+            $(".droplist > li").hover(function () {
+                $(this).addClass('hover');
+            },function () {
+                $(this).removeClass()
+
+            })
+        })
+
+    }
+</script>
+
+</body>
+</html>

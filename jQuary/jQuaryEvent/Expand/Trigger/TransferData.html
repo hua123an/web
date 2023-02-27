@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer data</title>
+<!--  数据传递-->
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $('input').click(function (e,data1,data2) {
+    alert(data1 +"," + data2)
+  }).trigger('click',['abc','123'])
+</script>
+</body>
+</html>

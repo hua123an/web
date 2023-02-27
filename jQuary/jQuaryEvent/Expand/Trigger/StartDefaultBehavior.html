@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start default behavior</title>
+<!--执行默认行为-->
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  模拟提交按钮
+$('form').trigger('submit')
+// 如果只想提交，阻止默认行为的操作，可以使用triggerHandler()方法
+$('form').triggerHandler('submit');
+</script>
+</body>
+</html>

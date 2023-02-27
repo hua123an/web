@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SimulatedOperation</title>
+<!--    使用trigger方法模拟操作-->
+</head>
+<body>
+<!--通常的例子都是用户必须单击按钮，才能触发click事件，但是有时需要通过模拟用户操作来达到单击效果，在jQuary中可以借助，trigger方法来完成操作-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function () {
+        $("#btnclick").click(function () {
+            alert("abc")
+        })
+        $("btnclick").trigger('click');
+    //     也可以直接写简化方法
+        $("divbtn").trigger()
+    })
+</script>
+</body>
+</html>

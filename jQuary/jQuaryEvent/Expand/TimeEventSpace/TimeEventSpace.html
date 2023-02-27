@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time eventspace</title>
+<!--  事件命名空间-->
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  有时，开发者想对事件进行移除，但是对于同名同元素绑定的事件移除往往比较麻烦，这个时候我们可以使用事件命名空间
+$("input").bind('click.abc',function () {
+    alert("abc")
+});
+$("input").bind('click.xyz',function () {
+    alert("xyz")
+})
+$('input').unbind('click.abc')
+// 也可以直接使用(.abc)
+$('input').unbind('.abc')
+// 同样还可以使用trigger方法
+$("input").trigger('click.abc')
+</script>
+
+</body>
+</html>

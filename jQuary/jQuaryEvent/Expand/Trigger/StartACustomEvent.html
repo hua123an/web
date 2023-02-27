@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start a custom event</title>
+<!--  借助trigger方法实现触发自定义事件-->
+</head>
+<body>
+<!--为按钮绑定一个myEvent事件-->
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  $('input').bind('myEvent',function () {
+    alert("自定义事件！！！")
+  }).trigger('myEvent')
+</script>
+</body>
+</html>
