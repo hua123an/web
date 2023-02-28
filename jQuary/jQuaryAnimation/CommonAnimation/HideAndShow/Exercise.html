@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    显示隐藏的p元素
+    $('.btn').click(function () {
+        $('p').show();
+    })
+// 设置两秒后显示
+$('.btn').click('2000ms',function () {
+    alert("已经完全显示！！！！")
+})
+// 元素显示隐藏交替
+$('.btn').toggle(function () {
+    $('p').show();
+},function () {
+    $('p').hide()
+})
+// 常见的显示隐藏交替可以用jQuary的toggle方法来使用
+// $(selector).toggle(speed,callback)
+$('.btn').click(function () {
+    $('p').toggle('2000ms',function () {
+    alert("已经完全显示！！！")
+    })
+})
+// 若不需要2s后显示或隐藏，不添加回调函数，可以简化为:
+$('.btn').click(function () {
+    $('p').toggle()
+})
+
+</script>
+</body>
+</html>

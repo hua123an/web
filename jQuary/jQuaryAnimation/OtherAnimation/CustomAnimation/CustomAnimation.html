@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomAnimation</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: aqua;
+    }
+  </style>
+  <!--创建自定义动画-->
+</head>
+<body>
+<button>开始动画</button>
+<div></div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  // $(selector).animate({params},speed,callback);
+  // //  params为必需参数，不可默认选择，用来定义css用于动画效果的属性，如位置（left,width
+  // // ,height,top,opacity(透明度)）
+  // //   speed为可选参数，给出了动画变化的时间，可使用slow，fast，normal或者是毫秒
+  // //   callback()为回调函数，可以省略，在animate()方法结束后调用
+  $("button").click(function (){
+    $("div").animate({left:'250px'},3000)
+  //   left属性意思为：距离左边多少像素
+  })
+</script>
+</body>
+</html>

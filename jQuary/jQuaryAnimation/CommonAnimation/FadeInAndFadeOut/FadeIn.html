@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FadeIn</title>
+    <!--fadeIn显示淡入效果  -->
+    <!--
+    使用方式
+    $(selector).fadeIn(speed,callback)
+    -->
+    <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+    <script>
+//        淡入效果
+        $(selector).fadeIn(speed,callback)
+    // 如果之前是淡出的，那么fadeToggle()方法将淡出元素。其基础语法如下:
+$(selector).fadeToggle(speed,callback);
+    // fadeTo()方法把所有匹配元素的不透明度以渐进方式调整到指定的不透明度，并在动画完成后可选地触发一个回调函数。其基础语法为：
+$(selector).fadeTo(speed,opacity,callback);
+    // 其中speed为必需参数，给出透明变化时间；opacity为必需参数，设置将要调整到的透明度，值域0~1；callback为可选参数，时回调函数，在fadeTo()方法结束后调用
+    // 在600ms内将<p>元素的透明度变为0.5
+$('.btn').click(function () {
+    $('p').fadeTo('slow',0.5)
+//     也可以变为$("p).fadeTo(600,0.5)
+})
+    </script>
+</head>
+<body>
+
+</body>
+</html>

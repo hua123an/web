@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnimatedCallBack</title>
+<!--动画回调函数-->
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+<button>开始动画</button>
+<div></div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//        在综合设置动画时，如果想在最后一步切换元素的css样式，而不是隐藏元素，css样式为:
+
+//    css.("border",'5px solid orange')
+
+/*一般常见的方法为:
+改变最后一个动画属性改为css样式，预期效果应该是，动画执行完毕，css样式生效，但是css并不是动画函数，会单独在网页加载时就生效，也就是在动画执行之前生效。
+由于css不是动画函数，可以加入css执行函数，然后单独执行函数，不受动画函数约束
+*
+*
+* */
+// 动画函数
+$('button').click(function () {
+    $('div').animate({left : '20px',top : '30px',right : '50px'})
+            .animate({opacity : 0.5})
+        .animate({width : '150px'},'slow',function () {
+        $('div').css("border",'50px solid orange')
+
+    })
+})
+</script>
+<!--
+现在执行完动画函数就可以直接执行css样式函数
+需要注意的是，回调函数支持所有的jQuary动画函数，如fadeIn()方法的回调函数
+$(selector).fadeIn('normal',function(){})在淡入动画效果完全完成时做其他事情
+-->
+</body>
+</html>

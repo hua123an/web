@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add and reduce animation</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: aqua;
+        }
+
+    </style>
+<!--累加累减动画-->
+</head>
+<body>
+<button id="add">累加开始</button>
+<button id="reduce">累减开始</button>
+<div></div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    累加动画
+$("#add").click(function () {
+    $("div").animate({left:"+=250px"})
+})
+//     累减动画
+$("#reduce").click(function () {
+    $("div").animate({bottom:"-=250px"})
+})
+</script>
+</body>
+</html>

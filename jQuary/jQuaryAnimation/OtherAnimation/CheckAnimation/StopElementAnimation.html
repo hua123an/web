@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stop element animation</title>
+    <style>
+        div {
+            width: 100px;
+            height: 200px;
+            background: aqua;
+            position: absolute;
+        }
+    </style>
+    <!--停止元素的动画
+    基本结构:
+    stop([clearQueue],[gotoEnd])
+    clearQueue和gotoEnd都是可选参数，为布尔值，true和false，默认值都是false。
+    clearQueue代表是否要清空未执行完的动画队列，gotoEnd代表直接将执行的那个动画跳转到末状态，而非动画队列的最后一个动画的末状态，由于二者是可选参数，有下面几种结果
+    1.两者都为false
+    即stop(false,false)，由于false是默认值，也可以直接写为stop()。它表示不将正在执行的动画跳转到末状态，不清空动画队列。也就是多，停止当前动画，并从目前的动画状态开始动画对列的下一个动画
+    2.第一个参数是true，即stop(true,false)，由于false是默认值也可以简写为stop(true).它表示不将正在执行的动画跳转到末状态，但清空队列。也就是说，停止所有动画，保持当前状态，瞬间停止。
+    3.两个参数都为true时，即stop(true,true)，它既清空当前动画队列，又将正在执行的动画跳转到末状态。也就是说，停止所有动画，跳转到当前动画的末状态。
+    4.第二个参数时true，即stop(false,true)，它表示不清理当前动画队列，将正在执行的动画跳转到末状态。也就是说，停止当前动画，跳转到当前动画的末状态，跳转到下一个动画。
+    -->
+    <button id="begin">开始动画</button>
+    <button id="stop">停止当前动画，进入下一个动画</button>
+    <button id="stop1">停止当前动画，跳转到当前动画终点，进入下一个动画</button>
+    <button id="stop2">瞬间停止</button>
+    <button id="stop3">停止所有动画，跳转到当前动画终点</button>
+    <div></div>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//    创建两个动画，动画执行五次
+$("#begin").click(function () {
+    for (var i = 0;i < 5;i++){
+        $('div').animate({left : '550px',opacity : 0.5,height : '250px',width : '250px'},'slow')
+            .animate({left : '0px',opacity : 0.5,height : '100px',width : '100px'},'slow')
+    }
+})
+// 停止当前动画，进入下一个动画
+$('#stop').click(function () {
+    $('div').stop();
+})
+// 停止当前动画，跳转到当前动画的末状态，进入下一个动画
+$("#stop1").click(function () {
+    $('div').stop(false,true)
+})
+// 停止所有动画，保持当前状态，瞬间停止
+$('#stop2').click(function(){
+    $("div").stop(true,false)
+})
+// 停止所有动画，跳转到当前动画的末状态
+$("#stop3").click(function(){
+    $('div').stop(true,true)
+})
+
+
+</script>
+</body>
+</html>

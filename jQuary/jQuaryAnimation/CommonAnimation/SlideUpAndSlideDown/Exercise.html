@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+  <style>
+    dd{
+      width: 360px;
+      height: 40px;
+      margin-right: 40px;
+      background: #f5DEA0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<!--实现基本的FAQ答案显示功能-->
+<p>jQuary动画篇-常见动画的使用</p>
+<dl>
+  <dt>1.你知道jQuary动画的toggle动画吗？</dt>
+  <dd>答:toggle动画是实现show()动画和hide()动画的一个切换方式.</dd>
+  <dt>2.你知道jQuary的fadeToggle动画吗？</dt>
+  <dd>答：fadeToggle动画是实现fadeIn()和fadeOut()动画的一个切换方法.</dd>
+  <dt>3.你知道jQuary的slideToggle()动画吗？</dt>
+  <dd>答：slideToggle()动画是实现slideUp()和slideDown()动画的一个切换方式</dd>
+</dl>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+//  先对第一个dt元素绑定
+$("dl dt:eq(0)").click(function () {
+  $(this).next().toggle('slow')
+})
+//   第二个元素
+$("dl dt:eq(1)").click(function () {
+  $(this).next().toggle('slow')
+})
+// 第三个元素
+$("dl dt:eq(2)").click(function () {
+  $(this).next().toggle('slow')
+})
+// 可以直接使用slideToggle方法直接绑定元素
+$('dl dt').click(function (){
+  $(this).next().slideToggle('fast');
+})
+
+</script>
+</body>
+</html>
