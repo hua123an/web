@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cascading effects</title>
+    <!--    实现数组方式实现级联效果-->
+    <style>
+        select {
+            width: 100px;
+            text-align: center;
+            margin: 5px;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <center>
+        省份:<select name="province" id="province" onchange="loadCity()" required>
+        <option>--请选择--</option>
+    </select>
+        城市:<select name="city" id="city" required>
+        <option>--请选择--</option>
+    </select>
+    </center>
+</form>
+
+<script>
+    //    function01
+    function myInit() {
+        var provs = document.getElementById("province")
+        var provinceList = ['四川省', '贵州省', '陕西省', '山西省'];
+        for (var i = 0; i < provinceList.length; i++) {
+            provs.innerHTML += "<option>" + provinceList[i] + "</option>"
+        }
+    }
+
+    function loadCity() {
+        var provs = document.getElementById("province");
+        var city = document.getElementById("city");
+        var selcity = [
+            ['成都市', '德阳市', '绵阳市', '广元市', '遂宁市'],
+            ['贵阳市', '遵义市'],
+            ['汉中市', '西安市', '宝鸡市', '咸阳市'],
+            ['太原市', '忻州市']];
+        city.innerHTML = "<option>" + "--请选择--" + "</option>"
+        var index = provs.selectedIndex;
+        for (var i = 0; i < selcity[index - 1].length; i++) {
+            city.innerHTML = "<option>" + selcity[index - 1][i] + "</option>"
+        }
+    }
+
+    window.onload = myInit;
+</script>
+<script>
+    //    function02
+    var provinceList = new Array();
+    provinceList["四川省"] = ['德阳市', '绵阳市', '广元市', '遂宁市'];
+    provinceList["贵州省"] = ['贵州市', '遵义市'];
+    provinceList["陕西省"] = ['汉中市', '西安市', '宝鸡市', '咸阳市'];
+    provinceList["山西省"] = ['太原市', '忻州市'];
+
+    function myInit() {
+        var province = document.getElementById("province");
+        for (var i in provinceList) {
+            province.add(new Option(i, i), null)
+        }
+    }
+
+    function loadCity() {
+        var province = document.getElementById("province").value;
+        var city = document.getElementById("city");
+        city.options.length = 1;
+        for (var i in provinceList) {
+            if (i == province) {
+                for (var j in provinceList[i]) {
+                    city.add(new Option(provinceList[i][j], provinceList[i][j], null));
+                }
+            }
+        }
+    }
+
+    window.onload = myInit();
+</script>
+</body>
+</html>
