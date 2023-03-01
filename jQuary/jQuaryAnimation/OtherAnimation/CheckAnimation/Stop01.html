@@ -3,10 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>Stop01</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: aqua;
+        }
+    </style>
+<!--    stop()动画的扩展
+当使用hover事件时，经常遇到这种情况，当用户把光标移入元素时出发动画效果，而这个动画化没有结束，
+用户就将鼠标移出这个元素了那么光标移出元素的动画效果就会被放入动画队列中，等待光标移入元素的动画执行完毕，再执行光标移出元素的动画。
+因此，如果光标移出移入速度过快就会导致动画效果与用户效果动作不一致。
+下面是实例代码:
+-->
 
-<!--    stop()动画的扩展-->
+
 </head>
 <body>
+<span>光标移入移出这里</span>
+<div></div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+	$(function(){
+		$('span').hover(function(){
+			$('div').animate({
+				left : '550px',
+				opacity : '0.5',
+				height : '200px',
+				width : '250px'
+			},'slow')
+		},function(){
+            $('div').animate({
+                left : '0px',
+                opacity : '1',
+                height : '100px',
+                width : '100px'
+            })
+		})
+	})
+// 如何解决动画效果和光标动作不一致的问题？可以使用stop()方法来解决动画延迟问题。stop()方法会结束当前正在进行的动画，并立即执行队列的下一个动画。jQuary代码为:
+    $(function() {
+        $('span').hover(function() {
+            $('div').stop().animate({
+                left : '550px',
+                opacity : '0.5',
+                height : '250px',
+                width : '250px'
+            },'slow')
+        },function() {
+            $('div').stop().animate({
+                left : '0px',
+                opacity : '1',
+                height : '100px',
+                width : '100px'
+            },'slow')
+        })
+    })
+//     加上stop()方法确实可以解决动画效果与光标不一致问题。但如果遇到组合动画，即遇到光标移入或移出元素时都是动画列表，例如：
+    $(function() {
+        $('span').hover(function() {
+            $('div').stop().animate({
+                left : '550px',
+                opacity : '0.5'
+            },'slow')
+        },function() {
+            $('div'),stop().animate({
+                left : '0px',
+                opacity : '1'
+            },'slow').animate({
+                height : '100px',
+                width : '100px'
+            },'slow')
+        })
+    })
+//     上面验证依然不能解决移动速度过快的问题，动画效果和用户不一致时，动画存在一定延迟，因为stop()方法只会停止当前动画，
+    //    如果当前动画时改变left属性值和opacity属性值，则触发光标移出事件时，只会停止位置和透明度的变化，继续执行下一个队列的动画，而这还是光标移入元素的动画，
+//     光标移出元素的动画要等这个动画结束才执行，这显然不是最佳效果。
+//     要解决这个问题，可以加入stop()的第一个参数(clearQueue),设置为trrue，此时会把正在执行的动画队列清空
+    $(function () {
+        $('span').hover(function () {
+            $('div').stop(true).animate({
+                left : '550px',
+                opacity : '0.5'
+            },'slow')
 
+        },function () {
+            $('div').stop(true).animate({
+                left :  '0px',
+                opacity : '1'
+            },'slow').animate({
+                height : ' 100px',
+                width : ' 100px'
+            },'slow')
+        })
+    })
+</script>
 </body>
 </html>
