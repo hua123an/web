@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IsAnimated</title>
+  <style>
+    div{
+      width: 20px;
+      height: 40px;
+      background: aqua;
+      position: absolute;
+    }
+  </style>
+<!--判断当前元素是否有正在执行的动画-->
+  <span>开始移入</span>
+  <div></div>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  if (!$('div').is(' :animated')){
+    $('span').hover(function() {
+        $('div').animate({
+          width : '100px',
+          height : ' 200px'
+        })
+    })
+  }else{
+    $('div').stop(true,true);
+  }
+
+</script>
+</body>
+</html>

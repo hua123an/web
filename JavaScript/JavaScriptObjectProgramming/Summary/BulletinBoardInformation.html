@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulletin board information</title>
+<!--js实现依次读取公示栏信息-->
+    <style>
+        #teletype{
+            width: 1000px;
+            color: aqua;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<form action="">
+    <table>
+        <tr>
+            <input type="text" id="teletype">
+        </tr>
+        <tr>
+            <td><textarea name="textarea" id="textNum"></textarea></td>
+        </tr>
+    </table>
+</form>
+<script>
+    var i = 0;
+    var TextInput = new Array();
+    TextInput[0] = "珠海，珠江口岸的核心城市，经济特区，珠江三角洲南端的一个重要城市，位置位于广东省珠江口的西南部！！！";
+    TextInput[1] = "珠海，珠江口岸的核心城市，经济特区，珠江三角洲南端的一个重要城市，位置位于广东省珠江口的西南部！！！"
+    TextInput[2] = "珠海，珠江口岸的核心城市，经济特区，珠江三角洲南端的一个重要城市，位置位于广东省珠江口的西南部！！！"
+    TextInput[3] = "珠海，珠江口岸的核心城市，经济特区，珠江三角洲南端的一个重要城市，位置位于广东省珠江口的西南部！！！"
+
+</script>
+<script>
+    function nextMessage(){
+        if (i < TextInput.length){
+            document.getElementById("teletype").value = TextInput[i];
+            i++;
+        }else{
+            alert("已经是最后一条信息了！！！")
+        }
+    }
+    window.onload = function(){
+        document.getElementById("textNum").value = "共有" + TextInput.length + "条！！！";
+        nextMessage();
+    }
+</script>
+<input type="button" value="阅读" onclick="nextMessage()">
+</body>
+</html>

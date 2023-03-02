@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Stop01</title>
-
-<!--    stop()动画的扩展-->
+<!--    stop()动画的扩展--
+如何解决鼠标悬浮时用户移出鼠标时间过短，动画未完
+-->
+    <span>光标移入这里</span><br><br>
+    <div style="background:aqua;height: 100px;width: 100px;position: absolute;left: 10px"></div>
 </head>
 <body>
-
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+    $(function() {
+        $('span').hover(function () {
+            $('div').stop(true).animate({
+                left : '550px',
+                opacity : '0.5'
+            },'slow')
+                .animate({
+                    height : '250px',
+                    width : '250px'
+                },'slow')
+            $('div').stop(true).animate({
+                left: '0px',
+                opacity: '1'
+            },'slow')
+                .animate({
+                height: '100px',
+                width: '100px'
+                },'slow')
+        })
+    })
+//     不管鼠标悬浮时间长短，移入动画都会完成
+</script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delay</title>
+  <style>
+    div{
+      width: 100px;
+      height: 200px;
+      background: aqua;
+      position: absolute;
+    }
+  </style>
+<!--  延迟动画-->
+  <div></div>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+<!--  开始动画-->
+  $('div').slideUp(300).stop(300).delay(300).fadeIn(300);
+
+</script>
+</body>
+</html>
