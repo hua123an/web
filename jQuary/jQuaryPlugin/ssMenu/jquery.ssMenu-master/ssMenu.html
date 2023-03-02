@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ssMenu</title>
+  <link rel="stylesheet" href="css/ss-menu.css">
+</head>
+<body>
+<!--侧边栏开始-->
+<nav class="ss-menu">
+  <ul>
+    <li><a href="#1"><i class="fa fa-android"></i>系统记录</a></li>
+    <li><a href="#1"><span class="ss-badge"></span><i class="fa fa-briefcase"></i>客户管理</a></li>
+    <li><a href="#1"><i class="fa fa-heartbeat"></i>渠道管理</a></li>
+    <li><a href="#1"><i class="fa fa-bank"></i>App管理</a></li>
+    <li><a href="#1"><i class="fa fa-cc-paypal"></i>在线支付</a></li>
+    <li><a href="#1"><i class="fa fa-bookmark-o"></i>系统管理</a></li>
+    <li><a href="#1"><i class="fa fa-car"></i>素材管理</a></li>
+    <li><a href="#1"><i class="fa fa-bar-chart"></i>统计分析</a></li>
+    <li><a href="#1"><i class="fa fa-location-arrow"></i>联系我们</a></li>
+  </ul>
+</nav>
+<!--页面内容开始-->
+<div class="htmleaf-container">
+  <header class="htmleaf-header">
+    <h1>jQuary固定侧边栏插件ssMenu<span>客户管理系统</span></h1>
+  </header>
+  <main class="ss-main">
+    <article>
+      <section class="theme-picker">
+        <h2>更换侧边栏背景</h2>
+        <p>点击选择你想更换的侧边栏颜色</p>
+        <button class="set-default">重置</button>
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="blue"></span>
+        <span class="green"></span>
+        <span class="orange"></span>
+        <span class="brown"></span>
+        <span class="purple"></span>
+        <div class="ad-unit">
+        </div>
+      </section>
+      <div>
+        <img src="" alt="">
+      </div>
+    </article>
+  </main>
+</div>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script src="js/jquery.ss.menu.js"></script>
+<script>
+  $(function() {
+      $('.ss-menu').ssMenu();
+  })
+</script>
+<script>
+  $(function () {
+    var ssMenu = $('.ss-menu');
+    var theme = $('.theme-picker').find('span');
+    $(theme).click(function(y) {
+        y = $(this).attr('class');
+        $(ssMenu).removeClass().addClass('ss-menu'+y);
+    })
+    $('.set-default').click(function() {
+      $(ssMenu).removeClass().addClass(' ss-menu default')
+    })
+  })
+</script>
+</body>
+</html>

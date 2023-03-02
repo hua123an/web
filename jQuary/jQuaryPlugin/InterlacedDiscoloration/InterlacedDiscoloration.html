@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InterlacedDiscoloration</title>
+</head>
+<body>
+<table id="table1">
+  <thead><tr>
+    <td>学号</td>
+    <td>姓名</td>
+    <td>性别</td></tr></thead>
+</table>
+<tbody>
+<tr>
+  <td><input type="checkbox" name="choice" value=""></td>
+  <td>20141201</td>
+  <td>jane</td>
+  <td>男</td>
+</tr>
+<tr>
+  <td><input type="checkbox" name="choice" value="" checked="checked"></td>
+  <td>20141206</td>
+  <td>huaan</td>
+  <td>男</td>
+</tr>
+</tbody>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+  ;(function ($) {
+    $ .fn.extend({
+      "alterBgColor" :function(options) {
+
+        options = $ .extend({
+          odd : 'odd',
+          evev : 'even',
+          selected : 'selected'
+        },options);
+        $('tbody > tr:odd',this).addClass(options.odd)
+        $('tbody > tr:even',this).addClass(options.even);
+        $('tbody > tr',this).click(function() {
+            var hasSelected = $(this).hasClass(options.selected)
+          $(this)[hasSelected ? 'removeClass' : 'addClass'](options.selected)
+          find(':checkbox').attr('checked',!hasSelected)
+        })
+
+        $('tbody >tr:has(:checked)',this).addClass(options.selected)
+        return this;
+      }
+    })
+
+  })(jQuery)
+  $(function() {
+      $("#table1")
+    alterColor()
+            .find("th").css('color','red')
+  })
+</script>
+</body>
+</html>
