@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object literal</title>
+<!--  对象字面量-->
+</head>
+<body>
+<script>
+<!--  ES6允许在大括号里直接写入变量和函数，作为对象的属性和方法-->
+const foo = 'bar';
+// const baz = {foo};
+// console.log(baz)
+// 等同于
+const baz = {foo : foo};
+console.log(baz)
+// 在上面代码中，变量foo直接写在大括号里面，此时变量名就是属性名，属性名就是变量名
+// 属性简写
+function f(x , y) {
+  return {x , y}
+}
+// 等同于
+function f(x, y) {
+    return {x : x, y : y}
+}
+f(1 , 2)
+// 除了属性可以简写，方法也可可以简写
+const o = {
+  method(){
+    return 'hello'
+  }
+}
+// 等同于
+const o = {
+  method : function() {
+    return 'hello'
+  }
+}
+// 实例
+let birth = '2000/01/02';
+const person = {
+  name : ' 张三',
+  birth,                //等同于birth : birth
+  hello(){
+    console.log('我的名字是',this.name)     //等同于hello:function(){console.log('我的名字是'，this.name)}
+  }
+}
+// 实际上常见的构造器(get,set)也采用了这种写法
+const cart = {
+  _wheels : 4,
+  get wheels(){
+    return this._wheels
+  },
+  set wheels(value){
+    if (value < this._wheels) {
+      throw new Error(' 数值太小了')
+}
+    this._wheels = value;
+  }
+}
+</script>
+</body>
+</html>

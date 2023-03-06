@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>InsertVariable</title>
-<!--  向字符串中嵌入变量,向字符串中放入变量时可以使用${variable}的方式加入变量-->
+    <!--  向字符串中嵌入变量,向字符串中放入变量时可以使用${variable}的方式加入变量-->
 </head>
 <body>
 <script>
-  let name = '张三';
-  let age = 10;
-  let str = '我的名字是'${name}'，我今年'${age}'岁了'
-  console.log(str)
+    let name = '张三';
+    let age = 10;
+    let str = '我的名字是'${name}
+    '，我今年'${age}
+    '岁了'
+    console.log(str)
 
+    //   当模板字符串中带有变量时，会讲模板字符串参数处理成多个参数
+    function f(stringArr, ...values) {
+        let result = "";
+        for (let i = 0; i < stringArr.length; i++) {
+            result += stringArr[i];
+            if (values[i]) {
+                result += values[i];
+            }
+
+        }
+        return result;
+
+    }
+
+    let name = '王大锤';
+    let age = 27;
+    console.log(f'我叫${name},我明年就${age+1}岁了');
 
 
 

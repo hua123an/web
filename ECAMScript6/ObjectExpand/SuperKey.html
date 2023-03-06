@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperKey</title>
+</head>
+<body>
+<script>
+/*super关键词
+* */
+// this关键词总是指向函数所在的当前对象，ES6中新增super关键词指向当前对象的原型对象
+const proto = {
+  foo : 'hello'
+};
+const obj = {
+  foo : 'world',
+  find(){
+   return super.foo
+  }
+}
+Object.setPrototypeOf(obj,proto);
+obj.find();
+// 当super关键词为原型对象时，只能用在对象的方法之中，而在其他地方都报错
+const obj = {
+  foo : super.foo
+}
+const obj = {
+    foo : () =>super.foo
+}
+const obj = {
+    foo :function() {
+        return super.foo;
+    }
+}
+// 上述三种方式均未出现super原型，无法找到原型，所以会报错
+// 在JavaScript引擎内部，super.foo等同于Object.getPrototyoeOf(this).foo(属性)，实例:
+Object.getPrototypeOf(this).foo.call(this)(方法)
+const proto = {
+    x : 'hello',
+  foo(){
+      console.log(this.x)
+  }
+}
+const obj = {
+  x : 'world',
+  foo() {
+      super.foo()
+  }
+}
+Object.setPrototypeOf(obj,proto);
+obj.foo();
+// 在上面代码中，super.foo指向了原型对象proto的foo方法，但是绑定的this还是当前对象的obj，因此输出world
+
+</script>
+
+</body>
+</html>

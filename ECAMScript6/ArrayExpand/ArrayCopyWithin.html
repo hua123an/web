@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayCopyWithin</title>
+</head>
+<body>
+<script>
+<!--  array.copyWithin()方法用于操作自身数组，用来把某些位置的元素复制并覆盖到其他位置上去，语法如下:-->/*
+array.copyWithin(target,start,end = arr.length)
+最后一个参数可以省略，如果省略则为数组长度，该方法在数组内复制从start(包含start)位置到end(不包含end)位置的一组元素覆盖以target未开始位置
+*/
+[1 , 2 , 3 , 4].copyWithin(0 , 1)          //当出现两个值时，此时0为target此处为1，此处的1所指数组中的2，将start位置的数赋给target，此时输出[2 , 3 , 4 , 4]
+[1 , 2 , 3 , 4].copyWithin(0 , 1 , 2)       //此时出现三个值，前面两个值和上面相同，此处2指的是3，由于从start位置到end位置，中间没有其他数值，则只会出现一次赋值，即将index = 1的值赋给index = 0的值
+// 下标为负数时，从右向左数时，最后一个元素下标为-1，以此类推
+[1 , 2 , 3 , 4].copyWithin(0 , -2 , -1)  //target = 1,index(start) = 3 ,index(end) = 4,直接将index(start)赋值给target,
+// 如果此时将end换为数组长度，此时，index(3)的值继续赋给index(2)
+</script>
+</body>
+</html>

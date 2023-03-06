@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayFindIndex</title>
+</head>
+<body>
+<!--Array.findIndex()方法和find()方法类似，findIndex()方法返回的是第一个符合条件元素的下标,找到其下标直接返回下标，失败则返回-1-->
+<script>
+    let arr = [1 , 2 , 3 , 4];
+    arr.findIndex(function (el,index,arr) {
+        return el > 2
+    })
+    arr.findIndex(function(el, index, arr) {
+        return el > 4;
+    })
+</script>
+</body>
+</html>

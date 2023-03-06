@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayFlat</title>
+</head>
+<body>
+<script>
+<!--  array.flat()方法可以将多维数组转化成一维数组-->
+let arr = [1 , [2 , 3]];
+console.log(arr.flat());
+// 还可以只当嵌套层数，还可以转化为2维数组，即从多维数组转化为低维数组。默认不写直接转化成一维数组
+var arr1 = [1 , [2 , [3 , [4 , 5]]]]           //将四维数组转化为二维数组
+console.log(arr1.flat(2));
+// 不管嵌套多少层，直接写入Infinity将其转化为一维数组
+console.log(arr1.flat(Infinity));
+// 当数组中出现空位时，自动跳过，后面数组向前补充
+let arr2 = [1 , [2 ,  , 3]];
+console.log(arr2.flat())
+</script>
+</body>
+</html>

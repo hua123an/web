@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AttributeExpression</title>
+</head>
+<body>
+<script>
+<!-- JavaScript定义对象属性常见的两种方法:-->/*
+方法一:
+obj.f00 = true;
+方法二:
+obj['a' + 'bc'] = 123
+// 方法一直接用标识符作为属性名，方法二用表达式作属性名，这时要将表岛是放入括号内。
+但是，如果使用字面量的方式定义对象(使用大括号)，则在ES5中只能使用方法一定义属性
+*/
+var obj = {
+  foo : true,
+  abc : 123
+};
+//当ES6允许使用字面量的方式来定义对象时，用方法二定义对象的属性名
+let propkey = 'foo';
+let obj = {
+  [propkey] : true,
+  ['a' + 'bc'] : 123
+};
+// 实例一
+let lastWord = 'last word'
+const a = {
+  'firstWord' : 'hello',
+  [lastWord] : 'world'
+};
+a['firstWord'];
+a[lastWord];
+a['last Word']
+// 表达式还可以定义方法名
+let obj = {
+  ['h' + 'ello'](){
+    return 'hi'
+  }
+}
+obj.hello();
+// 属性名表达式与简洁表示法不能同时使用，否则会报错
+//报错
+const foo = 'bar';
+const bar = 'abc';
+const baz = {[foo]};
+// 正确写法
+const foo = 'bar';
+const baz = {[foo] : 'abc'}
+// 注意，属性名表达式如果是一个对象时，默认情况下，会自动将对象转换为字符串[object,Object]
+const keyA = {a : 1};
+const keyB = {b : 2};
+const myObject = {
+  [keyA] : 'valueA',
+  [keyB] : 'valueB;'
+}
+myObject;
+// 在上面代码中，[keyA]和[keyB]得到的值都是[object Object],所以[keyB]会把[keyA]的值覆盖，而myObject最后只有一个[object Object]属性
+</script>
+</body>
+</html>

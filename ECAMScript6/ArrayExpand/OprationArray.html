@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OprationArray</title>
+<!--    数组的操作可以实现，找到数组的极值，拼接数组，复制合并数组，将字符串转化为真正的数组-->
+</head>
+<body>
+<script>
+<!--    查询数组极值，常见的Math方法都可以使用-->
+var arr = [100 , 201 , 300 , 403 , 504];
+console.log(Math.max(...arr))          //输出数组最大值
+console.log(Math.min(...arr))          //输出数组最小值
+// 拼接数组，使用push方法
+var arr1 = [1 , 2 , 3];
+var arr2 = [4 , 5 , 6]
+arr1.push(...arr2)                         //输出拼接后的数组时，先拼接，再输出拼接的字符串
+console.log(arr1)
+// 复制数组，和js方法不一致，es6是直接赋值，并不是使用js的clone()方法,赋值数组是，只改变复制数组，不改变原数组
+var arr1 = [1 , 2 , 3];
+arr2 = [...arr1]             //将arr1的值传给arr2
+// 此时输出的arr1=arr2
+console.log(arr1)
+console.log(arr2)
+// 改变arr2的第一个值，输出
+arr2[0] = 7
+console.log(arr1)
+console.log(arr2)
+// 当数组为一维数组是，扩展运算符可以深复制一个数组(对象同理)
+let arr = [1 , 2 , 3 , 4 , 5, 6]
+let arr1 = [...arr]                         //直接将数组值传给只读变量存储
+arr == arr1
+// 当数组对象为多维数组时，数组复制则会变成浅复制(对象同理)
+let arr = [1 , 2 , 3 , 4 , 5 , [1 , 2 , 3]];
+let arr1 = [...arr]
+arr1.push(7)                                                 //将7加入数组末尾
+arr1[arr1.length - 2][0]  = 100                             //改变二维数组的值
+// 此时输出两数组
+console.log(arr)
+console.log(arr1)
+// 合并多个数组
+let arr = [1]
+let arr1 = [2 , 3]
+let arr2 = [4 , 5]
+let arr3 = [...arr,...arr1,...arr2]
+console.log(arr3)
+// 还可以使用解析赋值方式，输出剩余数组(扩展运算符只能置于参数的最后面)
+let [one , ...rest] = [1 , 2 , 3 , 4 , 5]
+console.log(one)
+console.log(rest)
+// 将字符串扩展晨光数组
+let arr = [...'hello']
+console.log(arr)
+// 将类数组对象转化为真正的数组
+function convert2Arr(){
+    return [...arguments]
+}
+let result = convert2Arr(1 , 2 , 3 , 4 , 5)
+
+
+
+</script>
+</body>
+</html>

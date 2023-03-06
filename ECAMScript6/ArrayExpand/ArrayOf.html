@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayOf</title>
+</head>
+<body>
+<script>
+<!--  Array.of()用于将一组数转化为数组，存在的意义时替代以构造函数的形式创建数组，修复数组创建因参数不一致而导致表现形式不同的伪bug-->
+//   原始方法
+new Array();
+new Array(2);
+new Array(1 , 2 , 3 , 4 , 5)
+// 改良方法
+Array.of();
+Array.of(2);
+Array.of(1 , 2 , 3 , 4 , 5)
+</script>
+</body>
+</html>

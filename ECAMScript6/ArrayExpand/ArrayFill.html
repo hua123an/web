@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayFill</title>
+</head>
+<body>
+<!--array.fill()方法用以固定值填充一个数组从开始索引到结束索引(不包含)内的全部元素-->
+<!--array.fill()表现形式为:array.fill(value,start,end)-->
+<!--
+value表示需要填充的值
+start为起始位置
+end为结束位置
+是一个左闭右开区间，区间内的值全部替换为value
+-->
+<script>
+    var arr = [1 , 2 , 3];
+    console.log(arr.fill(4));
+    console.log(arr.fill(4 , 1 , 2));
+    console.log(arr.fill(4 , -3 , -2));
+
+
+</script>
+</body>
+</html>

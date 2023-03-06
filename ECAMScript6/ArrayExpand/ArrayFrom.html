@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array.from()</title>
+</head>
+<body>
+<script>
+<!--    array.from()函数用于将类数组对象、可遍历的对象专转换为真正的数组-->
+    let obj = {
+    0 : 'hello',
+        1 : 'world',
+        4 : 'out of bounds data',
+        length : 3
+    }
+    Array.from(obj)
+// 根据属性名对应到数组的index，将超过的length的部分舍弃。没有对应属性，置为undefined
+// 使用array.from()方法遍历数组
+var divs = document.querySelectorAll('div')
+Array.from(divs).forEach(function (node) {
+    console.log(node)
+})
+// Array.from()也可以将es6新增的Set、Map等结构转化为数组
+// 将Set结构转化未数组
+Array.from(new Set([1 , 2 , 3 , 4]))
+// 将Map转化为数组
+Array.from(new Map(['name' , 'haha']))
+// Array.from()可接收第二个参数，用于对数组的每一项进行处理并返回
+Array.from([1 , 2 , 3],x => x * x)
+// Array.from()还可以接收第三个参数，这样可以在处理函数中就可以使用传进去的对象域中的值
+let that = {
+    user : 'lisa'
+}
+let obj = {
+    0 : 'lisa',
+    1  : 'zhangsan',
+    2 : 'lis',
+    length : 3
+}
+let result = Array.form(obj,(user) =>{
+    if (user == that.user){
+        return user
+    }
+    return 0
+},that)
+result;
+</script>
+</body>
+</html>

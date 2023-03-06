@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayValues</title>
+</head>
+<body>
+<script>
+<!--  array.values()方法直接返回数组的值-->
+let arr = [1 , 3 , 5 , 7].values();
+console.log(arr.next().value);             //输出1
+console.log(arr.next().value);             //输出3
+console.log(arr.next().value);             //输出5
+console.log(arr.next().value);            //输出7
+// 使用for..of方法遍历迭代器
+for (let values of arr){
+    console.log(values)
+}
+</script>
+</body>
+</html>

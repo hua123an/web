@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayFind</title>
+</head>
+<body>
+<script>
+<!--  find()方法用于查找第一条符合要求的数据，找到后就返回该数据，否则返回undefined。-->/*
+参数包括一个回调函数和一个可选参数(执行环境上下文)，回调函数会遍历数组的所有元素，直到找到符合条件的元素，然后find()方法返回该元素
+*/
+[1 , 2 , 3 , 4].find(function (el,index,arr) {
+  return el > 2;
+})
+[1 , 2 , 3 , 4].find(function(el, index, arr) {
+  el > 4;
+})                    //此处会返回undefined，长度已经超过数组长度
+
+
+
+
+</script>
+</body>
+</html>
