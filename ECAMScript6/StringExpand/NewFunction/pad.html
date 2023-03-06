@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>padStart</title>
+<!--  pad方法用于头部字符串补全-->
+</head>
+<body>
+<script>
+<!--  pad方法有两个参数，第一个参数用来指定字符串的最小长度,第二个参数用来补充字符串的长度-->
+'x'.padStart(5 , 'ab')                  //输出'ababx'
+'x'.padStart(4 , 'ab')                  //输出'abax'
+'x'.padEnd(5 , 'ab')                    //输出'xabab'
+'x'.padEnd(4 , 'ab')                    //输出'xaba'
+//   如果补充字符串长度大于或等于字符串最小长度，则输出原字符串
+'xxx'.padStart(2 , 'ab')              //由于补充字符串'ab'等于字符串的最小长度，直接返回原字符串'xxx'
+'xxx'.padEnd(2  , 'ab')               //同上
+// 如果补充字符串与原字符串长度之和超过字符串最小长度，则输出字符串会截取超过位数的补全字符串，原字符串不会发生改变
+'xxx'.padStart(5 , '123')                //由于两字符串之后大于字符串最小长度，此时补充字符串会减少一位字符串，输出'12xxx'
+'xxx'.padEnd(5 , '123')                  //同上，输出'xxx12'
+// pad常见的用途是给数字往前补0
+'1'.padStart(10 , '0')                  //在1的前面继续补充9个0，输出'0000000001'
+</script>
+</body>
+</html>

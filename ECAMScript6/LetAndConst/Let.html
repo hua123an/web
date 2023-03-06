@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let</title>
+</head>
+<body>
+<script>
+    /*let声明的变量只在let命令所在的代码块内有效，let不存在变量提升，但var存在变量提升
+
+    *
+    *
+    *
+    *
+    *
+    * */
+    function demo(){
+        var x = 1;
+        window.x;
+        let y = 1;
+        window.y
+    }
+
+function demo1(){
+    let x = 1;
+    document.write(x)
+}
+for (var i = 0;i < 10;i++){
+    setTimeout(function() {
+        console.log(i)
+    })
+}
+for (let i = 0;i < 10;i++){
+    setTimeout(function() {
+console.log(i)
+    })
+}
+
+
+</script>
+</body>
+</html>

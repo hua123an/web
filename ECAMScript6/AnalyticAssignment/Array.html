@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script>
+<!--  数组对象基本用法-->
+let [a , b , c] = [1 , 2 , 3]
+// 输出a = 1,b = 2,c = 3
+// 嵌套解析数值中的值
+let [a , [[b] , c]] = [1 , [[2] ,3]]
+// 输出a = 1,b = 2,c = 3
+// 可以直接忽略解析数组中的某些值
+
+let [a , ,c] = [1 , 2 , 3]
+// 输出a = 1,c = 3,2未赋值，不输出
+// 不完全解析
+let [a = 1 , b] = []
+// 输出a = 1,b =undefined
+// 剩余运算符
+let [a , ...b] = [1 , 2 , 3]
+// 输出a = 1,b = [2 , 3]
+// 在数组的解析中，解析目标若为可遍历对象，则皆可进行解析赋值，可遍历对象即实现Iterator接口的数据
+let[a, b , c , d , e] = "hello"
+/*输出：
+* a = 'h'
+* b = 'e'
+* c = 'l'
+* d = 'l'
+* e = 'o'
+* */
+// 解析默认值
+let [a = 2] = [undefined]
+// 直接输出a = 2;
+</script>
+</body>
+</html>

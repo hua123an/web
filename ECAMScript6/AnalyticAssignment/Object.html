@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+/*对象的赋值解析和数组的赋值解析其实类似，但是数组成员时有序的，
+而对象属性则是无序的，所以对象的解析赋值可以简单地理解为等号的左边等于右边
+* */
+let {foo , bar} = {foo : 'aaa' , bar : 'bbb'}
+// 输出foo = 'aaa',bar = 'bbb'
+// 对象的解析赋值是根据key值进行匹配
+let {baz : foo} = {baz : 'ddd'}
+// 输出foo = 'ddd'
+// 可嵌套可忽略
+let obj = {p : ['hello',{y : 'world'}]};
+let {p : [x ,{y}]} = obj
+// 输出x = 'hello , y = world
+let obj = {p : ['hello',{y : 'world'}]}
+let {p : [x,{}]} = obj
+// 只输出x = 'hello'
+//不完全解析
+let obj = {p :[{y : 'hello'}]}
+let {p:[{y}] , x} = obj;
+// 输出x = undefined,y = 'hello'
+// 剩余运算符
+let {a , b , ...rest} = {a : 10 , b : 20 , c : 30 , d : 40};
+// 输出a = 10 , b = 20 , rest = {c : 30 , d ； 40}
+</script>
+
+</body>
+</html>

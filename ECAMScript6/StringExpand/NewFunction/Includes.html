@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Includes</title>
+<!--  Includes时es6新增的字符串查找方法，查找已知字符串中是否有该字符串-->
+</head>
+<body>
+<script>
+<!-- 旧方法 -->
+let str = "vue react angular"
+if (str.indexOf('react') != -1){
+  alert(true)
+
+}else{
+  alert(false)
+}
+// 新方法
+let str = 'vue react angular'
+alert(str.includes('react'))
+// 返回true
+
+</script>
+</body>
+</html>
