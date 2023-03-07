@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SymbolPrototypeDescription</title>
+</head>
+<body>
+<script>
+<!--  创建symbol的时候，可以加入描述-->
+const bol = Symbol('bar')
+// 在上面代码中，字符串bar就是symbol对象bol的描述，但是，读取这个描述需要将Symbol显式地转化为字符串
+const bol = Symbol('bar')
+String(bol)
+bol.toString();
+// 上面的方法都不是很方便，ES2019提供了一种实例属性description，直接返回symbol对象的描述
+const bol = Symbol('bra')
+bol.description;
+</script>
+</body>
+</html>

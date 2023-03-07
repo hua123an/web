@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AsAttribute</title>
+</head>
+<body>
+<script>
+/*由于每个Symbol值都是不相等的，所以意味着Symbol值可以作为标识符，用于对象那个属性名，这样就不会出现同名的属性。
+这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖
+* */
+// 创建Symbol对象
+let mySymbol = Symbol();
+// 第一种写法
+let a = {};
+a[mySymbol] = 'hello'
+//第二种写法(json写法)
+let a = {
+  [mySymbol] : 'hello'
+}
+// 第三种写法
+let a = {};
+Object.defineProperty(a, ' mySymbol',{value : 'hello'})
+a[mySymbol]
+// 以上结果都可以输出"hello"
+// 在上面代码中，因为点运算符后面总是字符串，所以不会读取mySymbol作为标识名所指代的那个值，导致a的属性名实际上是一个字符串，而不是Symbol值。
+// 同样在对象内部，当使用Symbol值定义属性时，Symbol值必须放在方括号内
+let s = Symbol()
+let obj = {
+  [s] : function(arg){ ... }
+};
+obj[s](123)
+// 在上面代码中，如果s不放在方括号内，则该属性的键名就是字符串s，而不是s所表示的那个symbol值。
+// 采用增强的对象写法，上面代码的obj对象可以更简洁
+let obj = {
+  [s](arg){...}
+}
+// Symbol类型还可以用来定义一组常量，保证这组常量的值都是不相等的
+const log = {}
+  log.levels = {
+    DEBUG : Symbol('debug'),
+    INFO : Symbol('info'),
+    WARN : Symbol('warn')
+}
+console.log(log.levels.DEBUG,'debug message')
+console.log(log.levels.INFO,'info message')
+console.log(log.levels.WARN, 'warn message ')
+// 下面是另一个例子
+// 创建Symbol对象
+const COLOR_RED = Symbol();
+const COLOR_GREEN = Symbol();
+function getComplement(color) {
+  switch (color) {
+      case COLOR_RED :
+        return COLOR_GREEN;
+    case CLOOR_GREEN :
+      return COLOR_RED;
+      default :
+        throw new Error(' Undefined color')
+  }
+}
+// 常量使用Symbol值的最大好处就是其他任何值都不可能有相同的值，因此可以保证上面的switch语句按设计的方式工作
+
+
+</script>
+</body>
+</html>

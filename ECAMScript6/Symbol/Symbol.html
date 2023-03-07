@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+<script>
+<!--  Es6引入一种原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第7种数据类型，前六种是undefined、null、布尔值(boolean)、字符串(String)、数值(Number)、对象(Object)-->
+//   Symbol值通过Symbol()函数生成。这就是说，对象的属性名可以有两种类型:一种是原来就有的原始的字符串类型;另一种是新增的Symbol类型。凡是属性名属于Symbol类型
+// 就都是独一无二，可以保证不与其他属性名产生冲突
+let s = Symbol();
+typeof s
+// 在上面变量中，变量s就是独一无二的。typeof运算符的结果，表明变量s是Symbol数据类型，而不是字符串以外的其他类型
+/*注意：Symbol函数前面不能使用new命令，否则会报错。这是因为Symbol是一个原始类型的值，而不是对象。也就是说，由于Symbol值不是对象，所以不能添加属性。基本上，它只是一种数据类型
+* */
+// Symbol()函数可以接收一个字符串作为参数，表示对Symbol实例的描述，主要是为了在控制台显示，或者当转换为字符串是比较容易区分
+let s1 = Symbol('foo');
+let s2 = Symbol('bar');
+console.log(s1)
+console.log(s2)
+s1.toString();
+s2.toString();
+// 在上面代码中，s1和s2是两个Symbol值。如果不加参数，则它们在控制台输出都是Symbol()不利于区分。有了参数以后，就等于为他们加入了描述，输入的时候就能够区分哪个值。
+// 如果Symbol的参数是一个对象，就会调用该对象的toString()方法，将其转化为字符串，然后生成一个Symbol值
+const obj = {
+    toString(){
+        return '123'
+    }
+};
+const sym = Symbol(obj);
+// Symbol函数的参数只是表示对当前Symbol对象的描述，因此相同参数的Symbol()函数的返回值是不相等的。
+// 在没有参数的情况下
+let s1 = Symbol();
+let s2 = Symbol();
+console.log(s1 == s2)      //此时输出false
+// 有参数的情况下
+let s1 = Symbol('foo');
+let s2 = Symbol('foo')
+console.log(s1 == s2)       //此时还是输出false
+// Symbol值不能和其他类型进行运算，否则会报错
+let sym = Symbol("My symbol");
+"symbol is" + sym             //此时会报错
+`symbol is ${sym}`           //此时也会有报错
+// 但是，Symbolo值可以显式地转换为字符串
+let sym = Symbol("My symbol" )
+String(sym);
+sym.toString();
+// Symbol值也可转换为布尔值，但是不能转换数值
+let sym = Symbol();
+Boolean(sym);
+!sym
+if (sym){
+    //...
+}
+Number(sym);
+sym + 2;
+
+
+
+
+</script>
+</body>
+</html>
