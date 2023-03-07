@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapOperation</title>
+</head>
+<body>
+<script>
+<!--    常见的Map操作-->
+// Map与Array的转换
+var newArray = [['key1','value1'],['key2','value2']];
+// Map构造函数可以将一个二维键值对转换成一个Map对象
+var myMap = new Map(newArray);
+// 使用Array.from()可以将Map对象转换成一个二维键值对数组
+// clone Map对象
+var myMap1 = new Map([['key1','value1'],['key2','value2']]);
+var myMap2 = new Map(myMap1)
+console.log(original === clone)               //打印false，Map对象构造函数生成实例，迭代出新的对象
+// Map合并
+var myMap1 = new Map([[1 , 'one'],[2 , 'two'],[3 , 'three']])
+var myMap2 = new Map([[1 , 'hi'],[2 , 'hello']])
+var newMap = new Map(...myMap1 , ...myMap2)
+// 此时会依次输出，hi,hello,three,两个Map对象有相同部分(值相同或不同)前者会被后者覆盖，其余部分不变，继续输出
++++++++++++++++++
+
+
+
+</script>
+</body>
+</html>

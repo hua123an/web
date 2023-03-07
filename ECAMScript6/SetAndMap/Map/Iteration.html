@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iteration</title>
+</head>
+<body>
+<script>
+<!--  Map对象的迭代(iteration)-->
+// Map对象遍历方法
+// 方法一：for..of
+var myMap = new Map();
+myMap.set(name , "zhangsan");
+myMap.set(age , 18);
+for (var [key , value] of myMap){
+  console.log(key + " = " + value)
+}
+for (var [key , value] of myMap.entries()) {
+  console.log(key + " = " + value)
+}
+for (var[key, value] of myMap.values()) {
+  console.log(value)
+}
+for (var[key, value] of myMap.keys()) {
+  console.log(key)
+}
+// forEach()方法遍历
+var myMap = new Map();
+myMap.set(name , "zhangsan");
+myMap.set(age , 18);
+// 调用对象.forEach()方法实现，最后回调
+myMap.forEach(function(key , value){
+  console.log(key + " = "+value)
+},myMap)
+
+
+
+
+
+</script>
+</body>
+</html>

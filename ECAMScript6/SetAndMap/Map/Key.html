@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key</title>
+</head>
+<body>
+<script>
+<!--  Map的key值是字符串-->
+// 创建新Map对象
+var myMap = new Map();
+//   创建一个键值
+var keyString = "a string"
+myMap.set(keyString,"和键'a string'关联的值")
+
+// 获取键值
+myMap.get(keyString);
+myMap.get("a string")
+// 此时都会输出a string，因为等号两边值相等，随便调用一个就可以了
+// Map也可以设置为对象
+var myMap = new Map();
+var newObj = {name : "zhangsan" , age : 17}
+myMap.set(newObj,name,age)
+// Map的key值可以是一个函数
+var myMap = new Map();
+var myFunc = function(x , y) {}
+myMap.set(myFunc,1, 2)
+myMap.get(myFunc)
+// Map也可以是NaN
+var myMap = new Map();
+myMap.set(NaN,"not a number");
+myMap.get(NaN);
+var otherNaN = Number('foo');
+myMap.get(otherNaN)
+// 此处otheNaN也会输出not a number，虽然NaN和任何值甚至和自己都不相等(NaN !== NaN此时返回true)，但是NaN作为Map的键来讲的话是没有任何区别的
+
+
+
+
+</script>
+</body>
+</html>

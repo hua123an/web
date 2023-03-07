@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set</title>
+</head>
+<body>
+<script>
+<!--    set是ES6提供的一种新的数据类型，类似于数组，但是成员的值是唯一的，没有重复的值。set本身是一个构造函数，用来生成Set数据类型。-->
+/*Set对象基本特征：
+* 1.Set对象只允许存储任何类型的唯一值，无论是原始值还是对象引用
+* 2.Set对象中的元素只会出现一次，即Set中的元素是唯一的
+* 3.NaN和undefined都可以被存储在Set对象中，NaN之间被视为相同的值(尽管NaN!==NaN)
+* 4.Set()函数可以接收一个数组(或者具有interable接口的其他数据结构类型)作为参数，用来初始化
+* */
+// Set对象的用法
+// 创建Set对象
+let mySet = new Set();
+// 设置Set值
+mySet.add(1)    //此时输出Set(1) 输出值为{1}
+mySet.add(5)   //此时输出Set(2)  输出值为{1 ， 5}
+mySet.add(5)   //此时输出Set(2)  输出值为{1 ， 5}，唯一性决定了加入相同新元素，不发生改变
+mySet.add('HelloWorld')   //此时输出Set(3)  输出值为{1 ， 5 , 'HelloWorld'}
+var o = {a : 1 , b : 2}
+mySet.add(o)   //此时输出Set(4)  输出值为{1 ， 5 , 'HelloWorld',{a : 1} , {b : 2}}
+// 这里体现了对象之间引用不同不恒等，即使值相等，Set也能存储
+// 类型转换
+// Array转Set
+var arr = ['value1' , 'value2' , 'value3'];
+var newSet = Set(arr);
+// 使用剩余运算符将Set对象转换为Array
+var myArray = Array(...newSet)
+// String转为Set
+var newString = "HelloWorld";
+var newSet = Set(newString)
+// Set中toString方法不能将Set转换为String
+// 利用Set对象的唯一性去重
+var newSet = Set([1 , 2 , 3 , 4 , 4])
+console.log([...newSet]);
+// Set进行常见的集合运算
+// 交集(利用Set的唯一性，使用剩余运算符直接后者覆盖前者)
+var a = new Set([1 , 2 , 3]);
+var b = new Set([4 , 3 , 2]);
+var union = new Set(...a , ...b)
+// 并集
+var intersect = new Set([...a].filter(x => b.has(x)))
+// 差集(属于a且不属于b的元素集合)
+var difference = new Set([...a].filter(x => !b.has(x)))
+
+
+
+
+
+
+</script>
+</body>
+</html>
