@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SupportObject</title>
+</head>
+<body>
+<script>
+/*在数据劫持这个问题上，Proxy可以被认为是Object.defindProperty()的升级版。
+外界对某个对象的访问必须经过这层拦截，因此它是针对整个对象的，而不是对象的某个属性，所以也就不需要对keys遍历
+*
+*
+* */
+// 创建对象
+let obj = {
+    name : '',
+    age : 30
+}
+// 创建proxy对象
+let handler = {
+    get(target , key , receiver){
+        console.log('get' , key)
+        return Reflect.get(target, key , receiver)
+    },
+    set(target, key, value , receiver) {
+        console.log('set' , key , value)
+        return Reflect.set(target, key, value , receiver)
+    }
+}
+// 创建proxy实例对象
+let proxy = new Proxy(obj , handler)
+proxy.name = '王大锤'
+peoxy.age = 28
+
+
+
+
+</script>
+
+</body>
+</html>

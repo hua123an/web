@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.defineProperty</title>
+</head>
+<body>
+<script>
+    <!--  Reflect.defineProperty-->
+    const person = {}
+        Object.defineProperty(person, 'name',{
+            configurable : false,
+            value : '老王'
+    })
+    console.log(person.name)           //旧写法
+    Reflect.defineProperty(person , 'name' , {
+        configurable : false,
+        value : '老王'
+    })
+console.log(person.name)
+</script>
+</body>
+</html>

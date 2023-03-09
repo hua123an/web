@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get</title>
+</head>
+<body>
+<script>
+<!--    get()方法可以对已知的所有属性进行监听，无法对所有属性进行监听，get()监听方法可以拦截和干涉目标对象的所有属性的读取行为-->
+// 创建属性对象
+var book = {
+    name : '大前端',
+    price : 30,
+    page : '100k'
+}
+// 创建proxy对象实例
+const peoxy = new proxy(book , {
+    get : function(book , prokey) {
+        if(prokey in book){
+            return book[prokey];
+        }else{
+            throw new ReferenceError(" Prop name \" " + prokey + "\" does not exit.");
+        }
+    }
+})
+book.publish             //不出意外此时会抛出异，因为未定义该属性
+book.name                //此时会输出大前端，已有定义
+
+
+
+</script>
+</body>
+</html>

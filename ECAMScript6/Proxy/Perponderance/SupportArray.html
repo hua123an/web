@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Array</title>
+</head>
+<body>
+<script>
+  /*Proxy不需要对数组的方法进行重载，就可以实现监听对象
+  * */
+//   创建数组对象
+  let arr = [1 , 3 , 5];
+//   创建Proxy对象
+  let proxy = new Proxy(arr , {
+      get(target , key , receiver){
+          console.log('get' , key)
+          return Reflect.get(target, key, receiver);
+      },
+      set(target, key,value,receiver) {
+          console.log('set' , key , value)
+          return Reflect.set(target, key, value, receiver);
+      }
+  })
+  proxy.push(4);
+
+</script>
+</body>
+</html>

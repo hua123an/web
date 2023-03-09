@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+</head>
+<body>
+<!--proxy的set()方法的常见属性值
+参数                                参数说明
+target                            目标值
+Key                               目标的Key值
+value                             要改变的值
+receiver                          改变前的值
+set()方法的四个对象依次是，目标对象，属性名，属性值，和proxy实例本身，最后一个为可选参数
+-->
+<script>
+<!--  proxy()函数的set()方法使用-->
+let person = {
+  name : 'zhangsan',
+  age : '20',
+  sex : '男'
+}
+// 创建proxy对象实例
+const proxy = new Proxy(person , {
+  set(person , property , value) {
+    console.log('tartget's ${property} change to ${value}');
+            person[property] = value;
+    return true;
+  }
+})
+proxy.name = 'lisi'
+console.log(proxy.name)
+
+
+
+
+
+</script>
+</body>
+</html>

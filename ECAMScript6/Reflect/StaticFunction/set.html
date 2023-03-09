@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.set</title>
+</head>
+<body>
+<script>
+<!--  Reflect.set()函数用于设置对象中的key值-->
+const my = {
+    name : '老王',
+    age : 58,
+    set setVal(val){
+        this.value = val;
+    }
+}
+let dat = {value : 0};
+my.setVal = 100           //老写法
+Reflect.set(my , 'setVal' , 100)
+Reflect.set(my , 'setVal' , 100 ,data)
+console.log(data)
+
+
+
+
+</script>
+</body>
+</html>

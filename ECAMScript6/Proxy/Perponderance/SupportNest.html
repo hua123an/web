@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SupportNest</title>
+</head>
+<body>
+<script>
+/*   本质上，proxy也不支持嵌套，这点和Object.defindProxy()是一样的。
+* 因此也需要逐层遍历来解决。
+* Proxy的写法是在get里面递归调用Proxy并返回
+*
+* */
+// 创建嵌套对象
+let obj = {
+    info: {
+        name : 'c1',
+        blogs : ['webpack' , 'babel' , 'cache']
+    }
+}
+// 创建peoxy方法
+let handler = {
+    get(target , key , receiver){
+        console.log('get' , key)
+        // 递归创建并返回
+        if(typeof tatget[key] === 'object' && target[key] !== null){
+            return new Proxy(tart[key] , handler)
+        }
+        return Reflect.get(target , key , receiver)
+    },
+    set(target, key,value, receiver) {
+        console.log('set' , key , value)
+        return Reflect.sset(target, key, value, receiver)
+    }
+}
+let proxy = new proxy(obj , handler);
+proxy.info.name = 'c2'
+proxy.info.blogs.push('proxy')
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.has</title>
+</head>
+<body>
+<script>
+<!--  Reflect.has()判断某个key是否属于这个对象-->
+const my = {
+  name : 'leo'
+}
+console.log('name' in my)            //旧方式
+console.log(Reflect.has(my , 'name'))
+
+
+</script>
+
+</body>
+</html>

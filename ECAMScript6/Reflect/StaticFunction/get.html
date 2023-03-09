@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.get</title>
+</head>
+<body>
+<script>
+<!--    Reflect.get()方法用于获取对象中的对应的key值-->
+const my = {
+    name : '桃花',
+    age : 18,
+    get sum(){
+        return this.a + this.b;
+    }
+}
+console.log(my['age']);           //老写法
+console.log(Reflect.get(my , 'age'))
+console.log(Reflect.get(my , 'sum' , {a : 1 , b : 1}))       //可以指定this指想
+
+
+
+
+
+
+</script>
+</body>
+</html>
