@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.apply()</title>
+</head>
+<body>
+<script>
+<!--  Reflect.apply()方法等价于Function.propertype.apply.call()-->
+  const func = function (a , b) {
+  console.log(this , a , b)
+  }
+  func.apply = () =>{
+  console.log('apply')
+  }
+  func.apply({name : 'leo'},[1 ,2])
+// 老方法
+Function.prototype.apply.call(func , {name : 'leo'} , [1 , 2])
+
+Reflect.apply(func , {name : 'leo'}, [1 , 2])
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.isExtensible</title>
+</head>
+<body>
+<script>
+<!--  Reflect.isExtensible方法对饮object.isExtensible，返回一个布尔值，表示当前对象是否可扩展-->
+const nyObject = {};
+// 旧方法
+Object.isExtensible(myObject)
+
+Reflect.isExtensible(myObject);
+// 如果参数本身不是对象，就会出现报错
+Object.isExtensible(1)     //false
+Reflect.isExtensible(1)   //报错
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.getOwnPropertyDecriptor</title>
+</head>
+<body>
+<script>
+<!--  等价于Object.getOwnPropertyDecriptor-->
+  const obj = { name : 'ol'}
+// 老写法
+const decriptor = Object.getOwnPropertyDescriptor(obj , 'name')
+
+const decriptor = Reflect.getOwnPropertyDescriptor(obj , 'name')
+
+  console.log(decriptor)
+
+</script>
+</body>
+</html>

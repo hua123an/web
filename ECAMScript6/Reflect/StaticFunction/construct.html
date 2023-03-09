@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.construct</title>
+</head>
+<body>
+<script>
+<!--    Reflect.construct()实例化类等价于new-->
+class person  {
+    constructor(sex){
+        console.log(sex)
+    }
+}
+new person('女');
+Reflect.construct(person , ['男']);
+
+
+
+
+
+</script>
+</body>
+</html>

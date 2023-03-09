@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.setPrototypeOf</title>
+</head>
+<body>
+<script>
+<!--  设置proto等价于Object.setPrototypeOf(),不同的是返回一个布尔值类型表示是否设置成功-->
+  let person = {name : '老王'}
+  let obj = {age : 58};
+// 老写法
+Object.setPrototypeOf(person , obj)
+Reflect.setPrototypeOf(person , obj)
+console.log(person.age)
+</script>
+</body>
+</html>

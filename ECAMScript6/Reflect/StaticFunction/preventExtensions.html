@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.preventExtensions</title>
+</head>
+<body>
+<script>
+<!--  Reflect.preventExtensions方法对应Object.preventExcentsions，用于让一个对象变为不可扩展-->
+var myObject = {}
+// 旧方法
+Object.preventExtensions(myObject) //object{}
+
+Reflect.preventExtensions(myObject)  //true
+// 如果参数不是对象
+// ES5环境
+Object.preventExtensions(1)      //报错
+//ES6环境
+Object.preventExtensions(1)   //  1
+//新写法
+Reflect.preventExtensions(1)   //报错
+
+
+
+</script>
+</body>
+</html>

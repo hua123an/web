@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Reflect and proxy</title>
 </head>
 <body>
+<script>
+    <!--    通过Reflect和proxy结合实现观察者模式-->
+    var queuedObservers = new Set();
+    var observer = fn => queuedObservers.add(fn)
+var observable = obj => new proxy(obj ,{set});
+    var o = observable({
+        "name" : '老王',
+        "age" : '20'
+    })
+    function set(target , key , value , receiver){
+        console.log(target)
+        console.log(key)
+        console.log(value)
+        console.log(receiver)
+        Reflect.set(target , key , value , receiver);
+        queuedObservers.forEach(observer => observer())
+    }
+    var f1 = () => {
+        console.log(o.name + '第一观察者' + o.age)
+    }
+    var f2 = () => {
+        console.log(o.name + '第二观察者 ' + o.age)
+    }
+    observe(f1)
+    o.name = "xlw"
+    observer(f2)
+    o.age = 2
 
+
+</script>
 </body>
 </html>

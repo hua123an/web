@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getProtoTypeOf</title>
+</head>
+<body>
+<script>
+<!--  读取proto等价于Object.getPrototypeOf(),不同的是如果方法传递的不是对象，则会报错-->
+class person {}
+//老方法
+console.log(Object.getPrototypeOf(person))
+// 同下
+console.log(Reflect.getPrototypeOf(person))
+
+
+
+
+
+</script>
+</body>
+</html>

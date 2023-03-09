@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflect.deleteProperty</title>
+</head>
+<body>
+<script>
+<!--  Reflect.deleteProperty()方法用来删除对象中的某个属性-->
+  const person = {};
+  Reflect.defineProperty(person , 'name' , {
+    configurable : false,
+    value : '老王'
+  })
+// 删除person.name
+const flag = Reflect.deleteProperty(person , 'name');
+  console.log(flag)
+</script>
+</body>
+</html>
