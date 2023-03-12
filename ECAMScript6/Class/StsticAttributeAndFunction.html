@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Attribute And Function</title>
+</head>
+<body>
+<script>
+<!--  静态属性和方法-->
+/*静态属性或者方法，又被叫做类属性或者类方法，使用static关键词修饰属性或方法
+就是类属性或者类方法，静态的属性或方法需要通过类直接调用，不能通过实例调用
+* */
+// 创建静态方法，里面创建静态属性
+class foo {
+  static prop = 1;
+  // 静态方法
+  static classMethod(){
+    return 'hello'
+  }
+}
+// 实现方法调用
+console.log(foo.prop)
+console.log(foo.classMethod())
+//创建一新对象
+var Foo = new foo()
+Foo.classMethod()     //此时会报错，因为此时的Foo是一个对象，对象不具有访问静态属性的方法
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

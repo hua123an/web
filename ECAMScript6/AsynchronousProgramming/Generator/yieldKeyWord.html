@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yieldKeyWord</title>
+</head>
+<body>
+<!--为了解决promise的问题，ES6提供另一种解决方案，Gendrator函数的有点是可以随心所欲地交出和恢复函数地执行权，yield用于交出执行权，next用于恢复执行权。
+Generator函数返回的是一个Interator接口的遍历器对象，用来操作内部指针。--><!--
+每次调用需要遍历器对象的next方法，会返回一个有着value和done两个属性的对象。
+value属性值表示当前内部状态的值，是yield语句后面的哪个表达式的值；
+done属性是一个布尔值，，表示是否遍历结束
+
+yield关键词使生成器函数暂停执行，并返回更在它后面的表达式的当前值。
+可以把它想象是return关键词的一个居于生成器的版本，但并非退出函数体，而是期初当前函数的运行时，于此同时可以将一个值带到主线程中。
+yiled语句时暂停执行的标记，而next方法可以恢复执行
+-->
+<script>
+    function * helloworldGenerator(){
+        yield 'hello';
+        yield 'world';
+        yield 'ending'
+    }
+    var yen = helloworldGenerator()
+/*输出结果如下
+conso0le.log(gen.next())
+console.log(gen.next())
+console.log(gen.next())
+此时会输出，
+{value : 'hello' , done : false}
+* */
+    /*上面的代码说明：
+    (1).当遇到yield语句是暂停执行后面的操作，并将紧跟yield后面的那个表达式作为返回的对象的value属性值
+    (2).下一次调用next方法时，在继续往下执行，直到遇到下一个yield语句。
+    (3).如果没有再遇见新的yield语句，就一直运行到函数结束，直到return语句为止，并将return语句后面的表达式
+    的值作为返回的对象的value属性值。
+    (4).如果该函数没有return语句，则返回的对象的value属性值为unfinished
+    注意：
+    yield语句后面的表达式，只有当调用next方法、内部指针指向该语句时才会执行，因此等于为JavaScript提供了惰性求值(Lazy Evaluation)的语法功能
+    *
+    * */
+    function * gen(){
+        yield 123 + 456;
+    }
+    functon * fn();
+        setTimeout(function() {
+            gen.next()
+        },2000)
+// /*在上面实例代码中，yield后面的表达式不会出现立即求值，只会在next方法将指针一道下一句时才会求值。
+    // Generator函数也可以不用yield语句，这时就会变成一个单纯的赞含执行的执行函数*/
+
+
+
+
+
+</script>
+</body>
+</html>

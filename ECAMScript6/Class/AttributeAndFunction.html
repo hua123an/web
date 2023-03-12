@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribue and function</title>
+</head>
+<body>
+<script>
+<!--  ES6的属性只有公有属性，无法和其他语言一样定义次有方法和静态属性，但是可以通过其他方法实现-->
+class Animail{
+  constructor(name = 'mouse' , age = 2 , noise = 'nothing') {
+    this.type = 'Animail';
+    this.name = name;
+    this.age = age;
+    this.noise = noise
+  }
+  geetInfo(){
+    console.log('我是${this.type}，我的名字叫${this.anem},我${this.age}岁了')
+  }
+  speak(){
+    console.log('我可以${this.noise}叫')
+  }
+}
+// 创建实例对象
+const mouse = new Animail('mouse')
+mouse.noise('jiji')
+mouse.speak();
+// 上面的代码在调用时，
+// 如果是通过实例对象访问speak，则speak中的this指向当前类的实例对象，但是如果单独使用
+// ，this则会指向该方法运行所在的环境，此时this的值为unfinded
+// 通过对象绑定方法
+mouse.speak();
+// 如果单独使用speak方法，则会造成speak方法中的this为unfinished
+let {speak} = mouse
+speak();
+// 一个比较简单的解决方法就是，在构造方法中绑定this，这样就不会找不到this了
+class Animail {
+  constructor(name = 'mouse', age = 2, noise = 'nothing') {
+    this.type = 'Animail';
+    this.name = this.name.bind(this)
+    this.age = this.age.bind(this)
+    this.noise = this.noise.bind(this)
+  }
+}
+// 另一种解决方法是使用箭头
+class Animail {
+  constructor(name = 'mouse', age = 2, noise = 'nothing') {
+    this.type = 'Animail';
+    this.name = name;
+    this.age = age;
+    this.noise = noise
+    this.speak = () => {
+      xonsole.log('${this.name} says ${this.noise}');
+    }
+  }
+}
+</script>
+</body>
+</html>

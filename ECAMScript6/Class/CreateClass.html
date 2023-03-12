@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dedinf Class</title>
+</head>
+<body>
+<script>
+<!--    在ES6中，面向对象累的写法和Java语言类似-->
+// ES5写法(类似于java构造器写法)
+function Person(){
+    this.name = name;
+}
+Person.prototype.sayName = function() {
+    return this.name;
+}
+const p1 = new Person('zhangsan')
+console.log(p1.sayName())
+// ES6面向对象写法
+class Person{
+//     构造方法是默认方法，new时会自动调用，如果没有显式定义，则会自动添加
+/*constructor():
+1.适合做初始化数据
+* 2.constructor可以指定返回的对象
+* */
+    constructor(name , age) {
+        this.anme = name;
+        this.age = age;
+    }
+    getINfo(){
+        console.log('你是${this.name},${this.age}岁了')
+    }
+}
+// 创建实例化对象
+var p1 = Person('zhangsan' , 20)
+p1.getINfo();
+// ES6的类可以看成是ES5的一种新的语法糖，ES6类本质还是一个函数，类本身指向构造函数
+typeof Person    //function
+Person === Person.prototype.constructor;   //true
+// ES6类还有另一种定义方式，也就是累的表达式写法
+const MyPerson = class Person{
+    constructor(name , age) {
+        this.name = name;
+        this.age = age
+    }
+    getInfo(){
+        console.log('我是${this.name}，我${this.age}岁了')
+    }
+}
+// 创建对象实例
+var person1 = new MyPerson('zhangsan' , 20)
+person1.getINfo();
+// 在上面代码中，Person没有作用，类名是const修饰的MyPerson。
+// 需要注意的是，与ES5不同的是，ES6中类是不存在变量提升的
+new Person() //ReferenceError
+class Person{}
+// 在上面代码中，Person类使用在前，定义在后，这样会报错，因为ES6不会把类的申明提升到
+// 代码头部。这种规定的原因和继承有关，必须保证子类在父类之后定义
+</script>
+</body>
+</html>

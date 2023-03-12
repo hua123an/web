@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AttributeMemory</title>
+</head>
+<body>
+<script>
+<!--  属性存储器就是我们常见的属性构造器(set/get)-->
+class myName {
+  constructor() {
+  //     设置基本属性
+  }
+  set prop(){
+    return 'getter'
+  }
+  get prop(value){
+    console.log('setter:' + value)
+  }
+}
+//   创建实例对象
+let c1 = new myName();
+c1.prop = 100;         //set Attribute
+c1.prop              //get Attribute
+/*在上面代码中，prop属性有对应的存值函数和取值函数，因此赋值和取值行为都被自定义了。
+存值函数和取值函数设置在属性的decriptor对象*/
+  var descriptor = Object.getOwnPropertyDescriptor(
+          myName.prototype , 'prop')
+
+  "get" in descriptor    //true
+  "set" in descriptor    //true
+</script>
+</body>
+</html>

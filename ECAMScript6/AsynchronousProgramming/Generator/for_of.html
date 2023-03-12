@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for.....of</title>
+</head>
+<body>
+<script>
+<!--  for....of循环可以自动遍历Generator函数生成的Iterator对象，并且此时不再需要调用next方法-->\
+function * foo(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+for (let v of foo()){
+  console.log(v)
+}
+// 此时会直接输出foo对象的所有值，无需使用next方法,
+// 使用Generator函数用for...of循环实现斐波那契数列
+function * fibpnaqi(){
+    let [prew , curr] = [0 , 1]
+    while (true){
+        [prew , curr] = [curr , prew + curr]
+        yield curr;
+    }
+}
+for (let n of fibpnaqi()){
+    if (n > 1000) break;
+    console.log(n)
+}
+
+
+
+</script>
+</body>
+</html>

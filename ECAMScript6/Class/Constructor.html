@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructor</title>
+</head>
+<body>
+<script>
+<!--  Constructor函数是累的后遭函数，用于传递参数，返回实例对象。-->
+/*当通过new命令=生成对象实例时，会自动调用该方法。如果没有显式定义，则类内部会挨冻创建一个constructor（）
+*/
+// 构造函数
+class Person {
+  constructor(name , age){
+    this.name = name;
+    this.age = age
+  }
+}
+//   和java语言不同的是，ES6中的构造函数时不支持构造函数重载的
+//   创建实例对象
+var p1 = new Person('zhangsan' , 20)
+console.log(p1.name , p1.age);
+
+
+</script>
+</body>
+</html>

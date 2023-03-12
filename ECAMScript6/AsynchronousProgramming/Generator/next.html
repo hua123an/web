@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>next</title>
+</head>
+<body>
+<script>
+<!--    next方法的参数
+/*注意：
+yield语句本身没有返回值(返回unfinished)。next方法可以带一个参数，这参数汇会被当做上一个yield语句的返回值
+*/
+-->
+function * foo(x){
+    var y = 2 * (yield(x + 1));
+    var z = yield(y / 3)
+    return (x + y + z)
+}
+var a = foo(5);
+a.next()
+a.next()
+a.next()
+var b = foo(5)
+b.next()
+b.next(12)
+b.next(13)
+// next函数中传入的都是x的值
+
+
+
+
+
+</script>
+</body>
+</html>

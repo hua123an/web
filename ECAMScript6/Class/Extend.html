@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extend</title>
+</head>
+<body>
+<script>
+<!-- 类的继承，基本语法child extends parents-->
+//   定义父函数
+class Animail {
+  constructor(name , age) {
+    this.name = name ;
+    this.age = age;
+  }
+//   定义父类方法
+  sayHello(){
+    console.log("我叫${this.name},我${this.age}岁了")
+  }
+}
+//定义子类
+class cat extends Animail {
+//   构造属性
+  constructor() {
+    super();
+    this.name = 'cat';
+    this.age = 3
+  }
+  sayHello() {
+    console.log('hello')
+  }
+}
+let littleCat = new cat();
+littleCat.sayHello();
+
+
+</script>
+</body>
+</html>

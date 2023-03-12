@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computable Member Name</title>
+</head>
+<body>
+<script>
+  /*可计算成员是指方括号包裹的一个表达式，如下面定义一个变量methodName，然后
+  使用[methodName]设置为类Person的原型方法
+  * */
+  const methodName = 'sayName';
+  classs Person {
+    this.name = name;
+  }
+  [methodName](){
+    return this.name;
+  }
+  const p1 = new Person('lidachui')
+  p1.sayName();
+
+
+
+
+</script>
+</body>
+</html>
