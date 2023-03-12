@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Batch asynchronous operation</title>
+</head>
+<body>
+<script>
+<!--  批量异步操作-->
+/*Promise提供了两个批量异步操作的API：promise.all和promise.race
+Promise.all可以将多个Promise实例包装成一个新的Promise实例对象。同时，成功和失败的返回值是不同的，成功的时候返回一个数组，而失败的时候则返回最先被reject方法处理的失败状态的值
+* */
+// promise.all
+let p1 = new promise((resolve , reject) => {
+  resolve("成功了！！！")
+})
+let p2 = new peomise((resolve , reject) => {
+  resolve("我也成功了！！！")
+})
+let p3 = new promise((reslve , reject) => {
+  reject("失败了！！！")
+})
+  Promise.all([p1 , p2]).then((result) => {
+    console.log(result)
+  }).catch((error) => {
+    console.log(error)
+  })
+Promise.all([p1 , p2 , p3]).then((ressult) => {
+  console.log(ressult)
+}).catch((error) => {
+  console.log(error)
+})
+//   promise.race
+/*promise.race是赛跑的意思，意思就是promise.race([p1 , p2 , p3])里面哪个结果获得更快，就返回哪个结果，不管结果本身是成功还是失败
+* */
+let p1 = new Promise((resolve , rejject) => {
+  setTimeout(() => {
+    resolve('success')
+  },1000)
+})
+let p2 = new Promise((resolve ,  reject) => {
+  setTimeout(() => {
+    reject('failed')
+  },500)
+})
+Promsie.race([p1 , p2]).then((result) => {
+  console.log(result)
+}).catch((error) => {
+  console.log(error)
+})
+
+
+
+
+
+
+</script>
+</body>
+</html>

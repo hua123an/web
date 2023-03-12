@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chain Call</title>
+</head>
+<body>
+<script>
+<!--  promise的链式调用的方法尽可能地保证异步任务的扁平化-->
+new promise((resolve , reject) =>{
+//   第一次异步处理
+  setTimeout(() => {
+resolve();
+  },1000)
+}).then(() => {
+//     第一次得到结果的处理代码
+  console.log("HelloWorld");
+  return new promise((resolve , reject) => {
+  //   第二次异步处理代码
+    setTimeout(() => {
+        resolve();
+    },1000)
+  })
+}).then(() => {
+//     第二次处理代码
+  console.log('Hello Promise');
+  return new Promise((resolve , reject) => {
+  //     第三次异步处理结果
+    setTimeout(() => {
+      resolve()
+    })
+  })
+}).then(() => {
+//     第三次处理的代码
+  console.log('Hello ES6')
+})
+/*在上面代码中，promise对象返回了全新的promise对象。
+可以继续调用then()方法，如果return的不是一个promise对象，而是一个值，则这个值会被作为resolve的值传递，如果没有值，则默认为undefined*
+*(1)后面的.then()方法就是在为上一个.then()返回的Promise注册回调
+(2)前看的.then()方法中回调函数的返回值会作为后面.then()方法回调的参数
+(3)如果前面回调的是promise，则后面.then()方法回调会等待它的结束
+* */
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Grammer</title>
+</head>
+<body>
+<script>
+<!--  Promise是异步编程的一种解决方案，比传统的以回调函数和事件方式处理异步操作更合理和更强大。-->
+// Promise是一个对象，用来表述一个异步任务执行之后是成功还是失败
+// 创建promise对象，构造函数，回调函数是同步的回调
+
+let promise = new Promise((resolve , reject) =>{
+  reject('error')
+})
+// 此时使用then接收resolve和reject函数返回的结果
+promise.then((data) =>{
+    console.log(data)
+},(error) =>{
+    console.log(error)
+}).catch (erroe =>{
+  console.log(error)
+}).finally(() => {
+console.log("执行成功！！！")
+})
+/*在上面代码中，new Promise(fn)返回的是一个Promise对象，在fn函数中定义异步操作，
+* resolve和reject分别是两个函数，如果该异步处理的结果正常，则调用resolve(处理结果值),返回处理的结果。
+* 如果处理的结果错误，则调用reject(Error对象)，返回错误信息。
+* */
+// 一个异步请求的例子
+let promise = new promise((resolve , reject) => {
+    $ .get('/remoteurl',(data , status) => {
+        if (status == 'success'){
+            resolve({msg : data})
+        }else{
+            resolve({msg : data})
+        }
+    })
+})
+
+
+
+
+</script>
+</body>
+</html>

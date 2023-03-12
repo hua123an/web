@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception handling </title>
+</head>
+<body>
+<script>
+
+
+<!--    异常处理-->
+let promise = new promise((resolve , reject) => {
+    reject('error')
+} )
+    .then(resolve , reject)
+    .catch((error) => {
+
+    })
+/*在上面代码中，如果出现错误，则依次会经过.then()和.catch(),其中错误经过.then(resolve , reject)时，会出现三种情况：
+(1).then()只提供了reject()方法处理回调逻辑，没有提供reject()方法处理错误
+(2).then()方法提供reject()方法处理了错误
+(3).then()中的代码执行时又出现新的错误
+*总的来讲：只要错误被提供的reject()方法处理了，下游就不会出现这个错误;
+只要存在错误，并且不曾被方法处理，最终都会被.catch()获取
+catch是promise原型链上的方法，用来捕获reject抛出的异常，进行统一的错误后处理，使用.catch()方法更为常见，因此更加符合链式调用
+*
+*
+*
+*
+* */
+
+
+
+</script>
+</body>
+</html>
