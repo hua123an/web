@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post and get</title>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+/*两种基本的请求方式
+get方法时使用HTTP GET请求从服务器加载数据，基本语法为：
+$.get(url , callback),callback是资源请求成功后执行的函数
+* post(url , data , callback)，data是在进行资源请求的同时向服务器发送的数据
+* */
+// 创建实例
+$(function () {
+  $("button").click(function() {
+    $.get(
+            "http://www.baidu.com",
+            function(data) {
+              alert("此时的返回值为："+data)
+
+            }
+    )
+      $.post("www.baidu,com" , {
+        name : 'Web程序基础',
+        url : 'https://www.baidu.com'
+      },
+      function (data , status){
+        $("#display").html(data , status)
+      },
+      )
+  })
+
+})
+</script>
+<div id="display"></div>
+<button>AjaxPost请求</button>
+</body>
+</html>

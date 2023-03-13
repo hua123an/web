@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<script>
+<!--    创建一个简单的ajax请求-->
+$(function() {
+//     获取文本框对象
+    var myUser = document.getElementById("username")
+//     设置文本框对象失去焦点事件
+        myUser.onblur = function() {
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+            //     IE7+浏览器创建对象方法
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+            //     IE5、6创建方式
+                xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+            }
+            xmlhttp.onreadystatechange = function() {
+            //     判断是否完成互数据交互
+                if (xmlhttp.readyState == 4){
+                //     此时status返回200表示正确反悔了数据
+                    if (xmlhttp.status == 200){
+                    //     获取responseText的值
+                        var message = xmlhttp.responseText;
+                        document.getElementById("display").innerHTML = message;
+                    }
+                }
+            }
+            xmlhttp.open("GET" , "ajaxServer.jsp" , true)
+            xmlhttp.send()
+        }
+})
+</script>
+<!--创建表单数据-->
+<form action=""method="get">
+    <input type="text" id="username" name="username">
+    <span id-="displayy"></span><br>
+    <input type="submit" value="测试">
+</form>
+
+
+</body>
+</html>

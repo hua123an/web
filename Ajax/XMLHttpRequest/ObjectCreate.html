@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ObjectCreate</title>
+</head>
+<body>
+<script>
+<!-- 初始化XMLHttpRequest对象   -->
+xmlhttp = new XMLHttpRequest();
+// 在旧版的IE浏览器中，Ajax使用ActiveX对象进行创建
+xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+// 为了提高程序的兼容性，可以创建一个跨浏览器的XMLHTTPRequest对象。
+// 创建一个跨浏览器的XMLHTTPRequest对象只需要判断一个不同的浏览器，，
+// 如果浏览器提供了XMLHTTPRequest类，则直接创建一个实例
+if (window.XMLHttpRequest){
+//     IE7、firefo以及主流浏览器
+//     创建一个新的请求实例
+    xmlhttp = new XMLHttpRequest()
+}else{
+//     IE6、ie5创建方式
+    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
