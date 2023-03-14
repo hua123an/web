@@ -9448,7 +9448,7 @@ jQuery.extend( {
 			// Convert anything to text
 			"* text": String,
 
-			// Text to html (true = no transformation)
+			// TextModification to html (true = no transformation)
 			"text html": true,
 
 			// Evaluate text as a json expression
