@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+<!--常见的列表：
+无样式列表：一般我们使用li标签时，前面会出现一个编号。我们不想看见这个编号，可以直接使用list-unstyled样式类，就可以呈现删除默认样式的风格
+，实例代码如下：
+-->
+<ul class="list-unstyled">
+    <li>....</li>
+</ul>
+<!--内联列表
+給有序无序列表添加list-inline样式类，可以将列表的所有元素放在同一行，这种效果通过设置：display:inline-block;并添加少量边距来实现。
+-->
+<ul class="list-inline">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+</ul>
+<!--列表组
+列表组件用于以列表形式呈现复杂的和自定义的内容,以组的形式
+                   常见的列表组类
+list-group                  将一个ul元素变成列表组
+list-group-item             列表组的每一个元素
+list-group-item-heading    为<a>元素或者<button>元素添加一个title
+list-group-item-text        为列表住添加内容，和list-group-item-heading一起放在<a>元素或者<button>元素样式类中
+                             为列表中添加颜色
+list-group-item-success      成功，背景色为绿色
+list-group-item-info         信息，背景色为蓝色
+list-group-item-warning      警告，背景色为黄色
+list-group-item-danger       危险，背景色为红色
+
+badge                        加入badge样式类，指定徽章，默认自动放在右边
+-->
+<!--基础列表组-->
+<ul class="list-group">
+    <li class="list-group-item">one</li>
+    <li class="list-group-item">two</li>
+    <li class="list-group-item">three</li>
+</ul>
+<!--徽章列表组-->
+<ul class="list-group">
+    <li class="list-group-item">one</li>
+    <li class="list-group-item">two</li>
+    <span class="badge">13</span>
+    <li class="list-group-item">three</li>
+</ul>
+<!--带链接的列表组-->
+<ul class="list-group">
+    <li class="list-group-item">one</li>
+    <li class="list-group-item">two</li>
+    <a href="#">这个一个a标签</a>
+</ul>
+<!--将ul换成div,li换为a-->
+<div class="list-group">
+    <a class="list-group-item">one</a>
+    <a class="list-group-item">two</a>
+    <a href="#">这个一个a标签</a>
+</div>
+<!--自定义列表组-->
+<div class="list-group">
+    <a href="" class="list-group-item">
+        <h4 class="list-group-item-heading">标题</h4>
+        <p class="list-group-item-text">文本内容...</p>
+    </a>
+</div>
+<!--综合设置-->
+<h3>基础列表组</h3>
+<ul class="list-group">
+    <li class="list-group-item">HTML</li>
+    <li class="list-group-item">CSS</li>
+    <li class="list-group-item">JavaScript</li>
+</ul>
+<h3>自定义列表组</h3>
+<div class="list-group">
+    <a href="##" class="list-group-item">
+        <h4 class="list-group-item-heading">BootStrap</h4>
+        <p class="list-group-item-text">
+            深入了解BootStrap底层结构关键部分，包括我们让web开发变得更快、更好、更强壮的最佳实践
+        </p>
+    </a>
+    <a href="##" class="list-group-item">
+        <h4 class="list-group-item-heading">jQuary</h4>
+        <p class="list-group-item-text">设计宗旨是“Write less,do more”，即倡导写更少的代码，做更多的事</p>
+    </a>
+</div>
+    <h3>多彩组合列表组</h3>
+    <div class="list-group">
+        <a href="###" class="list-group-item active">
+            <!--            设置的属性active为列表组的状态 有两种状态：
+                        1.active     表示当前为激活状态
+                        2.disabled    表示当前为禁用状态
+            -->
+            <span class="badge">5902</span>HTML
+            <a href="###" class="list-group-item-success">
+                <span class="badge">10</span>BootStrap
+            </a>
+            <a href="###" class="list-group-item-info">
+                <span class="badge">100</span>JavaScript
+            </a>
+            <a href="###" class="list-group-item-warning">
+                <span class="badge">200</span>JavaScript
+            </a>
+            <a href="###" class="list-group-item-danger">
+                <span class="badge">300</span>CSS
+            </a>
+        </a>
+    </div>
+</body>
+</html>

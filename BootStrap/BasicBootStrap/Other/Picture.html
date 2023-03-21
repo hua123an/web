@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture</title>
+    <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+<!--BootStrap对图片的风格样式很少，主要提供了图片的圆角和边框样式。
+当图片定义超链接时，会呈现默认的边框样式，BootStrap关闭了这种边框样式。
+BootStrap为图像定义了三种特殊风格的样式类：
+img-rounded:添加border-radius:6px 来获得圆角图片
+img-circle:添加border-radius:50% 来让整个图片变成圆形
+img-thumbnail:添加一些内边距和一个灰色边框
+通过添加img-responsive样式类可以让图片动态响应
+-->
+<!--创建简单图片对象-->
+<div class="container">
+    <div class="text-center col-sm-3">
+        <img src="" alt="" class="img-responsive">
+        <h3>正常效果</h3>
+    </div>
+    <div class="text-center col-sm-3">
+        <img src="" alt="" class="img-rounded">
+        <h3>圆角效果</h3>
+    </div>
+    <div class="text-center col-sm-3">
+        <img src="" alt="" class="img-circle">
+        <h3>圆形效果</h3>
+    </div>
+    <div class="text-center col-sm-3">
+        <img src="" alt="" class="img-thumbnail">
+        <h3>镶边效果</h3>
+    </div>
+</div>
+</body>
+</html>
