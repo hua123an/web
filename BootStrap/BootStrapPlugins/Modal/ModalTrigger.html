@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框触发</title>
+<!--    <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.min.css">-->
+    <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+<!--常见的modal触发方式：
+声明式弹出触发：使用data-toggle和data-target两个属性进行相应设置
+链接弹出触发：使用a标签的data-target属性代替href属性
+常见的几种链接弹出式触发属性：
+data-target:属性值是字符串，用来指定弹出那个模态框，属性值为模态框的id或class
+data-toggle:属性值是字符串，用来控制模态框的显示，属性值只能是data-toggle="modal"
+data-backdrop：属性值是布尔值，用于指定是否包含一个背景div元素。如果取值为true，单机背景关闭模态框；如果取值为false，单机背景模态框不会被关闭
+data-keyboard:属性值是布尔值,用于指定是否可以使用ESC键来关闭模态框，true则能，否则不能
+data-show：属性值是布尔值，用于指定窗体初始化是否显示
+js触发：
+确切来讲是使用jQuary触发，基本语法为：
+$(element).modal(option)
+option的可选参数：
+backdrop
+keyboard
+show
+remote:设置一个远程url，使用jQuary.load()，为模态框的主体注入内容。如果添加一个有效的URL的href，则会加载其中的内容。
+<a data-toggle="modal" href="remote.html" data-target="#modal">请点击我</a>
+-->
+<script>
+    $(function () {
+        $('.btn').click(function () {
+            $('#myModal').modal({
+                backdrop : false,     //关闭背景屏蔽罩
+                keyboard : false      //取消ESC键关闭模态框
+            })
+        })
+    })
+</script>
+<div class="container">
+    <h3>创建模态框</h3>
+    <button class="btn btn-primary" data-toggle="modal" data-bs-target="#myModal"></button>
+    <!--    定义模态框触发器，此处为按钮触发-->
+    <form action="#" method="post" class="form-horizontal" role="form" id="myForm" onsubmit="return">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <!--定义模态框，过渡效果为淡入，id为myModal，tabindex=-1可以禁止使用tab切换，aria-labelledby用于引用模态框的标题，aria-hidden=true保持模态框在触发前窗口不可见            -->
+            <div class="modal-dialog">
+                <!--                显示模态框的对话模型(若不写下一个div则没有颜色)-->
+                <div class="modal-content">
+                    <!--                    显示模态框白色背景，所有内容都写在这个div下-->
+                    <div class="btn-info modal-header">
+                        <!--                        模态框标题-->
+                        <button type="button" class="close" data-dismiss="modal">$time$</button>
+                        <!--                        关闭按钮-->
+                        <h4>您好，欢迎进入模态框</h4>
+                        <!--                        标题内容-->
+                    </div>
+                    <div class="modal-body">
+                        <!--                        模态框内容，在此添加一个表单-->
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="username" name="username" class="form-control well"
+                                           placeholder="请输入用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">密码</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="password" name="password" class="form-control well"
+                                           placeholder="请输入密码">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!--                                模态框底部样式，一般是提交或者确定按钮-->
+                                <button type="submit" class="btn btn-info">确定</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Defined</title>
+<!--    <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.css">-->
+</head>
+<body>
+<!--       模态框是覆盖在父窗体上的子窗体，通常用来显示来自一个子窗体的内容，并且子窗体可以在不离开父窗体的情况下与其相互交换信息。BootStrap中的模态框具有一下特点：
+      模态框固定浮动在浏览器中
+      模态框的宽度自适应，并且水平居中
+      当浏览器的宽度小于768px时，模态框的宽度为600px
+      底层有一个灰色的蒙版效果，可以禁止单击底层元素
+      模态框显示过程中会有过滤效果
+      使用模态框前必须要有一个触发器去启动模态框，触发器可以是按钮页可以是超链接。当触发器为按钮时：此时要加入属性data-target，该属性值是要在页面上加载需要出发的模态框div标签的id属性值。可以在页面上创建多个模态框，然后为每个模态框创建不同的按钮或超链接触发器。不能在同一时间加载多个模态框，但可以在页面上创建多个模态框，在不同时间加载。
+      定义模态框时以下主要属性需要特别注意：
+      modal:是把div的内容设置为模态框最外层容器的样式类
+      modal-dialog:是把div内容设置为模态框第二层的样式类
+      modal-content：是把div内容设置为模态框第三层样式类。其中：
+      modal-header:是把div设置为模态框窗口的头部的样式类
+      modal-body:是把div设置为模态框的主体内容的样式类
+      modal-footer:是把div设置为模态框的尾部的样式类
+      aria-hidden="true":用于保持模态框窗口不可见，直到触发器被触发为止
+      class="close":用于设置模态框窗口关闭按钮的样式类
+      data-dismiss="modal":用于关闭模态框
+            -->
+<!--  创建模态框-->
+<div class="container">
+    <h3>创建模态框</h3>
+    <button class="btn btn-primary" data-toggle="modal" data-bs-target="#myModal"></button>
+    <!--    定义模态框触发器，此处为按钮触发-->
+    <form action="#" method="post" class="form-horizontal" role="form" id="myForm" onsubmit="return">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <!--定义模态框，过渡效果为淡入，id为myModal，tabindex=-1可以禁止使用tab切换，aria-labelledby用于引用模态框的标题，aria-hidden=true保持模态框在触发前窗口不可见            -->
+            <div class="modal-dialog">
+                <!--                显示模态框的对话模型(若不写下一个div则没有颜色)-->
+                <div class="modal-content">
+                    <!--                    显示模态框白色背景，所有内容都写在这个div下-->
+                    <div class="btn-info modal-header">
+                        <!--                        模态框标题-->
+                        <button type="button" class="close" data-dismiss="modal">$time$</button>
+                        <!--                        关闭按钮-->
+                        <h4>您好，欢迎进入模态框</h4>
+                        <!--                        标题内容-->
+                    </div>
+                    <div class="modal-body">
+                        <!--                        模态框内容，在此添加一个表单-->
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="username" name="username" class="form-control well"
+                                           placeholder="请输入用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">密码</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="password" name="password" class="form-control well"
+                                           placeholder="请输入密码">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!--                                模态框底部样式，一般是提交或者确定按钮-->
+                                <button type="submit" class="btn btn-info">确定</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
