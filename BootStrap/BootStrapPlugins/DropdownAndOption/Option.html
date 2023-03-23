@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Option</title>
+<!--    <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.min.css">-->
+    <script src="/BootStrap/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+<!--BootStrap选项卡主要包括两部分：
+1.选项卡菜单组件，对应BootStrap的.nav-tabs样式类
+2.可以切换的选项卡面板组件，在BootStrap的.tab-pane样式类
+BootStrap选项卡中，选项卡nav-bars已带有样式，而面板内容tab-pane都是隐藏的，只有选中相应选项卡，其面板才会显示
+选项卡定义data属性来触发切换效果。前提是要先加载js方法。声明式触发选项卡满足一下几点：
+1.选项卡导航链接中要设置data-toggle="tab"
+2.设置data-target="对应内容面板的选择符"；如果说是链接的话，还可以通过href="对应面板选择符"设置，主要作用是用户单击是就能找到该选择符对应的面板内容tab-pane
+3.面板内容全部放在包含tab-content样式类的div容器中，而且每个面板内容都需要设置一个独立的选择符与选项卡中data-target或href的值匹配卡
+为了让面板的隐藏和显示在切换过程的效果更流畅，可以在面板中添加fade样式类，让其产生渐入渐出效果。添加fade样式类是，需要在最初默认显示的面板内容一定要加上in样式类，否则无法看到
+-->
+<script>
+    $(function () {
+        $('#myTab li:eq(1) a').tab('show')
+    })
+</script>
+<div class="container">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">BootStrap</a></li>
+        <li><a href="#vue" data-toggle="tab">VUE</a></li>
+        <li class="dropdown">
+            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">前端<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1"></ul>
+        <li><a href="#jmeter" tabindex="-1" data-toggle="tab">CSS</a></li>
+        </li>
+    </ul>
+    <div class="tab-pane fade" id="vue"><p>This is vue</p></div>
+    <div class="tab-pane fade" id="jmeter"><p>This is jmeter</p></div>
+    <div class="tab-pane fade" id="ejb"><p>This is ejb</p></div>
+
+</div>
+</body>
+</html>

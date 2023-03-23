@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warning</title>
+  <link rel="stylesheet" href="/BootStrap/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+  <script src="/BootStrap/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+  <style>
+    body{
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+<!--警告框
+添加警告框需要将div中加入alert样式类和上下文样式类。可以在警告框内添加一个开关按钮，关闭按钮是添加data-dismiss=“alert”
+关闭按钮实例对象：
+-->
+<div class="alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert">$time$</a>
+  <p>用户名和密码不正确</p>
+</div>
+<!--如果需要把关闭按钮放在警告框外，具体实现代码：-->
+<div id="myAlert" class="alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert">$time$</a>
+  <p>用户名或密码不正确</p>
+</div>
+<a href="#" class="btn btn-info" data-dismiss="alert" data-target="#myAlert">$time$</a>
+<!--想关闭警告框的同时，把触发关闭按钮也从DOM中删除，如果按钮是class是btn，设置data-target=".btn"可以把按钮也删除-->
+<button type="button" class="btn" data-dismiss="alert" data-target="#test,.btn">关闭</button>
+<div id="test" class="alert alert-success alert-dismissible" role="alert">操作成功</div>
+<!--JavaScript方式关闭警告框
+ BootStrap警告框支持两种方式关闭，分别是：
+ $().alert():让警告框监听具有data-dismiss="alert"
+ $().alert("close"):关闭警告框并从DOM中将其删除，如果警告框，被赋值fade样式类和in样式类，则警告框在淡出之后才会被删除
+-->
+<script>
+  $(function () {
+    $("#myClose").click(function () {
+      $(".alert").alert("close");
+    })
+  })
+</script>
+<div class="container">
+  <div id="myAlert1" class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert">&time$</a>
+  <p>用户名和密码错误</p>
+  </div>
+  <a href="#" class="btn btn-info" data-dismiss="alert" data-target="#myAlert1">样式类关闭</a>
+  <a href="#" class="btn btn-info" id="myClose">JS脚本关闭</a>
+</div>
+
+</body>
+</html>

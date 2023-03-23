@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+  <script src="/BootStrap/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--创建下拉菜单，先使用.dropdown样式类的div包裹住整个下拉菜单，然后用button或者a标签设置触发器，并且定义data-toggle属性，
+其value值必须和最外层类名一致；下拉菜单使用ul列表，并且定义,dropdown-menu样式类。
+创建下拉菜单实例对象：
+-->
+<div class="container">
+    <ul class="nav nav-bars">
+        <li><a href="#">PHP</a></li>
+        <li><a href="#">JSP</a></li>
+        <li><a href="#">ASP.NET</a></li>
+        <li><a href="#"></a>MYSQL</li>
+        <li><a href="#"></a>Pathon</li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown">前端技术<span class="caret"></span></a>
+            <ul class="dropdown">
+                <li><a href="">HTML</a></li>
+                <li><a href="">CSS</a></li>
+                <li><a href="">JavaScript</a></li>
+                <li><a href="">jQuary</a></li>
+                <li><a href="">VUE</a></li>
+                <li><a href="">React</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+
+</body>
+</html>
