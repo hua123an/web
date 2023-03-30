@@ -11,12 +11,16 @@
 </div>
 <!--创建vue实例对象-->
 <script>
-    let vm = new Vue ({
-        el : '#test',
-        data : {
-            msg : 'hello world'
+<!--   创建js对象-->
+const HelloApp =  {
+    data(){
+        return {
+            msg : "Hello"
         }
-    });
+    }
+}
+// 创建vue实例对象
+Vue.createApp(HelloApp).mount('#test')
 </script>
 </body>
 </html>
