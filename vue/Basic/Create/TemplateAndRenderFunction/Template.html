@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--&lt;!&ndash;模板选项来定义视图，template中的html标签最终转化为VNode虚拟DOM树-->
+<!--挂载点-->
+<div id="app"></div>
+<script>
+  const app = {
+    template : '<div class="user-card"> <h1>用户名：{{user.name}}</h1> <h1>年龄：{{user.age}}</h1></div>',
+    data() {
+      return {
+        user : {
+          name : 'huaan',
+          age : 19
+      }
+      }
+    }
+  }
+  vm = Vue.createApp(app).mount('#app')
+</script>
+</body>
+</html>

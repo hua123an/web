@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Attribute</title>
+</head>
+<body>
+<!--组件的data选项是一个函数。Vue在创建新组件实例的过程中调用此函数。它应该返回一个对象，Vue会通过响应式系统来重新包装，并以$data的形式存储在组件实例中。-->
+<div id="app">
+    <h1>x的值：{{x}</h1>
+    <h1>y的值：{{y}}</h1>
+</div>
+<script>
+    const app = createApp({
+        data () {
+            return {
+                x: 1,
+                y: 2
+            },
+                computed :
+            {
+                return  x + y
+            };
+                //     获取和设置x和y的属性
+                find : {
+                    get()
+                    {
+                        return this.$data.x;
+                        return this.$data.y;
+                    };
+
+                    set()
+                    {
+                        this.$data.x = x;
+                        this.$data.y = y;
+                    }
+                }
+            }
+        }
+
+    })
+    const vm = app.mount('#app')
+    console.log(vm.$data);
+//     修改data值
+    vm.$data.x = 3;
+    vm.$data.y = 4;
+    console.log(vm.$data.x);
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watch</title>
+  <script src="/vue/Package/vue3.2.47.global.js"> </script>
+</head>
+<body>
+<!--watch监听器，有以下两种：
+（1）在组件对象中添加value属性
+（2）通过组件实例的实例方法$watch来监听
+-->
+<div id="app">
+  <p>
+    提出一个只需要回答yes | no的问题：
+    <input v-model="question">
+  </p>
+  <p>{{answer}}</p>
+</div>
+<script>
+  const vm = Vue.createApp({
+    data() {
+      return  {
+        question : '',
+        answer : '问题要以问号结尾？；-)'
+      }
+    },
+    watch : {
+    //     当question发生变化时，该函数就执行
+      question(newQuestion , oldQuestion) {
+        if (newQuestion.indexOf('?') > -1){
+          this.getAnswer();
+        }
+      }
+    },
+    methods : {
+        /**
+         * @param axios
+         */
+        getAnswer(axios = axios) {
+          this.answer = "Thinking..."
+            axios
+                  .get("https://yesno.wtf/api")
+                  .then(response => {
+                    this.answer = response.data.answer
+                  })
+                  .catch(error => {
+                    this.answer = "Error!!!"+error
+                  })
+        }
+    }
+  }).mount('#app')
+</script>
+<!--$watch监听数据变化-->
+<div id="app1">
+    <p style="font-size: 20px">计算器：{{counter}}</p>
+    <button @click="counter++" style="font-size: 30px">+</button>
+</div>
+<script>
+    const app = {
+        data() {
+            return {
+                counter : 1
+            }
+        }
+    }
+    vm1 = Vue.createApp(app).mount('#app1')
+    vm.$watch('counter' , function (nval , oval) {
+        console.log('计算器变化为：'+oval +'to' + nval)
+
+    })
+</script>
+<!--vm.$watch方法用于监听组件实例上的响应式或函数计算结果。回调函数得到的参数为新值和旧值。只能使用data、props或computer属性名作为字符串传递。对于更复杂的表达式，用一个函数取代。-->
+<script>
+    const app = createApp({
+        data(){
+            return {
+                a : 1,
+                b : 2,
+                c : {
+                    d : 3,
+                    e : 4
+                }
+            }
+        },
+        created() {
+        //     顶层property名
+            this.$watch('a' , (newVal , oldVal) => {
+
+            })
+            this.$watch(
+                () => this.c.d,
+                (newVal , oldVal) => {
+
+                }
+            )
+        //     用于监听复杂表达式的函数
+            this.$watch(
+            /*
+            * 当表达式得到一个不同结果时
+            * 处理函数会被调用
+            * 这就像监听一个未被定义的计算属性
+            * */
+                () => this.a + this.b,
+                (newVal , oldVal) => {
+
+                }
+            )
+        }
+    })
+</script>
+<!--当监听的值是一个对象或数组时，对其属性或元素的任何更改都不会触发侦听器，因为他们引用了相同的对象/数组-->
+<script>
+    const app = createApp({
+        data(){
+            return {
+                article : {
+                    text : 'Vue is awesome'
+                },
+                comments : ['Indeed!' , 'I agree']
+            }
+        },
+        created() {
+            this.$watch('article' ,() => {
+                console.log('Article changed')
+            })
+            this.$watch(' comments' , () => {
+                console.log('Comments changed')
+            })
+        },
+        methods : {
+            changeArticleText () {
+                this.article.text = 'Vue3 is awesome'
+            },
+            addComment() {
+                this.comments.push('New comment')
+            },
+            changeWholeArticle() {
+                this.article = {text : 'Vue3 is awesome'}
+            },
+            clearComments() {
+                this.comments = {}
+            }
+        }
+    })
+</script>
+<!--$watch返回一个取消侦听函数，用来停止触发回调函数-->
+<script>
+    const app = createApp({
+        data() {
+            return {
+                a : 1
+            }
+        }
+    })
+    const vm = app.mount('#app')
+    const unwatch = vm.$watch('a' , cb)
+    unwatch();
+</script>
+<!--为了发现对象内部值的变化，可以在选项参数中指定：deep ： true。这个选项同样适用于监听数组变更
+当变更对象或数组并使用deep选项时，旧值与新值相同，因为它们指向同一个数组或对象。
+Vue不会保留更改之前值的副本
+-->
+<script>
+    const app = createApp({
+        data(){
+            return {
+                user : {
+                    name : "huaan ",
+                    age : 19
+                }
+            }
+        },
+        watch : {
+        //     监听对象中的属性变化，需要加入deep属性
+            user : {
+                handler : function(newVal , oldVal) {
+                    console.log("Change" + newVal + "-" +oldVal)
+                },
+                deep : true
+            }
+        }
+    })
+</script>
+<!--同样也可以使用$watch方法监听-->
+<script>
+    vm.$watch('user' , (newVal , oldVal) => {
+        console.log('$watch change'+newVal + '-' + oldVal)
+    },{
+        deep : true
+    })
+</script>
+
+
+
+</body>
+</html>

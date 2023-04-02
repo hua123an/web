@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Function</title>
+</head>
+<body>
+<!--methods选项是以一个包含组件所需方法的对象，Vue所有的方法对象必须定义在methods中，这些方法会被重新绑定到HTML模板上。-->
+<div id="app">
+  <h1>{{num}}</h1>
+  <button @click="updateNum">+</button>
+</div>
+<script>
+  const app = createApp({
+    data() {
+      return {
+        num : 0
+      }
+    },
+    methods : {
+        updateNum() {
+          num++
+        }
+    }
+  })
+  const vm = app.mount("#app");
+  console.log(vm.num);
+  vm.updateNum();
+  console.log(vm.num)
+</script>
+</body>
+</html>
