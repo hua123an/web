@@ -15,7 +15,7 @@ export interface VirtualMethods {
   to: number;
 
   /**
-   * Array with slide items passed by `virtual.slides` parameter
+   * ArrayObject with slide items passed by `virtual.slides` parameter
    */
   slides: any[];
 
@@ -86,7 +86,7 @@ export interface VirtualOptions {
    */
   enabled?: boolean;
   /**
-   * Array with slides
+   * ArrayObject with slides
    *
    * @default []
    */

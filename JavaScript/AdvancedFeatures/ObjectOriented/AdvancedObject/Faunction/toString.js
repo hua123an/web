@@ -14,7 +14,7 @@ console.log(Person.toString())
 * Number                          返回Number的字符串显示
 * Boolean                         返回布尔值类型，true和false
 *Object(默认)                      返回[object ObjectName]，其中ObjectName是对象名
-* Array                           将Array每个元素转化为字符串，并将他们吧一次连接，两个元素之间用因为逗号作为分隔符进行拼接。
+* ArrayObject                           将Array每个元素转化为字符串，并将他们吧一次连接，两个元素之间用因为逗号作为分隔符进行拼接。
 * Date                            返回日期的文本显示
 * Error                           返回一个包含相关错误的字符串
 * Function                        返回如下格式的字符串，其中functionName是函数名。

@@ -20,14 +20,14 @@ var divs = document.querySelectorAll('div')
 Array.from(divs).forEach(function (node) {
     console.log(node)
 })
-// Array.from()也可以将es6新增的Set、Map等结构转化为数组
+// ArrayObject.from()也可以将es6新增的Set、Map等结构转化为数组
 // 将Set结构转化未数组
 Array.from(new Set([1 , 2 , 3 , 4]))
 // 将Map转化为数组
 Array.from(new Map(['name' , 'haha']))
-// Array.from()可接收第二个参数，用于对数组的每一项进行处理并返回
+// ArrayObject.from()可接收第二个参数，用于对数组的每一项进行处理并返回
 Array.from([1 , 2 , 3],x => x * x)
-// Array.from()还可以接收第三个参数，这样可以在处理函数中就可以使用传进去的对象域中的值
+// ArrayObject.from()还可以接收第三个参数，这样可以在处理函数中就可以使用传进去的对象域中的值
 let that = {
     user : 'lisa'
 }

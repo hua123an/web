@@ -20,9 +20,9 @@ export interface CreativeEffectOptions {
    * @example
    * ```js
    * {
-   *   // Array with translate X, Y and Z values
+   *   // ArrayObject with translate X, Y and Z values
    *   translate: (string | number)[];
-   *   // Array with rotate X, Y and Z values (in deg)
+   *   // ArrayObject with rotate X, Y and Z values (in deg)
    *   rotate?: number[];
    *   // Slide opacity
    *   opacity?: number;
@@ -43,9 +43,9 @@ export interface CreativeEffectOptions {
    * @example
    * ```js
    * {
-   *   // Array with translate X, Y and Z values
+   *   // ArrayObject with translate X, Y and Z values
    *   translate: (string | number)[];
-   *   // Array with rotate X, Y and Z values (in deg)
+   *   // ArrayObject with rotate X, Y and Z values (in deg)
    *   rotate?: number[];
    *   // Slide opacity
    *   opacity?: number;

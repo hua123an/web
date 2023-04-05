@@ -46,11 +46,11 @@ computed                              computed : { aDouble (){{return x  + y},  
 methods                               {[key : string] : Function}                  将methods混入组件中，可以直接通过vm实例访问这个方法，或者在指令表达式中使用。
                                                                                   方法中的this自动绑定为组件实例
 
-watch                                 {[key : string] : string | function | Object | Array} 监听
+watch                                 {[key : string] : string | function | Object | ArrayObject} 监听
 
-emits                                 Array<string> | Object                       emits可以是对象和数组，从组件触发自定义事件，emits可以是简单的数组，也可以是对象，后者允许配置事件验证
+emits                                 ArrayObject<string> | Object                       emits可以是对象和数组，从组件触发自定义事件，emits可以是简单的数组，也可以是对象，后者允许配置事件验证
 
-expose 3.2+                           Array<string>                                一个将暴露在公共组件实例上的property列表
+expose 3.2+                           ArrayObject<string>                                一个将暴露在公共组件实例上的property列表
 
 
 

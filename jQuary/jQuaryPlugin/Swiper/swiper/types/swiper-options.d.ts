@@ -27,7 +27,7 @@ import { SwiperEvents } from './swiper-events';
 
 export interface SwiperOptions {
   /**
-   * Array with Swiper modules
+   * ArrayObject with Swiper modules
    *
    * @example
    * ```js

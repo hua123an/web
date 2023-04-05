@@ -47,7 +47,7 @@ var Vue = (function (exports) {
   };
 
   const GLOBALS_WHITE_LISTED = 'Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI,' +
-      'decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array,' +
+      'decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,ArrayObject,' +
       'Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt';
   const isGloballyWhitelisted = /*#__PURE__*/ makeMap(GLOBALS_WHITE_LISTED);
 
@@ -933,7 +933,7 @@ var Vue = (function (exports) {
               return res;
           }
           if (isRef(res)) {
-              // ref unwrapping - skip unwrap for Array + integer key.
+              // ref unwrapping - skip unwrap for ArrayObject + integer key.
               return targetIsArray && isIntegerKey(key) ? res : res.value;
           }
           if (isObject(res)) {
@@ -1890,7 +1890,7 @@ var Vue = (function (exports) {
       return start;
   }
   function queueJob(job) {
-      // the dedupe search uses the startIndex argument of Array.includes()
+      // the dedupe search uses the startIndex argument of ArrayObject.includes()
       // by default the search index includes the current job that is being run
       // so it cannot recursively trigger itself again.
       // if the job is a watch() callback, the search will start with a +1 index to
@@ -7974,7 +7974,7 @@ var Vue = (function (exports) {
                   warn('Invalid Teleport target on mount:', target, `(${typeof target})`);
               }
               const mount = (container, anchor) => {
-                  // Teleport *always* has Array children. This is enforced in both the
+                  // Teleport *always* has ArrayObject children. This is enforced in both the
                   // compiler and vnode children normalization.
                   if (shapeFlag & 16 /* ShapeFlags.ARRAY_CHILDREN */) {
                       mountChildren(children, container, anchor, parentComponent, parentSuspense, isSVG, slotScopeIds, optimized);
@@ -8069,7 +8069,7 @@ var Vue = (function (exports) {
       // do not move children. So the opposite is: only move children if this
       // is not a reorder, or the teleport is disabled
       if (!isReorder || isTeleportDisabled(props)) {
-          // Teleport has either Array children or no children.
+          // Teleport has either ArrayObject children or no children.
           if (shapeFlag & 16 /* ShapeFlags.ARRAY_CHILDREN */) {
               for (let i = 0; i < children.length; i++) {
                   move(children[i], container, parentAnchor, 2 /* MoveType.REORDER */);
@@ -8297,7 +8297,7 @@ var Vue = (function (exports) {
       }
       else if (children) {
           // compiled element vnode - if children is passed, only possible types are
-          // string or Array.
+          // string or ArrayObject.
           vnode.shapeFlag |= isString(children)
               ? 8 /* ShapeFlags.TEXT_CHILDREN */
               : 16 /* ShapeFlags.ARRAY_CHILDREN */;
