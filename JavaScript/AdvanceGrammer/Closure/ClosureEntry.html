@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            width: 10px;
+            height: 20px;
+            border: 1px;
+        }
+    </style>
+</head>
+<body><button type="button" value="点击"></button>
+<script>
+    /*
+* 需求信息
+*点击某个按钮，提示点击的是第n个按钮
+* */
+    //方法一：将btn对应的下标保存在btn中
+    var btns = document.getElementsByTagName('button');
+
+    //将btn所对应的下标保存在btn上
+    for (var i = 0, length = btns.length; i < length; i++) {
+        var btn = btns[i];
+        btn.index = i;
+        btn.onclick = function () {
+            alert('第' + (this.index + 1) + '个');
+        }
+    }
+</script>
+<script>
+    var btns = document.getElementsByTagName('button');
+
+    // 利用闭包延长局部变量的生命周期
+    for (var i = 0, length = btns.length; i < length; i++) {
+        (function (j) {
+            var btn = btns[j];
+            btn.onclick = function () {
+                alert('第' + (j + 1) + '个');
+            }
+        })(i);
+    }
+
+
+
+</script>
+</body>
+</html>
+
+
