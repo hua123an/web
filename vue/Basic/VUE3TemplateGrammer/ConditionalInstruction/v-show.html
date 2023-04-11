@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="/vue/Package/vue3.2.47.global.js"></script>
 </head>
 <body>
-
+<!--v-show使用方法和v-if类似
+优点：
+减少频繁切换，需要频繁切换对象，直接用v-show，如果运行次数少的话，可以直接用v-if
+-->
+<div id="app">
+    <div v-show="type === A">
+        OK!!!
+    </div>
+    <div v-show="type === B">
+        Error!!!
+    </div>
+</div>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                type : "B"
+            }
+        }
+    })
+    const vm = app.mount("#app")
+</script>
 </body>
 </html>
