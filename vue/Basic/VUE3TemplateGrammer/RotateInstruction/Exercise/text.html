@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--
+如果需要操作文本框,此时只需要在文本框中加入v-model指令即可,此时加入.lazy属性就可以实现将input事件转化为change实现文本信息输入后更新
+-->
+<center>
+<div id="app">
+  <div>
+    <label>用户名</label><input type="text" v-model.lazy="formData.userName">
+  </div>
+  <label>年龄</label><input type="text" v-model.number="formData.age">
+</div>
+</center>
+<script>
+  const app = Vue.createApp({
+    data(){
+      return {
+        formData : {
+            userName : 'huaan',
+          age : 20
+        }
+      }
+    }
+  })
+
+  const vm = app.mount("#app")
+</script>
+</body>
+</html>

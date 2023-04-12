@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlobalPlugins</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--全局组件，使用位置不限-->
+<div id="app">
+<my-counter></my-counter>
+</div>
+<script>
+  const app = Vue.createApp({})
+  //定义一个名为my-counter的全局组件
+  app.component('my-counter' , {
+    data(){
+      return {
+        num : 0
+      }
+    },
+    template :
+    '<button @click="num++" value="单击"></button><p>单击了{{num}}次</p>'
+  })
+  app.mount("#app")
+</script>
+</body>
+</html>

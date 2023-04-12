@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalPlugins</title>
+</head>
+<body>
+<!--局部组件，只能在所注册的组件模板中使用
+-->
+<div id="app">
+  <my-counter></my-counter>
+</div>
+<script>
+  //创建局部组件
+  const MyTitle = {
+    template : "<h2>这是一个h2标题</h2>"
+  }
+  const app = Vue.createApp({})
+  //定义一个名为my-counter的全局组件
+  app.component('my-counter' , {
+    data(){
+      return {
+        num : 0
+      }
+    },
+    //注册子组件
+    components: {
+      //组件标签名 ： 组件对象
+      'my-title': MyTitle
+    },
+    template :
+            '<my-title></my-title><button @click="num++" value="单击"></button><p>单击了{{num}}次</p>'
+  })
+  app.mount("#app")
+</script>
+
+</body>
+</html>

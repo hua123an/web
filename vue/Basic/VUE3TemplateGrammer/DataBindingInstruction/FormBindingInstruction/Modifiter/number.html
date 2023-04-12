@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number</title>
+</head>
+<body>
+<!--如果想让用户输入值转化为数值类型,可以直接加入v-model.number修饰符-->
+<input type="text" v-model.number="age">
+<!--此处输入类型为text时,后面可以加入v-model.number修饰符,输入类型为number时,加入修饰符不会生效.原因时因为parseFloat方法无法解析这个值,则会返回原来的值-->
+</body>
+</html>
