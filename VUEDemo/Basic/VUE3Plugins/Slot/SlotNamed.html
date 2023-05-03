@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot Named</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--插槽命名
+可以将单个插槽加入name，但是一个模板中只能允许一个插槽没有name
+-->
+<script>
+    const app =Vue.createApp({})
+    app.component("hello" , {
+        template : '<div><slot name="header"></slot><slot></slot><slot name="header"></slot></div>'
+    })
+    app.mount("#app")
+</script>
+<!--在向插槽命名时，可以在template标签上使用v-slot，后面可以直接加入:name-->
+<div id="app">
+    <hello>
+    <template v-slot :header>
+        <h1>插槽标题</h1>
+    </template>
+    </hello>
+</div>
+</body>
+</html>

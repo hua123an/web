@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Defined Custom Event</title>
+<script src="/VUEDemo//Package/vue.global.js"></script>
+</head>
+<body>
+<!--组件的输出通过定义自定义事件，在组件的标签上绑定组件的自定义事件名，例如：在模板名为my-tamplate的模板上定义一个自定义事件@my-event,
+当组件内部调用$emit("my-event")时会触发该事件的回调方法，$emit("my-event" , {a : 1 , b : 2})可以将固定参数传给回调函数，dosomwthing就是这个事件的回调方法
+-->
+	<my-component @my-event="dosomething"></my-component>
+// emit选项和props选项类似。可以选项可以用来定义一个组件，也可以向父类组件触发事件
+<script>
+app.component("my-comp" , {
+	emits : ['del' , 'update']
+})
+// 当在emit选项中定义了原生事件（如click）时，将使用组件中的事件替代原生事件监听器
+</script>
+
+</body>
+</html>

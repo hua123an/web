@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>render</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--render函数定义视图的方式性能最高，这种方法不需要模板编译的过程，这里使用h()函数创建虚拟DOM树，用法和document.createElement类似-->
+<div id="app"></div>
+<script>
+    import {render} from "../../../Package/vue3.2.47.global";
+    const app = {
+
+        render(h) {
+           return Vue.h('div',
+               {class : ' user-card' , style : 'font-size:20px'},
+               Vue.h('h2' , {} , '用户名：${this.user.name}')
+           )
+        },
+        data() {
+            return {
+                user : {
+                    name : 'huaan',
+                    age : 10
+                }
+            }
+        }
+    }
+    vm = Vue.createApp(app).mount('#app')
+
+</script>
+
+</body>
+</html>

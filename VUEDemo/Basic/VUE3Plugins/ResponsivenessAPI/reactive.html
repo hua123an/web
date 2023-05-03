@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reactive fucntion</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+    <script>
+        <!-- reactive会对传入的引用类型进行包裹,创建一个对象的proxy代理,它是源对象的响应式副本,不等于原始对象。它深层转换了源对象的所有嵌套property,-->
+        import {reactive} from "vue";
+        export default {
+            setup() {
+                const obj = reactive({
+                    name: "huaan",
+                    age: 18
+                })
+
+                //     use this function to change name
+                const changePerson = () => {
+                    obj.name = "jane";
+                        obj.age = 12
+                }
+                return {
+                    obj ,
+                    changePerson
+                }
+            }
+        }
+    </script>
+<template>
+    <div>{{obj.name}}</div>
+    <div>{{obj.age}}</div>
+    <button type="button" @click="changePerson"></button>
+</template>
+</body>
+</html>

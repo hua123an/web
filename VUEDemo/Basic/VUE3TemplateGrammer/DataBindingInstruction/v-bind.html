@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+  <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--v-bind用于绑定一个或多个属性值，或者向另一个组件传递props值-->
+<div id="app">
+<!--  //完整写法-->
+<!--  <a v-bind :href="url"></a>-->
+<!--  //缩略写法-->
+  <a :href="url">百度一下</a>
+</div>
+<script>
+  const app = Vue.createApp({
+    data(){
+      return {
+        url : "https://www.baidu.com"
+      }
+    }
+  })
+  const vm = app.mount("#app")
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>radio</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--单选框也只需要加入v-model属性,属性值为picked,单选框的值无需使用数组存储,直接当作字符串输出即可-->
+<!--其中value是必需参数,输出的值就是获取的value值,不写value无法或取输出值-->
+<div id="app">
+    <input type="radio" id="jack" value="jack" v-model="checkName">
+    <label for="jack">jack</label>
+    <input type="radio" id="john" value="john" v-model="checkName">
+    <label for="john">john</label>
+    <p>name : {{checkName}}</p>
+</div>
+<script>
+    const  app = Vue.createApp({
+        data(){
+            return {
+                checkName : ''
+            }
+        }
+    })
+    const  vm = app.mount("#app")
+</script>
+</body>
+</html>

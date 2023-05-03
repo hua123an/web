@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hook Funtion</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>{{num}}</h1>
+    <button @click="updateNum">+</button>
+    <button @click=" unmountComponent">卸载</button>
+</div>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                num : 1
+            }
+        },
+        methods : {
+            updateNum() {
+                this.num++
+            },
+            //手动销毁实例
+            unmountComponent() {
+                setTimeout(() => app.mount() , 1000)
+            }
+        },
+        beforeCreate(){
+            console.log("1.组件创建前准备")
+        },
+        created() {
+            console.log("组件创建成功")
+        },
+        beforeMount() {
+            console.log("即将被挂载")
+        },
+        mounted() {
+            console.log("DOM挂载成功")
+        },
+        beforeUpdate() {
+            console.log("组件准备更新")
+        },
+        updated() {
+            console.log("组件更新完成")
+        },
+        beforeUnmount(){
+            console.log("准备卸载组件")
+        },
+        unmounted(){
+            console.log("组件卸载完成")
+        }
+    })
+    app.mount("#app")
+</script>
+</body>
+</html>

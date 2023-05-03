@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multilevel linkage</title>
+  <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--实现多级联动,选择省市区-->
+<div id="app">
+  <ul class="list">
+    <select class="addr" v-model="selAddrs.p" onchange="update()">
+      <option>请选择你的省份</option>
+      <option :value="p" v-for="p in addrs">{{p.provinceName}}</option>
+    </select>
+    <select class="addr" v-model="selAddrs.c" onchange="update()">
+    <option>请选择你的城市</option>
+    <option :value="c" v-for="c in selAddrs.p.cities">{{c.cityName}}</option>
+    </select>
+    <select class="addr" v-model="selAddrs.c" onchange="update()">
+      <option>请选择你的区县</option>
+      <option :value="d" v-for="d in selAddrs.c.countries">{{d}}</option>
+    </select>
+  </ul>
+  <span>{{selAddrs}}</span>
+</div>
+<script>
+  const app = Vue.createApp({
+    data(){
+      return {
+        selAddrs : {
+          p : {},
+          c : {},
+          d : {},
+        },
+        addrs : [
+                {
+            provinceName : '陕西省',
+          cities: [
+            {
+              cityName : ' 咸阳市',
+              countries : [' 渭城区', '秦都区']
+            }
+          ]
+        }
+        ]
+      }
+    }
+  })
+  const vm = app.mount("#app")
+</script>
+</body>
+</html>

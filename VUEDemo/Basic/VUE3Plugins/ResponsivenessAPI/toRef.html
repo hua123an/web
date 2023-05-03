@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toRef fucntion</title>
+</head>
+<body>
+    <!-- toref function is a function to exchange reactive funciton to ref function -->
+<template>
+    <div>
+        <div>{{obj.name}}</div>
+        <div>{{obj.age}}</div>
+        <button type="button" @click="changePerson">changePersonInformmation</button>
+    </div>
+</template>
+    <script>
+        import {reactive , toRef} from "vue"
+        export default{
+            setup() {
+                const obj = reactive({
+                    name : "huaan",
+                    age : 19
+                })
+                let name = toRef("obj" , "name")
+                let age = toRef("obj" ,"age")
+                const changePerson = () =>{
+                    obj.name = "jane",
+                    obj.age = 20
+                }
+                return {
+                    obj,
+                    name,
+                    age,
+                    changePerson
+                }
+             }    
+        }
+    </script>
+</body>
+</html>

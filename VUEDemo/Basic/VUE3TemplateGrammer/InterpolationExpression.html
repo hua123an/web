@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interpolation expression
+    </title>
+  <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<div id="app">
+<h1>{{name}}</h1>
+<!--  如果不想更改名字，可以使用一次性插入值-->
+  <h2 v-once>{{name}}</h2>
+  <h2>{{name + "--好的"}}</h2>
+  <h2>{{1 + 1}}</h2>
+<!--  使用函数-->
+  <h2>{{title.substr(0 , 6)}}</h2>
+<!--  三目运算符-->
+  <h3>{{age > 18 ? "成年" : "未成年"}}</h3>
+<!--  //判断条件age是否大于18，大于则返回成年，否则返回未成年-->
+</div>
+<script>
+  //创建vue对象
+  const app = Vue.createApp({
+    //数据
+    data(){
+      return {
+        title : "我是一个标题",
+        name : "jane",
+        age : 19
+      }
+    }
+  })
+  //绑定对象
+  const vm = app.mount("#app")
+</script>
+</body>
+</html>

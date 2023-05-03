@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Option Merge</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--当混入对象和实例对象中都传入有参数是，此时会合并参数，数据相同则会被实例对象覆盖-->
+<script>
+
+//     创建混入对象
+    const myMixin = {
+        data(){
+            return {
+                message : 'Error',
+                foo : 'abc'
+            }
+        }
+    }
+//     创建实例对象
+    const app = Vue.createApp({
+        data(){
+            return {
+                message : 'huaan',
+                foo : 'cde',
+                name : 'huaan'
+            }
+        },
+        created (){
+            console.log(this.$data)
+        }
+    })
+// 同名钩子函数合并进一个数组，以便都能被调用，但是混入对象的钩子函数会在实例对象之前被调用
+// 创建混入对象
+const myMixin = {
+        created() {
+            console.log('myMixin');
+        }
+}
+// 创建实例对象
+const app = Vue.createApp({
+    mixins : [myMixin],
+    created() {
+        console.log('app')
+    }
+})
+// 值为对象的选项，例如：methods、components和directives，将被合并为同一个对象，且会被覆盖为实例对象的值
+// 创建混入对象
+const MyMixin = {
+        methods : {
+            foo (){
+                console.log('foo')
+            },
+            conflicting(){
+                console.log('from MyMixin')
+            }
+        }
+}
+// 创建实例对象
+const app =Vue.createApp({
+    //导入混入对象
+    mixins : [MyMixin],
+    methods : {
+        bar (){
+            console.log('bar')
+        },
+        conflicting() {
+            console.log('from app')
+        }
+    }
+})
+const vm = app.mount("#app")
+vm.bar()
+vm.foo()
+vm.conflicting()
+</script>
+</body>
+</html>
