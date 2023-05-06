@@ -16,18 +16,18 @@
 </template>
 <script>
     import {reactive,toRef} from "vue"
-    export default{
-        setup(){
+    export default {
+        setup() {
             const obj = reactive({
-                name : "huaan"
-            }),
-            const chnageName = () => {
+                name: "huaan"
+            })
+            const changeName = () => {
                 name.value = "jane"
-                console.long("toref" + name , obj)
-            },
-            const changeName1 = () =>{
+                console.long("toref" + name, obj)
+            }
+            const changeName1 = () => {
                 obj.name = "jian"
-                console.long("ref" + obj , name)
+                console.long("ref" + obj, name)
             }
             return {
                 name,
@@ -35,7 +35,8 @@
                 changeName,
                 changeName1
             }
-         }
+        },
+    }
 </script>
 </body>
 </html>
