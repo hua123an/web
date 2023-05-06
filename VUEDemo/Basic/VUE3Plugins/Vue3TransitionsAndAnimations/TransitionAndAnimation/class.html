@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>based on class </title>
+  <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+  <style>
+    .changeBg{
+      animation: ani 0.82s linear both;
+      perspective: 1000px;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+    @keyframes ani {
+      0% {
+        opacity: 0;
+        background: red;
+      }
+      100% {
+        opacity: 1;
+        background: green;
+      }
+    }
+    .p{
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<div id="demo">
+  <button @click="show = !show">run animation</button>
+</div>
+<div class="p" :class="{changeBg : show}">Hello Vue3</div>
+<script>
+  const demo = {
+      data () {
+          return {
+              show : false
+          }
+      }
+  }
+  Vue.createApp.mount('#demo')
+</script>
+</body>
+</html>

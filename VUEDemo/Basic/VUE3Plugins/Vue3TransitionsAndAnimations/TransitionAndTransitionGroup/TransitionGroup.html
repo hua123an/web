@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TransitionGroup</title>
+</head>
+<body>
+<transition-group tag="ul" name="slide">
+  <li v-for="item in items" :key="item.id">
+    {{item.text}}
+  </li>
+</transition-group>
+</body>
+</html>

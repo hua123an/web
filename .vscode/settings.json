@@ -1,5 +1,5 @@
 {
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "aiXcoder.showTrayIcon": true,
+    "aiXcoder.showTrayIcon": false,
     "Codegeex.EnableExtension": false
 }

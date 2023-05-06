@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
 </head>
 <body>
+<div>
+    <h1>user information</h1>
+    <h2>name : {{name}}</h2>
+    <h2>age : {{age}}</h2>
+    <button @click="showInformation">show information</button>
+</div>
 
+<script>
+    /*
+    *                           run time
+    *This is a function init props.Run it before created() and after beforeCreated()
+    *
+    * */
+    /*
+    *receive props data.Before setup can receive props.
+    * props : {
+        p1 : String
+
+    }
+    setup(props){
+        console.log(p1);
+    }
+    * */
+    import {h} from "vue";
+    export default {
+        name : 'App',
+        setup(){
+            let name = "huaan";
+            age : 19;
+            function showInformation() {
+                alert(`hello , ${name}`)
+            }
+            return {
+                name , age , showInformation
+            }
+        },
+
+    }
+
+
+</script>
 </body>
 </html>

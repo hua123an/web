@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+</head>
+<body>
+<!--Single Element-->
+<transition>
+  <div v-if="ok">toggled content</div>
+</transition>
+<!--Dynamic Components-->
+<transition name="fade" mode="out-in" appear>
+  <component :is="view"></component>
+</transition>
+<div id="transition-demo">
+  <transition @after-enter="transitionComplete">
+  <div v-show="ok">toggled content</div>
+  </transition>
+</div>
+</body>
+</html>
