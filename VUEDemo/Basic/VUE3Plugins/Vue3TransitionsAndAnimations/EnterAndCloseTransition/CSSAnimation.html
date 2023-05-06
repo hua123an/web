@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CSSAnimation</title>
+    <script src="/VUEDemo/Package/vue3.2.47.global.js"></script>
+    <style>
+        .bounce-enter-active {
+            animation: bounce-in 0.5s;
+        }
+        .bounce-leave-active {
+            animation: bounce-in 0.5s reverse;
+        }
+        @keyframes bopunce-in {
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1,25);
+            }
+            100%{
+                transform: scale(1);
+            }
+
+        }
+    </style>
 </head>
 <body>
+<div id="demo">
+    <button @click="show = !show">show | hidden</button>
+    <hr>
+    <transition name="bounce">
+        <img src="" alt="" v-if="show">
+    </transition>
+</div>
+<script>
+    const Demo = {
+        data() {
+            return {
+                show : true
+            }
+        }
+    }
+    Vue.createApp.mount("#Demo")
+</script>
 
 </body>
 </html>

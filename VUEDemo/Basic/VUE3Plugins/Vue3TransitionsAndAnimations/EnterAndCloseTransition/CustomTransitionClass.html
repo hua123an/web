@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Transition Class</title>
+</head>
+<body>
+<!--
+                                        Custom transition class name
+Attribute Name                                                 Description
+enter-from-class                                             v-enter-from:define enter transition begin status
+enter-active-class                                           v-enter-active:define enter transition run status
+enter-to-class                                               v-enter-to:define enter transition finish status
+leave-from-class                                             v-leave-from:define leave transition finish status
+leave-active-class                                           v-leave-active:define leave transition run status
+leave-to-class                                               v-leave-to:define leave transition finish status
+-->
+<link rel="stylesheet" href="https://cdnjs.cloundflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+<div id="demo">
+    <button @click="show = !show">Toggle render</button>
+    <transition name="custom-classes-transition" enter-active-class="animate_animated animate_tada" leave-active-class="animate_animated animate_bounceOutRight">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<script>
+    const Demo = {
+        data(){
+            return {
+                show : true
+            }
+        }
+    }
+    Vue.createApp.mount('#Demo')
+</script>
+</body>
+</html>
