@@ -45,7 +45,7 @@ const buf5 = Buffer.from('tést');
 // 创建一个包含 Latin-1 字节 [0x74, 0xe9, 0x73, 0x74] 的 Buffer。
 const buf6 = Buffer.from('tést', 'latin1');
 //写入缓冲区 buf.write(string[, offset[, length]][, encoding])
-buf = Buffer.alloc(256)
+let buf = Buffer.alloc(256)
 len = buf.write("hello world")
 console.log("写入字节" , + len)
 //从缓冲区读取数据  buf.toString([encoding[, start[, end]]])
