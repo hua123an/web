@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+<script>
+    /*XMLHttpRequest对象常见的方法：
+    (1)open()方法。open方法用于设置异步请求的目标url，请求方法以及其他参数信息，基本语法如下：
+    open("method","URL",[,asyncFlag[,"username"[,"password"]]])
+    open方法参数说明
+    参数                                      说明
+    method                              用于指定请求类型，一般为post或者get
+    URL                                 用于指定请求地址，可以使用绝对地址或者相对地址，并且可以传递查询字符串
+    asyncFlag                           可选参数，用于指定请求方式，异步请求为true，同步请求为false
+    userName                            可选参数，用于指定用户名，没有可以省略
+    password                            可选参数，用于指定密码，没有可以省略
+    *
+    (2).send方法
+    调用send方法后，就可以按照open方法设定的参数发送请求。当open方法中的ASYNC属性值为rue时，
+    send方法调用后立即返回，否则就会中断，直到请求返回。需要注意的是，send方法的readyState的属性值为1时才能调用；
+    在调用send方法之后接收到响应信息之间的时间内，readyState属性值将被设置为2；
+    一旦接收到响应信息，readyState属性值将被设置为3；当响应接收完成时，readyState属性值才会被设定为4。
+    如果send(data)方法中的data参数类型为DOMString，数据将被编码成UTF-8；
+    如果是Document类型，将使用data.xmlEncoding指定的编码来串化该数据
+    (3)abort()方法
+   该方法可以暂停一个HttpRequest的发送或者HttpResponse的接收，并将XMLHttpRequest对象设置为初始化状态
+  (4)setRequestHeader方法
+  在调用send方法之前，应该先使用setRequestHeader方法设置请求的·Content-Type头部信息。
+  当readyState属性值为1时，在调用open方法后再调用这个方法，否则将得到一个异常。setRequestHeader(header , value)
+  方法包含两个参数，第一个参数是header键名称，第二个参数是健值
+  (5).getResponseHeader方法
+  该方法用于检索相应的头部值。仅当readyState属性值是3或者4时才可以调用该方法，否则会返回一个空字符串。
+  此外，还可以 通过getAllResponseHeader方法获取所有的HttpResponse的头部信息。
+
+    * */
+
+
+
+
+
+
+</script>
+</body>
+</html>

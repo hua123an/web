@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$.ajax</title>
+</head>
+<body>
+<script src="/jQuary/Packages/jquery-3.6.3.min.js"></script>
+<script>
+<!--    使用jQuary创建ajax-->
+// 基本结构如下
+$.ajax({
+url : "输入请求地址",
+type : "POST/GET(请求类型)",
+data:{
+//     从客户端发送到服务器需要传输的值
+},
+    dataType : '设置从服务器返回数据的数据类型',
+    async : true | false,       //是否异步
+    success : function () {
+    // 成功函数
+    //     Ajax请求成功回调函数的相关操作语句
+    },
+    error : function() {
+    //     失败函数
+    //     Ajax请求失败时回调函数
+    }
+})
+// 创建一个Ajax实例
+$(function() {
+    $.ajax({
+        url : 'www.baidu,com',
+    //     创建一成功函数返回结果
+        success : function() {
+            $("#resultDiv").html(result)
+        }
+    })
+})
+
+</script>
+<div id="resultDiv"></div>
+</body>
+</html>
