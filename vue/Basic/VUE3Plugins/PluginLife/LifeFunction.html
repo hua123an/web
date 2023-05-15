@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Life Function</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<script>
+/*<!--  vue组件常见的钩子函数(生命周期函数)
+beforeCreate                        在实例初始化之前，各种事件配置之前被调用
+created                             完成基本数据配置，但是此时元素还不会被调用
+beforeMount                         在挂载之前被调用，此时虚拟DOM首次会被调用
+mounted                             元素被挂载的实例的元素替换，挂载到实例调用此钩子函数
+beforeUpdate                        数据更新时调用，发生在虚拟DOM重新渲染和打补丁之前。可以在这个钩子函数中进一步更改状态，这不会触发附加的重渲染过程
+updated                             数据更新之后调用，只会在重渲染之后带调用，此时DOM已经更新
+beforeUnmount                       在销毁实例之前被调用，此时实例对象依然可以使用
+unmounted                           在实例被销毁之后调用，此时所有数据和方法都会被销毁
+renderTracked                       将在跟踪虚拟DOM重新渲染时被调用，也就是在updated之前调用，
+renderTriggered                     告诉开发者相信信息，包括什么操作，触发了什么事件，重渲染发生了什么
+-->*/
+</script>
+<div id="app">
+
+  <button @click="addToCart">添加到购物车</button>
+  <p>Cart{{cart}}</p>
+</div>
+<!--renderTracked生命周期-->
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                cart : 0
+            }
+        },
+        renderTrakced({key , target , type}) {
+            console.log('renderTracked =>' , {key , target , type})
+            {
+                key : 'cart',
+                    target: {
+                    cart : 0
+                }
+                type : 'get'
+            }
+        },
+        renderTriggered({key , target , type}) {
+            console.log('renderTriggered =>' , {key , target , type})
+        },
+        methods : {
+            addToCart(){
+                this.cart += 1
+            }
+        }
+    })
+    app.mount("#app")
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法参数</title>
+  <script src="/vue/Package/vue.global.js"></script>
+</head>
+<body>
+<script>
+//该函数接一个根组件选项对象作为第一个参数
+const app = createApp ({
+  data() {
+      return {
+          //返回参数
+      }
+  },
+    method : {
+      //写入需要执行的方法
+    },
+    computed : {
+      //写入计算属性
+    }
+})
+// 使用第二个参数，可以将根props传递给应用程序，createApp()方法的第一个参数是根组件名，第二个参数是这个根组件的输入接口
+const app = Vue.createApp ({
+    props : ['userName'],
+},
+    {userName : 'huaan'}
+)
+app.mount("#app")
+</script>
+<!--prop的值会直接绑定到视图，这里指的是mount指定的DOM节点位置-->
+<div id="app">
+    {{userName}}
+</div>
+<!--根pro是原始props，就像那些通过h创建VNode。除了组件props，它们也包含应用于根组件的attributes和时间监视器。根组件对象的部分属性如下：
+属性名称                                  格式                                        说明
+data                                   data () {//数据结构}                       改函数返回组件实例的data对象
+
+props                                 props : {height:Number,age : {} }          用于接收从父组件接收数据的数组或对象，对象和数组写法都可以
+
+computed                              computed : { aDouble (){{return x  + y},   用于定义计算属性，
+                                      aPlus : {get(){return this.x + 1},
+                                      set(y) {this.x = y + 1}
+
+methods                               {[key : string] : Function}                  将methods混入组件中，可以直接通过vm实例访问这个方法，或者在指令表达式中使用。
+                                                                                  方法中的this自动绑定为组件实例
+
+watch                                 {[key : string] : string | function | Object | ArrayObject} 监听
+
+emits                                 ArrayObject<string> | Object                       emits可以是对象和数组，从组件触发自定义事件，emits可以是简单的数组，也可以是对象，后者允许配置事件验证
+
+expose 3.2+                           ArrayObject<string>                                一个将暴露在公共组件实例上的property列表
+
+
+
+
+
+
+-->
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>今天的温度是摄氏:{{(fahrenheit - 32) * 5 / 9}}℃</h1>
+</div>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        fahrenheit : 100
+      }
+    }
+  })
+  const vm = app.mount('#app')
+//   获取和设置对象
+  fullName : {
+    //getter
+    get() {
+        return : this.num
+    },
+    //setter
+    set(newValue) {
+      const num = newValue.split('');
+      this.num = num;
+
+
+
+    }
+  }
+
+
+
+</script>
+
+</body>
+</html>

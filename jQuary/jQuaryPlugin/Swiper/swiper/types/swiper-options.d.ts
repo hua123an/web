@@ -721,7 +721,7 @@ export interface SwiperOptions {
 
   // Observer
   /**
-   * Set to `true` to enable Mutation Observer on Swiper and its elements. In this case Swiper will be updated (reinitialized) each time if you change its style (like hide/show) or modify its child elements (like adding/removing slides)
+   * Set to `true` to enable Mutation Observer on Swiper and its elements. In this case Swiper will be updated (reinitialized) each time if you change its styles (like hide/show) or modify its child elements (like adding/removing slides)
    *
    * @default false
    */

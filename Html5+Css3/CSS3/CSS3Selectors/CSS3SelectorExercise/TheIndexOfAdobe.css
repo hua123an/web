@@ -1,4 +1,4 @@
-/*Defind the all style*/
+/*Defind the all styles*/
 *{
     list-style: none;
     outline: none;
@@ -7,7 +7,7 @@ body{
     font-family: 微软雅黑;
     text-align: center;
 }
-/*Defind the link style*/
+/*Defind the link styles*/
 a{
     /*Set the first line retract 1em*/
     text-indent: 1em;
@@ -25,7 +25,7 @@ a:hover{
     text-decoration: underline;
     color:#f03;
 }
-/*Set the body style*/
+/*Set the body styles*/
 dl{
     display: none;
 }

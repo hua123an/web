@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Prop</title>
+  <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--prop是子组件用来接收父组件传递过来的参数和自定义属性
+父组件的数据通过props将数据传递给子组件，子组件显式地使用prop选项声明prop
+-->
+<!--组件输入基本与语法：-->
+<div id="app">
+  <list-title title="新闻标题1"></list-title>
+  <list-title title="新闻标题2"></list-title>
+  <list-title title="新闻标题3"></list-title>
+</div>
+<script>
+  const app = Vue.createApp({})
+  app.component("list-title" , {
+    props : ['title'],
+    template : ' <h3>{{title}}</h3>'
+  })
+  app.mount("#app")
+</script>
+<!--动态参数，也就是从vue中获取，而不是在html中写死的-->
+<div id=app1">
+  <user-item v-for=" user in userList" :id="user.id" :title="user.title"></user-item>
+</div>
+<script>
+  const useritem = {
+    data(){
+      return {
+        userList : [
+          {id : 1 , title : ' 标题一'},
+          {id : 2 , title :  '标题二'},
+          {id : 3 , title : "标题三"}
+        ]
+      }
+    }
+  }
+  const app = Vue.createApp(useritem)
+  app.component("user-item" , {
+    props : ['title' , 'id'],
+    template: '<h4>{{id}}----{{title}}</h4>'
+  });
+  app.mount("#app1")
+</script>
+</body>
+</html>

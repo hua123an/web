@@ -1,14 +1,14 @@
 /*How to use the css in the html.
-One:Write the css in the tag of style
-Like this:<style>
+One:Write the css in the tag of styles
+Like this:<styles>
 .{background:black
 }
-</style>
+</styles>
 Two:We can create a css file in the directory.
 By link tag to use css file
 Like this:
 <link href="/cssfile"> or
-<style>
+<styles>
 @import url("add css file");
-</style>
+</styles>
 */

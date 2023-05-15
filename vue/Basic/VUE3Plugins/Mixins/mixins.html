@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mixins</title>
+    <script src="/vue/Package/vue3.2.47.global.js"></script>
+</head>
+<body>
+<!--混入就是简单的调用，就是将混入对象混进组件中-->
+<!--实现方法如下：-->
+<script>
+
+//   创建混入对象
+  const myMixins = {
+    created(){
+      this.hello()
+    },
+    methods : {
+      hello() {
+          console.log('hello from myMixins')
+      }
+    }
+  }
+//   创建vue实例化对象
+  const app = Vue.createApp({
+    mixins : [myMixins]
+  })
+</script>
+</body>
+</html>

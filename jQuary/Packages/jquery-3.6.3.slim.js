@@ -4788,11 +4788,11 @@ var isHiddenWithinTree = function( elem, el ) {
 		// in that case, element will be second argument
 		elem = el || elem;
 
-		// Inline style trumps all
+		// Inline styles trumps all
 		return elem.style.display === "none" ||
 			elem.style.display === "" &&
 
-			// Otherwise, check computed style
+			// Otherwise, check computed styles
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
@@ -6661,7 +6661,7 @@ function curCSS( elem, name, computed ) {
 		isCustomProp = rcustomProp.test( name ),
 
 		// Support: Firefox 51+
-		// Retrieving style before computed somehow
+		// Retrieving styles before computed somehow
 		// fixes an issue with getting wrong values
 		// on detached elements
 		style = elem.style;
@@ -6888,7 +6888,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 
 function getWidthOrHeight( elem, dimension, extra ) {
 
-	// Start with computed style
+	// Start with computed styles
 	var styles = getStyles( elem ),
 
 		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
@@ -6964,8 +6964,8 @@ function getWidthOrHeight( elem, dimension, extra ) {
 
 jQuery.extend( {
 
-	// Add in style property hooks for overriding the default
-	// behavior of getting and setting a style property
+	// Add in styles property hooks for overriding the default
+	// behavior of getting and setting a styles property
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
@@ -7007,7 +7007,7 @@ jQuery.extend( {
 	// setting or getting the value
 	cssProps: {},
 
-	// Get and set the style property on a DOM Node
+	// Get and set the styles property on a DOM Node
 	style: function( elem, name, value, extra ) {
 
 		// Don't set styles on text and comment nodes
@@ -7080,7 +7080,7 @@ jQuery.extend( {
 				return ret;
 			}
 
-			// Otherwise just get the value from the style object
+			// Otherwise just get the value from the styles object
 			return style[ name ];
 		}
 	},
@@ -7131,7 +7131,7 @@ jQuery.each( [ "height", "width" ], function( _i, dimension ) {
 			if ( computed ) {
 
 				// Certain elements can have dimension info if we invisibly show them
-				// but it must have a current display style that would benefit
+				// but it must have a current display styles that would benefit
 				return rdisplayswap.test( jQuery.css( elem, "display" ) ) &&
 
 					// Support: Safari 8+
