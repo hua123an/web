@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // stores/counter.js
 import { defineStore } from 'pinia'
 import {computed, ref} from "vue";
@@ -26,3 +27,22 @@ export const useCounterStore = defineStore("counter" , () => {
     }
 
 })
+=======
+import {defineStore} from "pinia";
+import {ref} from "vue";
+// define function initialization data and function
+export const useCounterStore = defineStore("counter" , () => {
+    const count = ref(0)
+    const changeData = () => {
+        count.value++
+    }
+//     use getter 
+//     return data and function
+    return {
+        count ,
+        changeData
+    }
+})
+
+
+>>>>>>> 08ed3c7ff15e653925c1eb1051590576f21d0f3a

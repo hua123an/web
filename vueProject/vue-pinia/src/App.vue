@@ -1,4 +1,5 @@
 <script setup>
+<<<<<<< HEAD
 /*
 * create pinia
 * first : import package form store
@@ -31,3 +32,18 @@ const { changeData } = counter
   </ol>
 
 </template>
+=======
+import {useCounterStore} from "@/stores/counter";
+const counter = useCounterStore()
+console.log(counter)
+</script>
+
+<template>
+  <button @click="counter">{{counter.count}}</button>
+
+</template>
+
+<style scoped>
+
+</style>
+>>>>>>> 08ed3c7ff15e653925c1eb1051590576f21d0f3a

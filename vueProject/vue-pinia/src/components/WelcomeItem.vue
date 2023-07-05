@@ -30,7 +30,10 @@ i {
   place-content: center;
   width: 32px;
   height: 32px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08ed3c7ff15e653925c1eb1051590576f21d0f3a
   color: var(--color-text);
 }
 
